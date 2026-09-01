@@ -13,6 +13,28 @@ const BAND_ORDER = [
 
 const state = { data: null, selected: null, major: "" };
 
+// ---- theming ---------------------------------------------------------------
+// Three branch colors sit below 3:1 against the dark background; these are the
+// contrast-verified lightened variants used only in dark mode.
+const THEME_KEY = "skilltree-theme";
+const DARK_BRANCH = { math: "#5d6168", robotics: "#6659a6", "supply-chain": "#9a436f" };
+const themePref = () => localStorage.getItem(THEME_KEY) ?? "system";
+const effectiveDark = () => {
+  const p = themePref();
+  return p === "dark" || (p === "system" && matchMedia("(prefers-color-scheme: dark)").matches);
+};
+const bcolor = (id) =>
+  effectiveDark() ? DARK_BRANCH[id] ?? state.data.branches[id].color : state.data.branches[id].color;
+function applyTheme() {
+  const p = themePref();
+  if (p === "system") delete document.documentElement.dataset.theme;
+  else document.documentElement.dataset.theme = p;
+  const btn = document.getElementById("theme-toggle");
+  btn.textContent = { system: "◐", light: "○", dark: "●" }[p];
+  btn.setAttribute("aria-label", `Color theme: ${p}`);
+  btn.title = `Theme: ${p}`;
+}
+
 async function main() {
   const wrap = document.getElementById("graph-wrap");
   try {
@@ -37,11 +59,27 @@ async function main() {
     if (!b) continue;
     const btn = document.createElement("button");
     btn.type = "button";
-    btn.innerHTML = `<span class="swatch" style="background:${b.color}"></span>${b.name}`;
+    btn.innerHTML = `<span class="swatch" data-branch="${id}" style="background:${bcolor(id)}"></span>${b.name}`;
     btn.setAttribute("aria-label", `Go to ${b.name} branch`);
     btn.addEventListener("click", () => flyToBand(id));
     legend.appendChild(btn);
   }
+
+  const rerenderAll = () => {
+    render();
+    renderClassDag(document.getElementById("cm-branch").value || "robotics");
+    for (const sw of legend.querySelectorAll(".swatch"))
+      sw.style.background = bcolor(sw.dataset.branch);
+  };
+  applyTheme();
+  document.getElementById("theme-toggle").addEventListener("click", () => {
+    const next = { system: "dark", dark: "light", light: "system" }[themePref()];
+    if (next === "system") localStorage.removeItem(THEME_KEY);
+    else localStorage.setItem(THEME_KEY, next);
+    applyTheme();
+    rerenderAll();
+  });
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", rerenderAll);
   const sel = document.getElementById("major");
   for (const m of majors) {
     const o = document.createElement("option");
@@ -198,7 +236,7 @@ function render() {
     tint.setAttribute("width", b.w + GAP_X);
     tint.setAttribute("height", state.h - 2 * PAD + 12);
     tint.setAttribute("rx", 10);
-    tint.setAttribute("fill", branches[b.id].color + "0D");
+    tint.setAttribute("fill", bcolor(b.id) + (effectiveDark() ? "14" : "0D"));
     gChrome.appendChild(tint);
 
     const g = document.createElementNS(SVG, "g");
@@ -214,7 +252,7 @@ function render() {
     chip.setAttribute("y", PAD + 4);
     chip.setAttribute("width", 9); chip.setAttribute("height", 9);
     chip.setAttribute("rx", 2);
-    chip.setAttribute("fill", branches[b.id].color);
+    chip.setAttribute("fill", bcolor(b.id));
     g.setAttribute("class", "band-head");
     g.setAttribute("role", "button");
     g.setAttribute("tabindex", "0");
@@ -265,7 +303,7 @@ function render() {
     g.setAttribute("tabindex", "0");
     g.setAttribute("role", "button");
     g.setAttribute("aria-label", n.title);
-    const color = state.data.branches[n.branch].color;
+    const color = bcolor(n.branch);
 
     const rect = document.createElementNS(SVG, "rect");
     rect.setAttribute("width", NODE_W);
@@ -340,7 +378,8 @@ function select(id, opts = {}) {
   if (opts.fly) state.view?.flyToNode(id);
   const n = state.byId[id];
   const b = state.data.branches[n.branch];
-  const tagClass = LIGHT.has(b.color) ? "branch-tag light-text-dark" : "branch-tag";
+  const tagColor = bcolor(n.branch);
+  const tagClass = LIGHT.has(tagColor) ? "branch-tag light-text-dark" : "branch-tag";
   const el = document.getElementById("panel-body");
   const demos = n.demos.map((d) => {
     const space = state.data.makerspaces.find((s) => s.id === d.space);
@@ -348,7 +387,7 @@ function select(id, opts = {}) {
   }).join("");
   el.innerHTML = `
     <h2>${esc(n.title)}</h2>
-    <span class="${tagClass}" style="background:${b.color}">${esc(b.name)}</span>
+    <span class="${tagClass}" style="background:${tagColor}">${esc(b.name)}</span>
     ${n.acquisition.on_the_job_only ? `<p class="otj">Learned on the job — no class or makerspace path covers this.</p>` : ""}
     <section><h3>What it is</h3><p>${esc(n.overview)}</p></section>
     <section><h3>Proficient means you can</h3>
@@ -365,14 +404,23 @@ function select(id, opts = {}) {
   `;
   el.querySelectorAll(".prereq-link").forEach((a) =>
     a.addEventListener("click", () => select(a.dataset.id, { fly: true })));
-  document.getElementById("panel").hidden = false;
+  const panel = document.getElementById("panel");
+  const wasHidden = panel.hidden;
+  panel.hidden = false;
+  if (wasHidden) panel.focus();
 }
 
 function closePanel() {
   if (document.getElementById("panel").hidden) return;
+  const last = state.selected;
   state.selected = null;
   document.getElementById("panel").hidden = true;
   render();
+  // hand keyboard focus back to the node the panel was describing
+  if (last) {
+    const n = state.byId[last];
+    if (n) document.querySelector(`#graph .node[aria-label="${CSS.escape(n.title)}"]`)?.focus();
+  }
 }
 
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -517,7 +565,7 @@ function renderClassDag(branchId) {
     }
   for (const n of dag.nodes) {
     // border takes the branch color of the first skill the class covers
-    const color = n.covers.length ? branches[n.covers[0].branch].color : "#4b4f57";
+    const color = n.covers.length ? bcolor(n.covers[0].branch) : (effectiveDark() ? "#5d6168" : "#4b4f57");
     const g = document.createElementNS(SVG, "g");
     g.setAttribute("class", "cnode");
     g.setAttribute("transform", `translate(${n.x},${n.y})`);

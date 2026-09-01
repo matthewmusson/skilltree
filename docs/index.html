@@ -4,6 +4,10 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Skilltree</title>
+<script>
+  const t = localStorage.getItem("skilltree-theme");
+  if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+</script>
 <link rel="stylesheet" href="fonts/plex.css" />
 <link rel="stylesheet" href="styles.css" />
 </head>
@@ -15,6 +19,7 @@
     Major overlay
     <select id="major"><option value="">none</option></select>
   </label>
+  <button id="theme-toggle" aria-label="Color theme: system">◐</button>
   <nav id="legend" aria-label="Branch legend"></nav>
 </header>
 <main>
@@ -39,7 +44,7 @@
       <svg id="class-graph" role="application" aria-label="Class prerequisite graph"></svg>
     </section>
   </div>
-  <aside id="panel" hidden>
+  <aside id="panel" hidden tabindex="-1">
     <button id="panel-close" aria-label="Close">×</button>
     <div id="panel-body"></div>
   </aside>

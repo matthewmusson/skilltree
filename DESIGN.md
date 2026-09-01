@@ -48,6 +48,9 @@ Restrained strategy: near-neutral surfaces and graphite ink, one accent at ≤10
 - **Surface** (oklch(0.97 0 0), ≈#f5f5f5): panels and wells, one visible step down from paper.
 - **Muted** (oklch(0.50 0.01 260), ≈#606369): secondary text. 6.0:1 on paper, 5.5:1 on surface — above the 4.5:1 floor on both.
 
+### Dark Mode (verified 2026-08-31)
+Follows the system scheme, with a manual three-state toggle (system/light/dark, persisted). Pure-neutral near-black, no hue tint: bg oklch(0.13 0 0), surface oklch(0.18 0 0), ink oklch(0.93 0.005 260) at 16.4:1, muted oklch(0.72 0.01 260) at 8.1:1, moss lifted to oklch(0.78 0.14 140) at 10.5:1, hairline oklch(0.3 0 0), edge oklch(0.32 0 0). Three branch colors fail 3:1 on the dark ground and swap to contrast-verified lightened variants in dark mode only: math #5d6168, robotics #6659a6, supply chain #9a436f.
+
 ### Branch Palette (data only)
 The Okabe-Ito colorblind-safe palette, the scientific-publishing standard: orange #E69F00, sky blue #56B4E9, bluish green #009E73, yellow #F0E442, blue #0072B2, vermillion #D55E00, reddish purple #CC79A7. Branch-to-color assignment locks when the branch list locks; the build validator runs a deuteranopia simulation as a hard gate. Light members (yellow, sky blue) take graphite text; dark members take white.
 
