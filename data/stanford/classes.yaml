@@ -37,6 +37,7 @@ classes:
     title: Partial Differential Equations
     covers:
       - { skill: pdes, depth: teaches }
+      - { skill: fourier-analysis, depth: touches }
   - id: MATH 151
     title: Introduction to Probability Theory
     covers:

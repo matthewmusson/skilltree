@@ -35,7 +35,7 @@ docs/                    static site (GitHub Pages serves this)
 ```
 npm install
 npm run build      # validate + compile docs/data.json
-npm run serve      # localhost:8321
+npm run serve      # localhost:3001
 ```
 
 Design context lives in `PRODUCT.md` (strategy) and `DESIGN.md` (visual system).

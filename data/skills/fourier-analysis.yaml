@@ -1,0 +1,22 @@
+id: fourier-analysis
+title: Fourier Analysis & Spectral Methods
+branch: math
+prereqs: [pdes, linear-algebra]
+overview: >
+  Decomposing functions into sums of sinusoids, and using that decomposition to
+  solve differential equations. A partial differential equation (PDE) that is
+  hard in physical space often becomes independent algebraic equations per
+  frequency mode, which is why Fourier methods sit under signal processing,
+  quantum mechanics, spectral PDE solvers, and the FFT (fast Fourier transform)
+  in every numerical library.
+proficiency:
+  - Compute Fourier series and transforms of standard functions and state the convergence caveats
+  - Solve the heat and wave equations on standard domains by transforming, solving per mode, and inverting
+  - Explain the duality between smoothness in space and decay in frequency, and use it to predict spectral accuracy
+  - Implement a spectral Poisson solver with the FFT and verify its convergence rate against a manufactured solution
+  - Choose between finite-difference and spectral discretizations for a given geometry and boundary condition
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Trefethen, Spectral Methods in MATLAB"
