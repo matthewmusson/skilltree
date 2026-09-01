@@ -289,7 +289,7 @@ function render() {
 
     const label = document.createElementNS(SVG, "text");
     label.setAttribute("x", 24); label.setAttribute("y", NODE_H / 2 + 4);
-    label.textContent = n.title.length > 24 ? n.title.slice(0, 23) + "…" : n.title;
+    label.textContent = n.title;
 
     // full title on hover for truncated labels
     const tip = document.createElementNS(SVG, "title");
@@ -301,6 +301,24 @@ function render() {
     g.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); } });
     gNodes.appendChild(g);
   }
+  // trim labels by measured width, never by character count (glyph widths vary)
+  for (const label of gNodes.querySelectorAll("g.node > text"))
+    fitText(label, NODE_W - 24 - 8);
+}
+
+// Width-aware truncation. Measures rendered glyphs; caches per title so the
+// layout cost is paid once, not on every re-render.
+const fitCache = new Map();
+function fitText(el, max) {
+  const full = el.textContent;
+  const key = full + "|" + max + "|" + (el.getAttribute("class") ?? "");
+  if (fitCache.has(key)) { el.textContent = fitCache.get(key); return; }
+  let s = full;
+  while (s.length > 2 && el.getComputedTextLength() > max) {
+    s = s.slice(0, -2).replace(/[\s·&-]+$/, "") + "…";
+    el.textContent = s;
+  }
+  fitCache.set(key, s);
 }
 
 function ancestorsOf(id) {
@@ -518,7 +536,7 @@ function renderClassDag(branchId) {
     name.setAttribute("class", "cname");
     name.setAttribute("x", C_W / 2); name.setAttribute("y", 33);
     name.setAttribute("text-anchor", "middle");
-    name.textContent = n.title.length > 26 ? n.title.slice(0, 25) + "…" : n.title;
+    name.textContent = n.title;
     const tip = document.createElementNS(SVG, "title");
     tip.textContent = `${n.id} — ${n.title}`;
     g.append(tip, rect, code, name);
@@ -527,6 +545,8 @@ function renderClassDag(branchId) {
     g.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); } });
     gN.appendChild(g);
   }
+  for (const label of gN.querySelectorAll("g.cnode > text.cname"))
+    fitText(label, C_W - 14);
 }
 
 function selectClass(c) {
