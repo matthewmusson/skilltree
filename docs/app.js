@@ -48,7 +48,11 @@ async function main() {
     o.value = m.id; o.textContent = m.name;
     sel.appendChild(o);
   }
-  sel.addEventListener("change", () => { state.major = sel.value; render(); });
+  sel.addEventListener("change", () => {
+    state.major = sel.value;
+    document.getElementById("overlay-key").hidden = !state.major;
+    render();
+  });
   document.getElementById("panel-close").addEventListener("click", closePanel);
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closePanel(); });
 
@@ -213,9 +217,13 @@ function render() {
     chip.setAttribute("fill", branches[b.id].color);
     g.setAttribute("class", "band-head");
     g.setAttribute("role", "button");
+    g.setAttribute("tabindex", "0");
     g.setAttribute("aria-label", `Go to ${branches[b.id].name} branch`);
     g.style.cursor = "pointer";
     g.addEventListener("click", () => flyToBand(b.id));
+    g.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); flyToBand(b.id); }
+    });
     g.append(chip, label);
     gChrome.appendChild(g);
   });
@@ -248,7 +256,9 @@ function render() {
     }
   }
 
-  for (const n of state.data.nodes) {
+  // reading order = tab order: left band to right band, bottom layer to top
+  const ordered = [...state.data.nodes].sort((a, b) => a.x - b.x || b.y - a.y);
+  for (const n of ordered) {
     const g = document.createElementNS(SVG, "g");
     g.setAttribute("class", "node");
     g.setAttribute("transform", `translate(${n.x},${n.y})`);
@@ -306,9 +316,10 @@ function ancestorsOf(id) {
 // ---- selection + panel -----------------------------------------------------
 const LIGHT = new Set(["#E69F00", "#56B4E9", "#F0E442", "#8B8000"]);
 
-function select(id) {
+function select(id, opts = {}) {
   state.selected = id;
   render();
+  if (opts.fly) state.view?.flyToNode(id);
   const n = state.byId[id];
   const b = state.data.branches[n.branch];
   const tagClass = LIGHT.has(b.color) ? "branch-tag light-text-dark" : "branch-tag";
@@ -335,7 +346,7 @@ function select(id) {
       <ul>${n.resources.map((r) => `<li>${esc(r)}</li>`).join("")}</ul></section>` : ""}
   `;
   el.querySelectorAll(".prereq-link").forEach((a) =>
-    a.addEventListener("click", () => select(a.dataset.id)));
+    a.addEventListener("click", () => select(a.dataset.id, { fly: true })));
   document.getElementById("panel").hidden = false;
 }
 
@@ -360,31 +371,53 @@ function initPanZoom() {
   const apply = () => svg.setAttribute("viewBox", vb.join(" "));
   apply();
   let drag = null;
-  wrap.addEventListener("mousedown", (e) => {
-    if (e.target.closest(".node")) return;
+  wrap.addEventListener("pointerdown", (e) => {
+    if (e.target.closest(".node") || e.target.closest("#view-controls")) return;
     drag = { x: e.clientX, y: e.clientY, vb: [...vb] };
+    wrap.setPointerCapture(e.pointerId);
     wrap.classList.add("dragging");
   });
-  window.addEventListener("mousemove", (e) => {
+  wrap.addEventListener("pointermove", (e) => {
     if (!drag) return;
     const scale = vb[2] / wrap.clientWidth;
     vb[0] = drag.vb[0] - (e.clientX - drag.x) * scale;
     vb[1] = drag.vb[1] - (e.clientY - drag.y) * scale;
     apply();
   });
-  window.addEventListener("mouseup", () => { drag = null; wrap.classList.remove("dragging"); });
+  const endDrag = () => { drag = null; wrap.classList.remove("dragging"); };
+  wrap.addEventListener("pointerup", endDrag);
+  wrap.addEventListener("pointercancel", endDrag);
   wrap.addEventListener("wheel", (e) => {
     e.preventDefault();
-    const f = e.deltaY > 0 ? 1.12 : 1 / 1.12;
+    zoomAt(e.deltaY > 0 ? 1.12 : 1 / 1.12, e.clientX, e.clientY);
+  }, { passive: false });
+
+  function zoomAt(f, cx, cy) {
     const r = wrap.getBoundingClientRect();
-    const px = vb[0] + ((e.clientX - r.left) / r.width) * vb[2];
-    const py = vb[1] + ((e.clientY - r.top) / r.height) * vb[3];
+    const px = vb[0] + ((cx - r.left) / r.width) * vb[2];
+    const py = vb[1] + ((cy - r.top) / r.height) * vb[3];
     vb = [px - (px - vb[0]) * f, py - (py - vb[1]) * f, vb[2] * f, vb[3] * f];
     apply();
-  }, { passive: false });
+  }
+  const center = () => {
+    const r = wrap.getBoundingClientRect();
+    return [r.left + r.width / 2, r.top + r.height / 2];
+  };
+  document.getElementById("zoom-in").addEventListener("click", () => zoomAt(1 / 1.3, ...center()));
+  document.getElementById("zoom-out").addEventListener("click", () => zoomAt(1.3, ...center()));
+  document.getElementById("zoom-fit").addEventListener("click", () => {
+    const a = wrap.clientWidth / wrap.clientHeight || 1;
+    const fitW = Math.max(state.w, state.h * a);
+    state.view.animateTo([(state.w - fitW) / 2, (state.h - fitW / a) / 2, fitW, fitW / a]);
+  });
 
   let animId = null;
   state.view = {
+    flyToNode(id) {
+      const n = state.byId[id];
+      if (!n) return;
+      this.animateTo([n.x + NODE_W / 2 - vb[2] / 2, n.y + NODE_H / 2 - vb[3] / 2, vb[2], vb[3]]);
+    },
     animateTo(target) {
       if (animId) cancelAnimationFrame(animId);
       if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -427,6 +460,8 @@ function renderClassDag(branchId) {
   const w = Math.max(maxRow * (C_W + C_GAP_X) - C_GAP_X + 2 * C_PAD, 600);
   const h = (maxLayer + 1) * (C_H + C_GAP_Y) - C_GAP_Y + 2 * C_PAD;
   svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
+  // let tall DAGs (math: 7 layers) keep readable node size instead of shrinking
+  svg.style.height = Math.min(Math.max(h * 0.9, 300), 700) + "px";
 
   // order each layer by prereq barycenter, then center it
   const pos = {};
@@ -507,7 +542,7 @@ function selectClass(c) {
     <p class="note">Class-level prerequisites are draft; verify against the bulletin.</p>
   `;
   el.querySelectorAll(".prereq-link").forEach((a) =>
-    a.addEventListener("click", () => select(a.dataset.id)));
+    a.addEventListener("click", () => select(a.dataset.id, { fly: true })));
   document.getElementById("panel").hidden = false;
 }
 
