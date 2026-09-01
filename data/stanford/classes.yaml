@@ -324,6 +324,80 @@ classes:
     prereqs: [ENGR 50]
     covers:
       - { skill: materials-selection, depth: touches }
+  # ---- graduate (drawn from scraped MS/PhD requirements; see
+  #      bulletin-programs-cache.json for full per-program course lists) ----
+  - id: CS 109
+    title: Introduction to Probability for Computer Scientists
+    prereqs: [CS 106B]
+    covers:
+      - { skill: probability-theory, depth: teaches }
+  - id: CME 106
+    title: Introduction to Probability and Statistics for Engineers (ENGR 155C)
+    prereqs: [MATH 52]
+    covers:
+      - { skill: probability-theory, depth: touches }
+      - { skill: statistical-inference, depth: touches }
+  - id: CS 161
+    title: Design and Analysis of Algorithms
+    prereqs: [CS 106B, CS 103, CS 109]
+    covers:
+      - { skill: algorithms, depth: teaches }
+  - id: CS 221
+    title: "Artificial Intelligence: Principles and Techniques"
+    prereqs: [CS 161, CS 109]
+    covers:
+      - { skill: ml-foundations, depth: touches }
+      - { skill: algorithms, depth: touches }
+  - id: CS 140E
+    title: Operating systems design and implementation
+    prereqs: [CS 107]
+    covers:
+      - { skill: operating-systems, depth: teaches }
+      - { skill: bare-metal-firmware, depth: teaches }
+  - id: AA 203
+    title: Optimal and Learning-based Control
+    prereqs: [ENGR 105]
+    covers:
+      - { skill: control-systems, depth: teaches }
+      - { skill: reinforcement-learning, depth: touches }
+  - id: AA 274A
+    title: Principles of Robot Autonomy I (CS 237A, EE 260A, ME 274A)
+    prereqs: [CS 106A, MATH 51, CME 106]
+    covers:
+      - { skill: classical-robotics, depth: teaches }
+      - { skill: state-estimation, depth: touches }
+  - id: AA 210A
+    title: Fundamentals of Compressible Flow
+    prereqs: [ME 70, ME 30]
+    covers:
+      - { skill: fluid-dynamics, depth: teaches }
+  - id: CME 212
+    title: Programming for performance
+    prereqs: [CS 106B]
+    covers:
+      - { skill: modern-cpp, depth: teaches }
+      - { skill: build-toolchains, depth: touches }
+  - id: CME 213
+    title: Introduction to parallel computing using MPI, openMP, and CUDA (ME 339)
+    prereqs: [CME 212]
+    covers:
+      - { skill: gpu-programming, depth: teaches }
+      - { skill: concurrency, depth: teaches }
+  - id: CME 302
+    title: Numerical Linear Algebra
+    prereqs: [CME 108, MATH 104]
+    covers:
+      - { skill: numerical-methods, depth: teaches }
+  - id: CME 307
+    title: Optimization (MS&E 311)
+    prereqs: [MATH 104]
+    covers:
+      - { skill: convex-optimization, depth: teaches }
+  - id: PHYSICS 230
+    title: Graduate Quantum Mechanics I
+    prereqs: [PHYSICS 131]
+    covers:
+      - { skill: quantum-mechanics, depth: teaches }
   # ---- bio / chem ----
   - id: CHEM 31A
     title: Chemical Principles I

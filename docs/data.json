@@ -108,6 +108,43 @@
    "demos": []
   },
   {
+   "id": "algorithms",
+   "title": "Algorithm Design & Analysis",
+   "branch": "cs-systems",
+   "layer": 2,
+   "prereqs": [
+    "discrete-math",
+    "programming-fundamentals"
+   ],
+   "overview": "Designing procedures that solve problems efficiently and proving they work. Covers asymptotic analysis, divide and conquer, greedy methods, dynamic programming, graph algorithms, and NP-completeness, the theory of problems believed to have no fast solution. Every systems, ML, and infrastructure role assumes this layer.",
+   "proficiency": [
+    "Derive time and space complexity of an algorithm and prove its correctness",
+    "Recognize when a problem reduces to a known one (shortest path, max flow, matching) and apply the standard algorithm",
+    "Design a dynamic programming solution from a recurrence and implement it without blowing up memory",
+    "Identify an NP-hard subproblem and choose an approximation, heuristic, or exact-solver strategy deliberately"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Cormen, Leiserson, Rivest & Stein, Introduction to Algorithms (CLRS)"
+   ],
+   "classes": [
+    {
+     "id": "CS 161",
+     "title": "Design and Analysis of Algorithms",
+     "depth": "teaches"
+    },
+    {
+     "id": "CS 221",
+     "title": "Artificial Intelligence: Principles and Techniques",
+     "depth": "touches"
+    }
+   ],
+   "demos": []
+  },
+  {
    "id": "analog-design",
    "title": "Analog Circuit Design",
    "branch": "ee-circuits",
@@ -208,6 +245,11 @@
     {
      "id": "CS 107E",
      "title": "Computer Systems from the Ground Up",
+     "depth": "teaches"
+    },
+    {
+     "id": "CS 140E",
+     "title": "Operating systems design and implementation",
      "depth": "teaches"
     }
    ],
@@ -329,7 +371,13 @@
    "resources": [
     "Bryant & O'Hallaron, Computer Systems: A Programmer's Perspective"
    ],
-   "classes": [],
+   "classes": [
+    {
+     "id": "CME 212",
+     "title": "Programming for performance",
+     "depth": "touches"
+    }
+   ],
    "demos": []
   },
   {
@@ -456,6 +504,11 @@
     {
      "id": "CS 223A",
      "title": "Introduction to Robotics (ME 320)",
+     "depth": "teaches"
+    },
+    {
+     "id": "AA 274A",
+     "title": "Principles of Robot Autonomy I (CS 237A, EE 260A, ME 274A)",
      "depth": "teaches"
     }
    ],
@@ -594,6 +647,11 @@
      "id": "CS 149",
      "title": "Parallel Computing",
      "depth": "teaches"
+    },
+    {
+     "id": "CME 213",
+     "title": "Introduction to parallel computing using MPI, openMP, and CUDA (ME 339)",
+     "depth": "teaches"
     }
    ],
    "demos": []
@@ -628,6 +686,11 @@
      "id": "ENGR 105",
      "title": "Feedback Control Design",
      "depth": "teaches"
+    },
+    {
+     "id": "AA 203",
+     "title": "Optimal and Learning-based Control",
+     "depth": "teaches"
     }
    ],
    "demos": []
@@ -661,6 +724,11 @@
     {
      "id": "EE 364A",
      "title": "Convex Optimization I",
+     "depth": "teaches"
+    },
+    {
+     "id": "CME 307",
+     "title": "Optimization (MS&E 311)",
      "depth": "teaches"
     }
    ],
@@ -1031,6 +1099,11 @@
      "id": "ME 70",
      "title": "Introductory Fluids Engineering",
      "depth": "teaches"
+    },
+    {
+     "id": "AA 210A",
+     "title": "Fundamentals of Compressible Flow",
+     "depth": "teaches"
     }
    ],
    "demos": []
@@ -1136,6 +1209,11 @@
     {
      "id": "CS 149",
      "title": "Parallel Computing",
+     "depth": "teaches"
+    },
+    {
+     "id": "CME 213",
+     "title": "Introduction to parallel computing using MPI, openMP, and CUDA (ME 339)",
      "depth": "teaches"
     }
    ],
@@ -1488,6 +1566,11 @@
      "id": "CS 229",
      "title": "Machine Learning (STATS 229)",
      "depth": "teaches"
+    },
+    {
+     "id": "CS 221",
+     "title": "Artificial Intelligence: Principles and Techniques",
+     "depth": "touches"
     }
    ],
    "demos": []
@@ -1543,7 +1626,13 @@
     "Meyers, Effective Modern C++",
     "Klabnik & Nichols, The Rust Programming Language"
    ],
-   "classes": [],
+   "classes": [
+    {
+     "id": "CME 212",
+     "title": "Programming for performance",
+     "depth": "teaches"
+    }
+   ],
    "demos": []
   },
   {
@@ -1643,6 +1732,11 @@
      "id": "CME 108",
      "title": "Introduction to Scientific Computing with Machine Learning Applications",
      "depth": "teaches"
+    },
+    {
+     "id": "CME 302",
+     "title": "Numerical Linear Algebra",
+     "depth": "teaches"
     }
    ],
    "demos": []
@@ -1675,6 +1769,11 @@
     {
      "id": "CS 111",
      "title": "Operating Systems Principles",
+     "depth": "teaches"
+    },
+    {
+     "id": "CS 140E",
+     "title": "Operating systems design and implementation",
      "depth": "teaches"
     }
    ],
@@ -1845,6 +1944,16 @@
     {
      "id": "STATS 118",
      "title": "Probability Theory for Statistical Inference",
+     "depth": "touches"
+    },
+    {
+     "id": "CS 109",
+     "title": "Introduction to Probability for Computer Scientists",
+     "depth": "teaches"
+    },
+    {
+     "id": "CME 106",
+     "title": "Introduction to Probability and Statistics for Engineers (ENGR 155C)",
      "depth": "touches"
     }
    ],
@@ -2053,6 +2162,11 @@
      "id": "PHYSICS 131",
      "title": "Quantum Mechanics II",
      "depth": "teaches"
+    },
+    {
+     "id": "PHYSICS 230",
+     "title": "Graduate Quantum Mechanics I",
+     "depth": "teaches"
     }
    ],
    "demos": []
@@ -2125,6 +2239,11 @@
      "id": "CS 224R",
      "title": "Deep Reinforcement Learning",
      "depth": "teaches"
+    },
+    {
+     "id": "AA 203",
+     "title": "Optimal and Learning-based Control",
+     "depth": "touches"
     }
    ],
    "demos": []
@@ -2386,6 +2505,11 @@
      "id": "AA 273",
      "title": "State Estimation and Filtering for Robotic Perception",
      "depth": "teaches"
+    },
+    {
+     "id": "AA 274A",
+     "title": "Principles of Robot Autonomy I (CS 237A, EE 260A, ME 274A)",
+     "depth": "touches"
     }
    ],
    "demos": []
@@ -2462,6 +2586,11 @@
      "id": "STATS 200",
      "title": "Introduction to Theoretical Statistics",
      "depth": "teaches"
+    },
+    {
+     "id": "CME 106",
+     "title": "Introduction to Probability and Statistics for Engineers (ENGR 155C)",
+     "depth": "touches"
     }
    ],
    "demos": []
@@ -2742,6 +2871,92 @@
       "STATS 200"
      ]
     }
+   ]
+  }
+ ],
+ "gradPrograms": [
+  {
+   "id": "aa-ms",
+   "name": "Aeronautics and Astronautics (MS)",
+   "type": "ms",
+   "classes": [
+    "AA 203",
+    "AA 210A"
+   ]
+  },
+  {
+   "id": "bmds-ms",
+   "name": "Biomedical Data Science (MS)",
+   "type": "ms",
+   "classes": [
+    "CS 106A",
+    "CS 161",
+    "CS 229",
+    "STATS 200"
+   ]
+  },
+  {
+   "id": "cme-ms",
+   "name": "Computational and Mathematical Engineering (MS)",
+   "type": "ms",
+   "classes": [
+    "CME 213",
+    "CS 149"
+   ]
+  },
+  {
+   "id": "cme-phd",
+   "name": "Computational and Mathematical Engineering (PhD)",
+   "type": "phd",
+   "classes": [
+    "CME 212",
+    "CME 302",
+    "CME 307",
+    "CS 149"
+   ]
+  },
+  {
+   "id": "cs-ms",
+   "name": "Computer Science (MS)",
+   "type": "ms",
+   "classes": [
+    "CME 106",
+    "CS 109",
+    "CS 111",
+    "CS 140E",
+    "CS 144",
+    "CS 221",
+    "CS 229",
+    "STATS 117"
+   ]
+  },
+  {
+   "id": "design-ms",
+   "name": "Design (MS)",
+   "type": "ms",
+   "classes": [
+    "CS 106A",
+    "CS 106B",
+    "ME 203"
+   ]
+  },
+  {
+   "id": "energy-ms",
+   "name": "Energy Science and Engineering (MS)",
+   "type": "ms",
+   "classes": [
+    "CS 106A",
+    "CS 106B",
+    "MATH 53"
+   ]
+  },
+  {
+   "id": "symbo-ms",
+   "name": "Symbolic Systems (MS)",
+   "type": "ms",
+   "classes": [
+    "CS 106B",
+    "CS 107"
    ]
   }
  ],
@@ -3065,6 +3280,72 @@
        "branch": "math"
       }
      ]
+    },
+    {
+     "id": "CS 109",
+     "title": "Introduction to Probability for Computer Scientists",
+     "layer": 2,
+     "prereqs": [
+      "CS 106B"
+     ],
+     "covers": [
+      {
+       "skill": "probability-theory",
+       "depth": "teaches",
+       "branch": "math"
+      }
+     ]
+    },
+    {
+     "id": "CME 106",
+     "title": "Introduction to Probability and Statistics for Engineers (ENGR 155C)",
+     "layer": 2,
+     "prereqs": [
+      "MATH 52"
+     ],
+     "covers": [
+      {
+       "skill": "probability-theory",
+       "depth": "touches",
+       "branch": "math"
+      },
+      {
+       "skill": "statistical-inference",
+       "depth": "touches",
+       "branch": "math"
+      }
+     ]
+    },
+    {
+     "id": "CME 302",
+     "title": "Numerical Linear Algebra",
+     "layer": 3,
+     "prereqs": [
+      "CME 108",
+      "MATH 104"
+     ],
+     "covers": [
+      {
+       "skill": "numerical-methods",
+       "depth": "teaches",
+       "branch": "math"
+      }
+     ]
+    },
+    {
+     "id": "CME 307",
+     "title": "Optimization (MS&E 311)",
+     "layer": 2,
+     "prereqs": [
+      "MATH 104"
+     ],
+     "covers": [
+      {
+       "skill": "convex-optimization",
+       "depth": "teaches",
+       "branch": "math"
+      }
+     ]
     }
    ]
   },
@@ -3330,6 +3611,21 @@
        "branch": "physics"
       }
      ]
+    },
+    {
+     "id": "PHYSICS 230",
+     "title": "Graduate Quantum Mechanics I",
+     "layer": 4,
+     "prereqs": [
+      "PHYSICS 131"
+     ],
+     "covers": [
+      {
+       "skill": "quantum-mechanics",
+       "depth": "teaches",
+       "branch": "physics"
+      }
+     ]
     }
    ]
   },
@@ -3554,6 +3850,22 @@
       {
        "skill": "materials-selection",
        "depth": "touches",
+       "branch": "meche"
+      }
+     ]
+    },
+    {
+     "id": "AA 210A",
+     "title": "Fundamentals of Compressible Flow",
+     "layer": 3,
+     "prereqs": [
+      "ME 70",
+      "ME 30"
+     ],
+     "covers": [
+      {
+       "skill": "fluid-dynamics",
+       "depth": "teaches",
        "branch": "meche"
       }
      ]
@@ -3953,6 +4265,139 @@
        "branch": "cs-systems"
       }
      ]
+    },
+    {
+     "id": "CS 161",
+     "title": "Design and Analysis of Algorithms",
+     "layer": 3,
+     "prereqs": [
+      "CS 106B",
+      "CS 103",
+      "CS 109"
+     ],
+     "covers": [
+      {
+       "skill": "algorithms",
+       "depth": "teaches",
+       "branch": "cs-systems"
+      }
+     ]
+    },
+    {
+     "id": "CS 103",
+     "title": "Mathematical Foundations of Computing",
+     "layer": 2,
+     "prereqs": [
+      "CS 106B"
+     ],
+     "covers": [
+      {
+       "skill": "discrete-math",
+       "depth": "teaches",
+       "branch": "math"
+      },
+      {
+       "skill": "proof-writing",
+       "depth": "teaches",
+       "branch": "math"
+      }
+     ]
+    },
+    {
+     "id": "CS 109",
+     "title": "Introduction to Probability for Computer Scientists",
+     "layer": 2,
+     "prereqs": [
+      "CS 106B"
+     ],
+     "covers": [
+      {
+       "skill": "probability-theory",
+       "depth": "teaches",
+       "branch": "math"
+      }
+     ]
+    },
+    {
+     "id": "CS 221",
+     "title": "Artificial Intelligence: Principles and Techniques",
+     "layer": 4,
+     "prereqs": [
+      "CS 161",
+      "CS 109"
+     ],
+     "covers": [
+      {
+       "skill": "ml-foundations",
+       "depth": "touches",
+       "branch": "cs-ml"
+      },
+      {
+       "skill": "algorithms",
+       "depth": "touches",
+       "branch": "cs-systems"
+      }
+     ]
+    },
+    {
+     "id": "CS 140E",
+     "title": "Operating systems design and implementation",
+     "layer": 3,
+     "prereqs": [
+      "CS 107"
+     ],
+     "covers": [
+      {
+       "skill": "operating-systems",
+       "depth": "teaches",
+       "branch": "cs-systems"
+      },
+      {
+       "skill": "bare-metal-firmware",
+       "depth": "teaches",
+       "branch": "cs-systems"
+      }
+     ]
+    },
+    {
+     "id": "CME 212",
+     "title": "Programming for performance",
+     "layer": 2,
+     "prereqs": [
+      "CS 106B"
+     ],
+     "covers": [
+      {
+       "skill": "modern-cpp",
+       "depth": "teaches",
+       "branch": "cs-systems"
+      },
+      {
+       "skill": "build-toolchains",
+       "depth": "touches",
+       "branch": "cs-systems"
+      }
+     ]
+    },
+    {
+     "id": "CME 213",
+     "title": "Introduction to parallel computing using MPI, openMP, and CUDA (ME 339)",
+     "layer": 3,
+     "prereqs": [
+      "CME 212"
+     ],
+     "covers": [
+      {
+       "skill": "gpu-programming",
+       "depth": "teaches",
+       "branch": "cs-systems"
+      },
+      {
+       "skill": "concurrency",
+       "depth": "teaches",
+       "branch": "cs-systems"
+      }
+     ]
     }
    ]
   },
@@ -4099,6 +4544,134 @@
        "skill": "robot-learning",
        "depth": "touches",
        "branch": "robotics"
+      }
+     ]
+    },
+    {
+     "id": "CS 221",
+     "title": "Artificial Intelligence: Principles and Techniques",
+     "layer": 4,
+     "prereqs": [
+      "CS 161",
+      "CS 109"
+     ],
+     "covers": [
+      {
+       "skill": "ml-foundations",
+       "depth": "touches",
+       "branch": "cs-ml"
+      },
+      {
+       "skill": "algorithms",
+       "depth": "touches",
+       "branch": "cs-systems"
+      }
+     ]
+    },
+    {
+     "id": "CS 161",
+     "title": "Design and Analysis of Algorithms",
+     "layer": 3,
+     "prereqs": [
+      "CS 106B",
+      "CS 103",
+      "CS 109"
+     ],
+     "covers": [
+      {
+       "skill": "algorithms",
+       "depth": "teaches",
+       "branch": "cs-systems"
+      }
+     ]
+    },
+    {
+     "id": "CS 103",
+     "title": "Mathematical Foundations of Computing",
+     "layer": 2,
+     "prereqs": [
+      "CS 106B"
+     ],
+     "covers": [
+      {
+       "skill": "discrete-math",
+       "depth": "teaches",
+       "branch": "math"
+      },
+      {
+       "skill": "proof-writing",
+       "depth": "teaches",
+       "branch": "math"
+      }
+     ]
+    },
+    {
+     "id": "CS 109",
+     "title": "Introduction to Probability for Computer Scientists",
+     "layer": 2,
+     "prereqs": [
+      "CS 106B"
+     ],
+     "covers": [
+      {
+       "skill": "probability-theory",
+       "depth": "teaches",
+       "branch": "math"
+      }
+     ]
+    },
+    {
+     "id": "AA 203",
+     "title": "Optimal and Learning-based Control",
+     "layer": 3,
+     "prereqs": [
+      "ENGR 105"
+     ],
+     "covers": [
+      {
+       "skill": "control-systems",
+       "depth": "teaches",
+       "branch": "robotics"
+      },
+      {
+       "skill": "reinforcement-learning",
+       "depth": "touches",
+       "branch": "cs-ml"
+      }
+     ]
+    },
+    {
+     "id": "ENGR 105",
+     "title": "Feedback Control Design",
+     "layer": 2,
+     "prereqs": [
+      "MATH 53"
+     ],
+     "covers": [
+      {
+       "skill": "control-systems",
+       "depth": "teaches",
+       "branch": "robotics"
+      }
+     ]
+    },
+    {
+     "id": "MATH 53",
+     "title": "Differential Equations with Linear Algebra, Fourier Methods, and Modern Applications",
+     "layer": 1,
+     "prereqs": [
+      "MATH 51"
+     ],
+     "covers": [
+      {
+       "skill": "differential-equations",
+       "depth": "teaches",
+       "branch": "math"
+      },
+      {
+       "skill": "fourier-analysis",
+       "depth": "touches",
+       "branch": "math"
       }
      ]
     }
@@ -4267,6 +4840,83 @@
        "skill": "control-systems",
        "depth": "teaches",
        "branch": "robotics"
+      }
+     ]
+    },
+    {
+     "id": "AA 203",
+     "title": "Optimal and Learning-based Control",
+     "layer": 3,
+     "prereqs": [
+      "ENGR 105"
+     ],
+     "covers": [
+      {
+       "skill": "control-systems",
+       "depth": "teaches",
+       "branch": "robotics"
+      },
+      {
+       "skill": "reinforcement-learning",
+       "depth": "touches",
+       "branch": "cs-ml"
+      }
+     ]
+    },
+    {
+     "id": "AA 274A",
+     "title": "Principles of Robot Autonomy I (CS 237A, EE 260A, ME 274A)",
+     "layer": 3,
+     "prereqs": [
+      "CS 106A",
+      "MATH 51",
+      "CME 106"
+     ],
+     "covers": [
+      {
+       "skill": "classical-robotics",
+       "depth": "teaches",
+       "branch": "robotics"
+      },
+      {
+       "skill": "state-estimation",
+       "depth": "touches",
+       "branch": "robotics"
+      }
+     ]
+    },
+    {
+     "id": "CME 106",
+     "title": "Introduction to Probability and Statistics for Engineers (ENGR 155C)",
+     "layer": 2,
+     "prereqs": [
+      "MATH 52"
+     ],
+     "covers": [
+      {
+       "skill": "probability-theory",
+       "depth": "touches",
+       "branch": "math"
+      },
+      {
+       "skill": "statistical-inference",
+       "depth": "touches",
+       "branch": "math"
+      }
+     ]
+    },
+    {
+     "id": "MATH 52",
+     "title": "Integral Calculus of Several Variables",
+     "layer": 1,
+     "prereqs": [
+      "MATH 51"
+     ],
+     "covers": [
+      {
+       "skill": "multivariable-calculus",
+       "depth": "teaches",
+       "branch": "math"
       }
      ]
     }

@@ -64,6 +64,7 @@ Object.keys(skills).forEach((id) => depth(id));
 const loadYaml = (p) => yaml.load(fs.readFileSync(path.join(root, p), "utf8"));
 const { classes } = loadYaml("data/stanford/classes.yaml");
 const { majors } = loadYaml("data/stanford/majors.yaml");
+const { programs: gradPrograms } = loadYaml("data/stanford/grad-programs.yaml");
 const { makerspaces, demonstrations } = loadYaml("data/stanford/makerspaces.yaml");
 
 const classIds = new Set();
@@ -83,6 +84,9 @@ for (const m of majors)
   for (const y of m.sequence)
     for (const cid of y.classes)
       if (!classIds.has(cid)) errors.push(`major ${m.id}: class '${cid}' not in classes.yaml`);
+for (const p of gradPrograms)
+  for (const cid of p.classes)
+    if (!classIds.has(cid)) errors.push(`program ${p.id}: class '${cid}' not in classes.yaml`);
 const spaceIds = new Set(makerspaces.map((s) => s.id));
 for (const d of demonstrations) {
   if (!skills[d.skill]) errors.push(`demonstration: skill '${d.skill}' does not exist`);
@@ -160,7 +164,7 @@ if (errors.length) {
   process.exit(1);
 }
 
-const out = { generated: null, branches: BRANCHES, nodes, majors, makerspaces, classDags };
+const out = { generated: null, branches: BRANCHES, nodes, majors, gradPrograms, makerspaces, classDags };
 fs.writeFileSync(path.join(root, "docs/data.json"), JSON.stringify(out, null, 1));
 console.log(
   `OK: ${nodes.length} skills, ${classes.length} classes, ${majors.length} major(s), ` +

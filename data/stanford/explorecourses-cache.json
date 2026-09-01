@@ -25,7 +25,7 @@
   "title": "Differential Equations with Linear Algebra, Fourier Methods, and Modern Applications",
   "prereqText": "Math 21 and Math 51, or equivalents",
   "prereqCodes": [],
-  "ourTitle": "Differential Equations with Linear Algebra",
+  "ourTitle": "Differential Equations with Linear Algebra, Fourier Methods, and Modern Applications",
   "ourPrereqs": [
    "MATH 51"
   ]
@@ -46,7 +46,9 @@
   "prereqText": null,
   "prereqCodes": [],
   "ourTitle": "Applied Matrix Theory",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "MATH 51"
+  ]
  },
  {
   "id": "MATH 115",
@@ -55,7 +57,9 @@
   "prereqText": "Math 51 or Math 56.",
   "prereqCodes": [],
   "ourTitle": "Functions of a Real Variable",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "MATH 51"
+  ]
  },
  {
   "id": "MATH 116",
@@ -64,7 +68,9 @@
   "prereqText": null,
   "prereqCodes": [],
   "ourTitle": "Complex Analysis",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "MATH 52"
+  ]
  },
  {
   "id": "MATH 131P",
@@ -73,7 +79,9 @@
   "prereqText": "Math 53.",
   "prereqCodes": [],
   "ourTitle": "Partial Differential Equations",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "MATH 53"
+  ]
  },
  {
   "id": "MATH 151",
@@ -83,15 +91,8 @@
   "prereqCodes": [],
   "ourTitle": "Introduction to Probability Theory",
   "ourPrereqs": [
-   "MATH 52"
-  ]
- },
- {
-  "id": "STATS 116",
-  "found": false,
-  "ourTitle": "Theory of Probability",
-  "ourPrereqs": [
-   "MATH 52"
+   "MATH 52",
+   "MATH 115"
   ]
  },
  {
@@ -102,7 +103,7 @@
   "prereqCodes": [
    "MATH 21"
   ],
-  "ourTitle": "Introduction to Probability II",
+  "ourTitle": "Introduction to Probability Theory",
   "ourPrereqs": []
  },
  {
@@ -114,8 +115,12 @@
    "MATH 52",
    "STATS 117"
   ],
-  "ourTitle": "Probability Theory and Applications",
-  "ourPrereqs": []
+  "ourTitle": "Probability Theory for Statistical Inference",
+  "ourPrereqs": [
+   "MATH 51",
+   "MATH 52",
+   "STATS 117"
+  ]
  },
  {
   "id": "STATS 200",
@@ -125,8 +130,10 @@
   "prereqCodes": [
    "STATS 118"
   ],
-  "ourTitle": "Introduction to Statistical Inference",
-  "ourPrereqs": []
+  "ourTitle": "Introduction to Theoretical Statistics",
+  "ourPrereqs": [
+   "STATS 118"
+  ]
  },
  {
   "id": "CS 103",
@@ -137,7 +144,9 @@
    "CS 106B"
   ],
   "ourTitle": "Mathematical Foundations of Computing",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "CS 106B"
+  ]
  },
  {
   "id": "CME 108",
@@ -145,8 +154,11 @@
   "title": "Introduction to Scientific Computing with Machine Learning Applications",
   "prereqText": null,
   "prereqCodes": [],
-  "ourTitle": "Introduction to Scientific Computing",
-  "ourPrereqs": []
+  "ourTitle": "Introduction to Scientific Computing with Machine Learning Applications",
+  "ourPrereqs": [
+   "MATH 53",
+   "CS 106B"
+  ]
  },
  {
   "id": "EE 364A",
@@ -155,7 +167,9 @@
   "prereqText": null,
   "prereqCodes": [],
   "ourTitle": "Convex Optimization I",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "MATH 104"
+  ]
  },
  {
   "id": "PHYSICS 41",
@@ -173,7 +187,9 @@
   "prereqText": null,
   "prereqCodes": [],
   "ourTitle": "Electricity and Magnetism",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "PHYSICS 41"
+  ]
  },
  {
   "id": "PHYSICS 45",
@@ -182,13 +198,20 @@
   "prereqText": null,
   "prereqCodes": [],
   "ourTitle": "Light and Heat",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "PHYSICS 41"
+  ]
  },
  {
-  "id": "PHYSICS 70",
-  "found": false,
-  "ourTitle": "Foundations of Modern Physics",
-  "ourPrereqs": []
+  "id": "ENGR 65",
+  "found": true,
+  "title": "Modern Physics for Engineers (EE 65)",
+  "prereqText": "Physics 41",
+  "prereqCodes": [],
+  "ourTitle": "Modern Physics for Engineers (EE 65)",
+  "ourPrereqs": [
+   "PHYSICS 41"
+  ]
  },
  {
   "id": "PHYSICS 110",
@@ -197,7 +220,10 @@
   "prereqText": null,
   "prereqCodes": [],
   "ourTitle": "Advanced Mechanics",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "PHYSICS 41",
+   "MATH 53"
+  ]
  },
  {
   "id": "PHYSICS 120",
@@ -205,8 +231,11 @@
   "title": "Electromagnetism",
   "prereqText": null,
   "prereqCodes": [],
-  "ourTitle": "Intermediate Electricity and Magnetism I",
-  "ourPrereqs": []
+  "ourTitle": "Electromagnetism",
+  "ourPrereqs": [
+   "PHYSICS 43",
+   "MATH 53"
+  ]
  },
  {
   "id": "PHYSICS 121",
@@ -214,8 +243,10 @@
   "title": "Electrodynamics",
   "prereqText": null,
   "prereqCodes": [],
-  "ourTitle": "Intermediate Electricity and Magnetism II",
-  "ourPrereqs": []
+  "ourTitle": "Electrodynamics",
+  "ourPrereqs": [
+   "PHYSICS 120"
+  ]
  },
  {
   "id": "PHYSICS 130",
@@ -224,7 +255,10 @@
   "prereqText": null,
   "prereqCodes": [],
   "ourTitle": "Quantum Mechanics I",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "ENGR 65",
+   "MATH 104"
+  ]
  },
  {
   "id": "PHYSICS 131",
@@ -233,7 +267,9 @@
   "prereqText": null,
   "prereqCodes": [],
   "ourTitle": "Quantum Mechanics II",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "PHYSICS 130"
+  ]
  },
  {
   "id": "PHYSICS 170",
@@ -241,8 +277,11 @@
   "title": "Thermodynamics, Kinetic Theory, and Statistical Mechanics I",
   "prereqText": null,
   "prereqCodes": [],
-  "ourTitle": "Statistical Mechanics and Thermodynamics I",
-  "ourPrereqs": []
+  "ourTitle": "Thermodynamics, Kinetic Theory, and Statistical Mechanics I",
+  "ourPrereqs": [
+   "PHYSICS 45",
+   "STATS 117"
+  ]
  },
  {
   "id": "PHYSICS 172",
@@ -250,7 +289,31 @@
   "title": "Solid State Physics (APPPHYS 272)",
   "prereqText": null,
   "prereqCodes": [],
-  "ourTitle": "Solid State Physics",
+  "ourTitle": "Solid State Physics (APPPHYS 272)",
+  "ourPrereqs": [
+   "PHYSICS 130",
+   "PHYSICS 170"
+  ]
+ },
+ {
+  "id": "CS 259Q",
+  "found": true,
+  "title": "Quantum Computing",
+  "prereqText": "Knowledge of linear algebra &amp; discrete probability, and knowledge of algorithms OR quantum mechanics (or both)",
+  "prereqCodes": [],
+  "ourTitle": "Quantum Computing",
+  "ourPrereqs": [
+   "MATH 51",
+   "PHYSICS 130"
+  ]
+ },
+ {
+  "id": "CS 106A",
+  "found": true,
+  "title": "Programming Methodology",
+  "prereqText": null,
+  "prereqCodes": [],
+  "ourTitle": "Programming Methodology",
   "ourPrereqs": []
  },
  {
@@ -260,7 +323,9 @@
   "prereqText": "106A or equivalent.",
   "prereqCodes": [],
   "ourTitle": "Programming Abstractions",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "CS 106A"
+  ]
  },
  {
   "id": "CS 107",
@@ -269,7 +334,9 @@
   "prereqText": null,
   "prereqCodes": [],
   "ourTitle": "Computer Organization and Systems",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "CS 106B"
+  ]
  },
  {
   "id": "CS 107E",
@@ -281,7 +348,9 @@
    "CS 106X"
   ],
   "ourTitle": "Computer Systems from the Ground Up",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "CS 106B"
+  ]
  },
  {
   "id": "CS 111",
@@ -290,7 +359,9 @@
   "prereqText": null,
   "prereqCodes": [],
   "ourTitle": "Operating Systems Principles",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "CS 107"
+  ]
  },
  {
   "id": "CS 144",
@@ -301,7 +372,9 @@
    "CS 110"
   ],
   "ourTitle": "Introduction to Computer Networking",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "CS 111"
+  ]
  },
  {
   "id": "CS 149",
@@ -310,7 +383,9 @@
   "prereqText": null,
   "prereqCodes": [],
   "ourTitle": "Parallel Computing",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "CS 107"
+  ]
  },
  {
   "id": "CS 229",
@@ -327,11 +402,11 @@
    "MATH 51",
    "CS 205"
   ],
-  "ourTitle": "Machine Learning",
+  "ourTitle": "Machine Learning (STATS 229)",
   "ourPrereqs": [
    "MATH 51",
    "CS 106B",
-   "STATS 116"
+   "STATS 117"
   ]
  },
  {
@@ -341,7 +416,10 @@
   "prereqText": "Familiarity with programming in Python and Linear Algebra (matrix / vector multiplications)",
   "prereqCodes": [],
   "ourTitle": "Deep Learning",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "MATH 51",
+   "CS 106B"
+  ]
  },
  {
   "id": "CS 231N",
@@ -350,7 +428,10 @@
   "prereqText": "Proficiency in Python - All class assignments will be in Python (and use numpy) (we provide a tutorial here for those who aren't as familiar with Python)",
   "prereqCodes": [],
   "ourTitle": "Deep Learning for Computer Vision",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "MATH 51",
+   "CS 106B"
+  ]
  },
  {
   "id": "CS 224R",
@@ -369,10 +450,22 @@
   "title": "Introduction to Robotics (ME 320)",
   "prereqText": null,
   "prereqCodes": [],
-  "ourTitle": "Introduction to Robotics",
+  "ourTitle": "Introduction to Robotics (ME 320)",
   "ourPrereqs": [
    "MATH 51",
    "CS 106B"
+  ]
+ },
+ {
+  "id": "AA 273",
+  "found": true,
+  "title": "State Estimation and Filtering for Robotic Perception",
+  "prereqText": null,
+  "prereqCodes": [],
+  "ourTitle": "State Estimation and Filtering for Robotic Perception",
+  "ourPrereqs": [
+   "MATH 53",
+   "STATS 117"
   ]
  },
  {
@@ -402,7 +495,9 @@
   "prereqText": null,
   "prereqCodes": [],
   "ourTitle": "Circuits I",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "ENGR 40M"
+  ]
  },
  {
   "id": "EE 101B",
@@ -411,7 +506,9 @@
   "prereqText": null,
   "prereqCodes": [],
   "ourTitle": "Circuits II",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "EE 101A"
+  ]
  },
  {
   "id": "EE 102A",
@@ -419,9 +516,9 @@
   "title": "Signals and Systems I",
   "prereqText": null,
   "prereqCodes": [],
-  "ourTitle": "Signal Processing and Linear Systems I",
+  "ourTitle": "Signals and Systems I",
   "ourPrereqs": [
-   "MATH 52"
+   "MATH 53"
   ]
  },
  {
@@ -431,7 +528,9 @@
   "prereqText": null,
   "prereqCodes": [],
   "ourTitle": "Digital System Design",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "ENGR 40M"
+  ]
  },
  {
   "id": "EE 180",
@@ -439,8 +538,11 @@
   "title": "Digital Systems Architecture (CS 180)",
   "prereqText": null,
   "prereqCodes": [],
-  "ourTitle": "Digital Systems Architecture",
-  "ourPrereqs": []
+  "ourTitle": "Digital Systems Architecture (CS 180)",
+  "ourPrereqs": [
+   "EE 108",
+   "CS 107"
+  ]
  },
  {
   "id": "EE 114",
@@ -448,8 +550,10 @@
   "title": "Fundamentals of Analog Integrated Circuit Design (EE 214A)",
   "prereqText": null,
   "prereqCodes": [],
-  "ourTitle": "Fundamentals of Analog Integrated Circuit Design",
-  "ourPrereqs": []
+  "ourTitle": "Fundamentals of Analog Integrated Circuit Design (EE 214A)",
+  "ourPrereqs": [
+   "EE 101B"
+  ]
  },
  {
   "id": "EE 116",
@@ -457,8 +561,10 @@
   "title": "Semiconductor Devices for Energy and Electronics",
   "prereqText": null,
   "prereqCodes": [],
-  "ourTitle": "Semiconductor Device Physics",
-  "ourPrereqs": []
+  "ourTitle": "Semiconductor Devices for Energy and Electronics",
+  "ourPrereqs": [
+   "EE 101A"
+  ]
  },
  {
   "id": "EE 212",
@@ -467,12 +573,43 @@
   "prereqText": null,
   "prereqCodes": [],
   "ourTitle": "Integrated Circuit Fabrication Processes",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "EE 116"
+  ]
  },
  {
-  "id": "EE 272A",
-  "found": false,
-  "ourTitle": "Design Projects in VLSI Systems",
+  "id": "EE 272",
+  "found": true,
+  "title": "Design Projects in VLSI Systems I",
+  "prereqText": null,
+  "prereqCodes": [],
+  "ourTitle": "Design Projects in VLSI Systems I",
+  "ourPrereqs": [
+   "EE 108"
+  ]
+ },
+ {
+  "id": "ENGR 14",
+  "found": true,
+  "title": "Intro to Solid Mechanics",
+  "prereqText": "(complete at least 1 of the following courses): PHYSICS41, PHYSICS41E, or PHYSICS61",
+  "prereqCodes": [
+   "PHYSICS 41",
+   "PHYSICS 41E",
+   "PHYSICS 61"
+  ],
+  "ourTitle": "Intro to Solid Mechanics",
+  "ourPrereqs": [
+   "PHYSICS 41"
+  ]
+ },
+ {
+  "id": "ME 30",
+  "found": true,
+  "title": "Engineering Thermodynamics",
+  "prereqText": null,
+  "prereqCodes": [],
+  "ourTitle": "Engineering Thermodynamics",
   "ourPrereqs": []
  },
  {
@@ -487,7 +624,11 @@
    "ME 30"
   ],
   "ourTitle": "Introductory Fluids Engineering",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "MATH 53",
+   "ENGR 14",
+   "ME 30"
+  ]
  },
  {
   "id": "ME 80",
@@ -498,16 +639,9 @@
    "ENGR 14"
   ],
   "ourTitle": "Mechanics of Materials",
-  "ourPrereqs": []
- },
- {
-  "id": "ME 30",
-  "found": true,
-  "title": "Engineering Thermodynamics",
-  "prereqText": null,
-  "prereqCodes": [],
-  "ourTitle": "Engineering Thermodynamics",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "ENGR 14"
+  ]
  },
  {
   "id": "ME 102",
@@ -518,12 +652,17 @@
    "ENGR 14"
   ],
   "ourTitle": "Foundations of Product Realization",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "ENGR 14"
+  ]
  },
  {
-  "id": "ME 112",
-  "found": false,
-  "ourTitle": "Mechanical Systems Design",
+  "id": "ME 203",
+  "found": true,
+  "title": "Design and Manufacturing",
+  "prereqText": null,
+  "prereqCodes": [],
+  "ourTitle": "Design and Manufacturing",
   "ourPrereqs": []
  },
  {
@@ -533,6 +672,17 @@
   "prereqText": null,
   "prereqCodes": [],
   "ourTitle": "Finite Element Analysis",
+  "ourPrereqs": [
+   "ME 80"
+  ]
+ },
+ {
+  "id": "ENGR 50",
+  "found": true,
+  "title": "Introduction to Materials Science, Nanotechnology Emphasis (MATSCI 50)",
+  "prereqText": null,
+  "prereqCodes": [],
+  "ourTitle": "Introduction to Materials Science, Nanotechnology Emphasis (MATSCI 50)",
   "ourPrereqs": []
  },
  {
@@ -544,22 +694,204 @@
    "ENGR 50"
   ],
   "ourTitle": "Materials Structure and Characterization",
-  "ourPrereqs": []
+  "ourPrereqs": [
+   "ENGR 50"
+  ]
  },
  {
-  "id": "CHEM 31",
-  "found": false,
-  "ourTitle": "Chemical Principles",
-  "ourPrereqs": []
- },
- {
-  "id": "BIO 83",
+  "id": "CS 109",
   "found": true,
-  "title": "Biochemistry & Molecular Biology",
-  "prereqText": "None.Please only enroll in the lecture section (section 01) on Axess",
+  "title": "Introduction to Probability for Computer Scientists",
+  "prereqText": null,
   "prereqCodes": [],
-  "ourTitle": "Biochemistry and Molecular Biology",
+  "ourTitle": "Introduction to Probability for Computer Scientists",
+  "ourPrereqs": [
+   "CS 106B"
+  ]
+ },
+ {
+  "id": "CME 106",
+  "found": true,
+  "title": "Introduction to Probability and Statistics for Engineers (ENGR 155C)",
+  "prereqText": "CME100/ENGR154 or Math 51 or 52 or equivalent.",
+  "prereqCodes": [
+   "CME 100",
+   "ENGR 154"
+  ],
+  "ourTitle": "Introduction to Probability and Statistics for Engineers",
+  "ourPrereqs": [
+   "MATH 52"
+  ]
+ },
+ {
+  "id": "CS 161",
+  "found": true,
+  "title": "Design and Analysis of Algorithms",
+  "prereqText": "106B or 106X; 103 or 103B; 109 or STATS 116.",
+  "prereqCodes": [
+   "STATS 116"
+  ],
+  "ourTitle": "Design and Analysis of Algorithms",
+  "ourPrereqs": [
+   "CS 103"
+  ]
+ },
+ {
+  "id": "CS 221",
+  "found": true,
+  "title": "Artificial Intelligence: Principles and Techniques",
+  "prereqText": "CS 103 or CS 103B/X, CS 106B or CS 106X, CS 109, and CS 161 (algorithms, probability, and object-oriented programming in Python)",
+  "prereqCodes": [
+   "CS 103",
+   "CS 103B",
+   "CS 106B",
+   "CS 106X",
+   "CS 109",
+   "CS 161"
+  ],
+  "ourTitle": "Artificial Intelligence: Principles and Techniques",
+  "ourPrereqs": [
+   "CS 161",
+   "CS 109"
+  ]
+ },
+ {
+  "id": "CS 140E",
+  "found": true,
+  "title": "Operating systems design and implementation",
+  "prereqText": null,
+  "prereqCodes": [],
+  "ourTitle": "Embedded Operating Systems",
+  "ourPrereqs": [
+   "CS 107"
+  ]
+ },
+ {
+  "id": "AA 203",
+  "found": true,
+  "title": "Optimal and Learning-based Control",
+  "prereqText": null,
+  "prereqCodes": [],
+  "ourTitle": "Optimal and Learning-Based Control",
+  "ourPrereqs": [
+   "ENGR 105"
+  ]
+ },
+ {
+  "id": "AA 274A",
+  "found": true,
+  "title": "Principles of Robot Autonomy I (CS 237A, EE 260A, ME 274A)",
+  "prereqText": "CS 106A or equivalent, CME 100 or equivalent (for linear algebra), and CME 106 or equivalent (for probability theory).",
+  "prereqCodes": [
+   "CS 106A",
+   "CME 100",
+   "CME 106"
+  ],
+  "ourTitle": "Principles of Robot Autonomy I",
+  "ourPrereqs": [
+   "CS 223A"
+  ]
+ },
+ {
+  "id": "AA 210A",
+  "found": true,
+  "title": "Fundamentals of Compressible Flow",
+  "prereqText": "undergraduate background in fluid mechanics and thermodynamics.",
+  "prereqCodes": [],
+  "ourTitle": "Fundamentals of Compressible Flow",
+  "ourPrereqs": [
+   "ME 70"
+  ]
+ },
+ {
+  "id": "CME 212",
+  "found": true,
+  "title": "Programming for performance",
+  "prereqText": null,
+  "prereqCodes": [],
+  "ourTitle": "Advanced Software Development for Scientists and Engineers",
+  "ourPrereqs": [
+   "CS 106B"
+  ]
+ },
+ {
+  "id": "CME 213",
+  "found": true,
+  "title": "Introduction to parallel computing using MPI, openMP, and CUDA (ME 339)",
+  "prereqText": "include C++, templates, debugging, UNIX, makefile, numerical algorithms (differential equations, linear algebra).",
+  "prereqCodes": [],
+  "ourTitle": "Introduction to Parallel Computing Using MPI, openMP, and CUDA",
+  "ourPrereqs": [
+   "CME 212"
+  ]
+ },
+ {
+  "id": "CME 302",
+  "found": true,
+  "title": "Numerical Linear Algebra",
+  "prereqText": "CME 108/Math 114 and one of Math 104 or Math 113.",
+  "prereqCodes": [
+   "CME 108"
+  ],
+  "ourTitle": "Numerical Linear Algebra",
+  "ourPrereqs": [
+   "MATH 104"
+  ]
+ },
+ {
+  "id": "CME 307",
+  "found": true,
+  "title": "Optimization (MS&E 311)",
+  "prereqText": null,
+  "prereqCodes": [],
+  "ourTitle": "Optimization",
+  "ourPrereqs": [
+   "MATH 104"
+  ]
+ },
+ {
+  "id": "PHYSICS 230",
+  "found": true,
+  "title": "Graduate Quantum Mechanics I",
+  "prereqText": "PHYSICS 131 or equivalent.",
+  "prereqCodes": [
+   "PHYSICS 131"
+  ],
+  "ourTitle": "Graduate Quantum Mechanics I",
+  "ourPrereqs": [
+   "PHYSICS 131"
+  ]
+ },
+ {
+  "id": "MATSCI 200",
+  "found": true,
+  "title": "Master's Research",
+  "prereqText": null,
+  "prereqCodes": [],
+  "ourTitle": "Materials Science Core",
+  "ourPrereqs": [
+   "ENGR 50"
+  ]
+ },
+ {
+  "id": "CHEM 31A",
+  "found": true,
+  "title": "Chemical Principles I",
+  "prereqText": "Math 18 (or placement beyond),  and Chem11 or placement into Chem31A with Autumn General Chemistry Placement test",
+  "prereqCodes": [],
+  "ourTitle": "Chemical Principles I",
   "ourPrereqs": []
+ },
+ {
+  "id": "CHEM 31B",
+  "found": true,
+  "title": "Chemical Principles II",
+  "prereqText": "Chem 31A.",
+  "prereqCodes": [],
+  "ourTitle": "Chemical Principles II",
+  "ourPrereqs": [
+   "CHEM 31A"
+  ]
  },
  {
   "id": "CHEM 33",
@@ -567,7 +899,18 @@
   "title": "Structure and Reactivity of Carbon-Based Molecules",
   "prereqText": null,
   "prereqCodes": [],
-  "ourTitle": "Structure and Reactivity of Organic Molecules",
+  "ourTitle": "Structure and Reactivity of Carbon-Based Molecules",
+  "ourPrereqs": [
+   "CHEM 31B"
+  ]
+ },
+ {
+  "id": "BIO 83",
+  "found": true,
+  "title": "Biochemistry & Molecular Biology",
+  "prereqText": "None.Please only enroll in the lecture section (section 01) on Axess",
+  "prereqCodes": [],
+  "ourTitle": "Biochemistry & Molecular Biology",
   "ourPrereqs": []
  },
  {
@@ -576,25 +919,7 @@
   "title": "Introduction to Bioengineering (Engineering Living Matter) (ENGR 80)",
   "prereqText": null,
   "prereqCodes": [],
-  "ourTitle": "Introduction to Bioengineering",
+  "ourTitle": "Introduction to Bioengineering (Engineering Living Matter) (ENGR 80)",
   "ourPrereqs": []
- },
- {
-  "id": "APPPHYS 227",
-  "found": false,
-  "ourTitle": "Quantum Information and Measurement",
-  "ourPrereqs": []
- },
- {
-  "id": "AA 273",
-  "found": true,
-  "title": "State Estimation and Filtering for Robotic Perception",
-  "prereqText": null,
-  "prereqCodes": [],
-  "ourTitle": "State Estimation and Filtering for Robotic Perception",
-  "ourPrereqs": [
-   "MATH 53",
-   "STATS 116"
-  ]
  }
 ]

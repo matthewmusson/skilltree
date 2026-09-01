@@ -1,0 +1,524 @@
+[
+ {
+  "code": "AA-ENG",
+  "title": "AA-ENG Program",
+  "courses": []
+ },
+ {
+  "code": "AA-MS",
+  "title": "AA-MS Program",
+  "courses": [
+   "AA 200",
+   "AA 203",
+   "AA 204",
+   "AA 210A",
+   "AA 240",
+   "AA 242A",
+   "AA 256",
+   "AA 279A",
+   "AA 283",
+   "AA 290"
+  ]
+ },
+ {
+  "code": "AA-PMN",
+  "title": "AA-PMN Program",
+  "courses": []
+ },
+ {
+  "code": "AA-PHD",
+  "title": "AA-PHD Program",
+  "courses": [
+   "AA 290"
+  ]
+ },
+ {
+  "code": "APLPH-MS",
+  "title": "APLPH-MS Program",
+  "courses": [
+   "APPPHYS 214",
+   "APPPHYS 232",
+   "APPPHYS 290"
+  ]
+ },
+ {
+  "code": "APLPH-PHD",
+  "title": "APLPH-PHD Program",
+  "courses": [
+   "APPPHYS 201",
+   "APPPHYS 203",
+   "APPPHYS 204",
+   "APPPHYS 214",
+   "APPPHYS 232"
+  ]
+ },
+ {
+  "code": "AEPHY-MS",
+  "title": "AEPHY-MS Program",
+  "courses": [
+   "APPPHYS 290"
+  ]
+ },
+ {
+  "code": "BMDS-PMN",
+  "title": "BMDS-PMN Program",
+  "courses": [
+   "BMDS 201C"
+  ]
+ },
+ {
+  "code": "BMDS-MS",
+  "title": "BMDS-MS Program",
+  "courses": [
+   "BMDS 201",
+   "BMDS 201A",
+   "BMDS 205",
+   "BMDS 212",
+   "BMDS 295",
+   "BMDS 801",
+   "CS 106A",
+   "CS 161",
+   "CS 229",
+   "STATS 200",
+   "STATS 315A"
+  ]
+ },
+ {
+  "code": "BMDS-PHD",
+  "title": "BMDS-PHD Program",
+  "courses": [
+   "BMDS 201A",
+   "BMDS 215",
+   "BMDS 218",
+   "BMDS 295",
+   "BMDS 802"
+  ]
+ },
+ {
+  "code": "BMP-PHD",
+  "title": "BMP-PHD Program",
+  "courses": [
+   "EE 8T"
+  ]
+ },
+ {
+  "code": "BIOPH-MS",
+  "title": "BIOPH-MS Program",
+  "courses": [
+   "BIOPHYS 250"
+  ]
+ },
+ {
+  "code": "BIOPH-PHD",
+  "title": "BIOPH-PHD Program",
+  "courses": [
+   "BIOE 300A",
+   "BIOE 301D",
+   "BIOPHYS 250"
+  ]
+ },
+ {
+  "code": "CHEME-ENG",
+  "title": "CHEME-ENG Program",
+  "courses": [
+   "CHEMENG 699"
+  ]
+ },
+ {
+  "code": "CHEME-MS",
+  "title": "CHEME-MS Program",
+  "courses": [
+   "CHEMENG 300"
+  ]
+ },
+ {
+  "code": "CHEME-PMN",
+  "title": "CHEME-PMN Program",
+  "courses": []
+ },
+ {
+  "code": "CHEME-PHD",
+  "title": "CHEME-PHD Program",
+  "courses": [
+   "CHEMENG 400",
+   "CHEMENG 601",
+   "CHEMENG 699"
+  ]
+ },
+ {
+  "code": "CEE-ENG",
+  "title": "CEE-ENG Program",
+  "courses": [
+   "CEE 299",
+   "ENGR 103"
+  ]
+ },
+ {
+  "code": "CEE-MS",
+  "title": "CEE-MS Program",
+  "courses": [
+   "CEE 203",
+   "CEE 269",
+   "CEE 280",
+   "CEE 281",
+   "CEE 283",
+   "CEE 284W",
+   "CEE 285A",
+   "CEE 285B",
+   "CEE 291",
+   "CEE 298",
+   "CEE 306",
+   "CEE 310",
+   "CEE 314",
+   "CEE 315",
+   "CEE 398",
+   "ME 395"
+  ]
+ },
+ {
+  "code": "CEE-PMN",
+  "title": "CEE-PMN Program",
+  "courses": []
+ },
+ {
+  "code": "CEE-PHD",
+  "title": "CEE-PHD Program",
+  "courses": [
+   "CEE 200A",
+   "CEE 379A",
+   "CEE 379B",
+   "CEE 399",
+   "CEE 802",
+   "ENGR 103"
+  ]
+ },
+ {
+  "code": "CME-MS",
+  "title": "CME-MS Program",
+  "courses": [
+   "CME 213",
+   "CME 291",
+   "CME 323",
+   "CS 149",
+   "CS 246",
+   "CS 315B",
+   "CS 316"
+  ]
+ },
+ {
+  "code": "CME-PHD",
+  "title": "CME-PHD Program",
+  "courses": [
+   "CME 212",
+   "CME 300",
+   "CME 302",
+   "CME 306",
+   "CME 307",
+   "CME 391",
+   "CME 400",
+   "CME 500",
+   "CME 510",
+   "CS 149"
+  ]
+ },
+ {
+  "code": "CME-PMN",
+  "title": "CME-PMN Program",
+  "courses": []
+ },
+ {
+  "code": "CS-MS",
+  "title": "CS-MS Program",
+  "courses": [
+   "CME 106",
+   "CS 109",
+   "CS 111",
+   "CS 112",
+   "CS 129",
+   "CS 140E",
+   "CS 144",
+   "CS 145",
+   "CS 147",
+   "CS 154",
+   "CS 161A",
+   "CS 173A",
+   "CS 196",
+   "CS 198",
+   "CS 212",
+   "CS 221",
+   "CS 229",
+   "CS 247",
+   "CS 248",
+   "CS 248A",
+   "CS 273A",
+   "CS 331",
+   "CS 331X",
+   "CS 347",
+   "CS 359",
+   "CS 369",
+   "CS 377",
+   "CS 390A",
+   "CS 390B",
+   "CS 390C",
+   "CS 399",
+   "CS 468",
+   "EE 178",
+   "STATS 117"
+  ]
+ },
+ {
+  "code": "CS-PMN",
+  "title": "CS-PMN Program",
+  "courses": [
+   "CS 341"
+  ]
+ },
+ {
+  "code": "CS-PHD",
+  "title": "CS-PHD Program",
+  "courses": [
+   "CS 103",
+   "CS 154",
+   "CS 273A",
+   "CS 300",
+   "CS 390A",
+   "CS 499",
+   "CS 499P",
+   "EE 382E"
+  ]
+ },
+ {
+  "code": "DESIGN-MS",
+  "title": "DESIGN-MS Program",
+  "courses": [
+   "CS 106A",
+   "CS 106B",
+   "DESIGN 208",
+   "DESIGN 231",
+   "DESIGN 301",
+   "DESIGN 341",
+   "DESIGN 391",
+   "DESIGN 391A",
+   "ME 203",
+   "ME 219",
+   "ME 318",
+   "ME 324",
+   "ME 325"
+  ]
+ },
+ {
+  "code": "EE-MS",
+  "title": "EE-MS Program",
+  "courses": [
+   "BIOE 300B",
+   "EE 290A",
+   "EE 292L",
+   "EE 300",
+   "EE 390",
+   "EE 391"
+  ]
+ },
+ {
+  "code": "EE-PMN",
+  "title": "EE-PMN Program",
+  "courses": [
+   "EE 292L",
+   "EE 363"
+  ]
+ },
+ {
+  "code": "EE-PHD",
+  "title": "EE-PHD Program",
+  "courses": [
+   "EE 290I",
+   "EE 390",
+   "EE 391",
+   "EE 400"
+  ]
+ },
+ {
+  "code": "ENERGY-MS",
+  "title": "ENERGY-MS Program",
+  "courses": [
+   "CS 106A",
+   "CS 106B",
+   "ENERGY 352",
+   "ENERGY 358",
+   "MATH 53"
+  ]
+ },
+ {
+  "code": "ENERGY-PMN",
+  "title": "ENERGY-PMN Program",
+  "courses": []
+ },
+ {
+  "code": "ENERGY-PHD",
+  "title": "ENERGY-PHD Program",
+  "courses": [
+   "CME 206",
+   "ENERGY 221",
+   "ENERGY 352",
+   "ENERGY 358"
+  ]
+ },
+ {
+  "code": "ENGR-MS",
+  "title": "ENGR-MS Program",
+  "courses": []
+ },
+ {
+  "code": "LING-MA",
+  "title": "LING-MA Program",
+  "courses": [
+   "LINGUIST 222B",
+   "LINGUIST 390",
+   "LINGUIST 398"
+  ]
+ },
+ {
+  "code": "LING-PMN",
+  "title": "LING-PMN Program",
+  "courses": []
+ },
+ {
+  "code": "MATSC-ENG",
+  "title": "MATSC-ENG Program",
+  "courses": [
+   "MATSCI 400"
+  ]
+ },
+ {
+  "code": "MATSC-MS",
+  "title": "MATSC-MS Program",
+  "courses": [
+   "CS 106A",
+   "MATSCI 170",
+   "MATSCI 200",
+   "MATSCI 211",
+   "MATSCI 299"
+  ]
+ },
+ {
+  "code": "MATSC-PMN",
+  "title": "MATSC-PMN Program",
+  "courses": []
+ },
+ {
+  "code": "MATSC-PHD",
+  "title": "MATSC-PHD Program",
+  "courses": [
+   "MATSCI 200",
+   "MATSCI 201",
+   "MATSCI 230",
+   "MATSCI 231",
+   "MATSCI 232",
+   "MATSCI 299",
+   "MATSCI 300",
+   "MATSCI 399",
+   "MATSCI 400",
+   "MATSCI 802"
+  ]
+ },
+ {
+  "code": "MATH-MS",
+  "title": "MATH-MS Program",
+  "courses": []
+ },
+ {
+  "code": "MATH-PMN",
+  "title": "MATH-PMN Program",
+  "courses": []
+ },
+ {
+  "code": "MATH-PHD",
+  "title": "MATH-PHD Program",
+  "courses": [
+   "MATH 355"
+  ]
+ },
+ {
+  "code": "ME-ENG",
+  "title": "ME-ENG Program",
+  "courses": []
+ },
+ {
+  "code": "ME-MS",
+  "title": "ME-MS Program",
+  "courses": [
+   "AA 274A",
+   "CS 333",
+   "ENGR 290A",
+   "ME 218D",
+   "ME 274A",
+   "ME 299A",
+   "ME 310A",
+   "ME 321",
+   "ME 391",
+   "ME 392",
+   "ME 398"
+  ]
+ },
+ {
+  "code": "ME-PMN",
+  "title": "ME-PMN Program",
+  "courses": []
+ },
+ {
+  "code": "ME-PHD",
+  "title": "ME-PHD Program",
+  "courses": []
+ },
+ {
+  "code": "MGTSC-MS",
+  "title": "MGTSC-MS Program",
+  "courses": [
+   "CEE 207A"
+  ]
+ },
+ {
+  "code": "MGTSC-PHD",
+  "title": "MGTSC-PHD Program",
+  "courses": [
+   "ME 3B"
+  ]
+ },
+ {
+  "code": "MGTSC-PMN",
+  "title": "MGTSC-PMN Program",
+  "courses": []
+ },
+ {
+  "code": "MUSIC-MA",
+  "title": "MUSIC-MA Program",
+  "courses": []
+ },
+ {
+  "code": "PHYS-MS",
+  "title": "PHYS-MS Program",
+  "courses": []
+ },
+ {
+  "code": "PHYS-PMN",
+  "title": "PHYS-PMN Program",
+  "courses": [
+   "PHYSICS 230",
+   "PHYSICS 231",
+   "PHYSICS 234",
+   "PHYSICS 330",
+   "PHYSICS 331",
+   "PHYSICS 332"
+  ]
+ },
+ {
+  "code": "SYMBO-MS",
+  "title": "SYMBO-MS Program",
+  "courses": [
+   "CS 106B",
+   "CS 107",
+   "LINGUIST 120",
+   "PSYCH 55",
+   "SYMSYS 291"
+  ]
+ }
+]

@@ -81,11 +81,21 @@ async function main() {
   });
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", rerenderAll);
   const sel = document.getElementById("major");
+  const ogUG = document.createElement("optgroup");
+  ogUG.label = "Undergraduate";
   for (const m of majors) {
     const o = document.createElement("option");
     o.value = m.id; o.textContent = m.name;
-    sel.appendChild(o);
+    ogUG.appendChild(o);
   }
+  const ogGrad = document.createElement("optgroup");
+  ogGrad.label = "Graduate (auto-derived, partial)";
+  for (const p of state.data.gradPrograms) {
+    const o = document.createElement("option");
+    o.value = "grad:" + p.id; o.textContent = p.name;
+    ogGrad.appendChild(o);
+  }
+  sel.append(ogUG, ogGrad);
   sel.addEventListener("change", () => {
     state.major = sel.value;
     document.getElementById("overlay-key").hidden = !state.major;
@@ -204,8 +214,14 @@ function layout() {
 // ---- major coverage --------------------------------------------------------
 function coverage() {
   if (!state.major) return null;
-  const major = state.data.majors.find((m) => m.id === state.major);
-  const classIds = new Set(major.sequence.flatMap((y) => y.classes));
+  let classIds;
+  if (state.major.startsWith("grad:")) {
+    const p = state.data.gradPrograms.find((g) => "grad:" + g.id === state.major);
+    classIds = new Set(p.classes);
+  } else {
+    const major = state.data.majors.find((m) => m.id === state.major);
+    classIds = new Set(major.sequence.flatMap((y) => y.classes));
+  }
   const cov = {};
   for (const n of state.data.nodes)
     for (const c of n.classes)

@@ -1,0 +1,20 @@
+id: algorithms
+title: Algorithm Design & Analysis
+branch: cs-systems
+prereqs: [discrete-math, programming-fundamentals]
+overview: >
+  Designing procedures that solve problems efficiently and proving they work.
+  Covers asymptotic analysis, divide and conquer, greedy methods, dynamic
+  programming, graph algorithms, and NP-completeness, the theory of problems
+  believed to have no fast solution. Every systems, ML, and infrastructure role
+  assumes this layer.
+proficiency:
+  - Derive time and space complexity of an algorithm and prove its correctness
+  - Recognize when a problem reduces to a known one (shortest path, max flow, matching) and apply the standard algorithm
+  - Design a dynamic programming solution from a recurrence and implement it without blowing up memory
+  - Identify an NP-hard subproblem and choose an approximation, heuristic, or exact-solver strategy deliberately
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Cormen, Leiserson, Rivest & Stein, Introduction to Algorithms (CLRS)"
