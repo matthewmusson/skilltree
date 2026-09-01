@@ -76,6 +76,9 @@ for (const c of classes) {
       errors.push(`class ${c.id}: bad depth '${cov.depth}'`);
   }
 }
+for (const c of classes)
+  for (const p of c.prereqs ?? [])
+    if (!classIds.has(p)) errors.push(`class ${c.id}: prereq class '${p}' not in classes.yaml`);
 for (const m of majors)
   for (const y of m.sequence)
     for (const cid of y.classes)
@@ -115,7 +118,49 @@ const nodes = Object.values(skills).map((s) => ({
   demos: demosBySkill[s.id] ?? [],
 }));
 
-const out = { generated: null, branches: BRANCHES, nodes, majors, makerspaces };
+// ---- class-level DAGs per branch -------------------------------------------
+// Seed: classes covering any skill in the branch; expand through class prereqs.
+const CLASS_DAG_BRANCHES = ["robotics"];
+const classById = Object.fromEntries(classes.map((c) => [c.id, c]));
+const classDags = CLASS_DAG_BRANCHES.map((branch) => {
+  const set = new Set();
+  const grow = (id) => {
+    if (set.has(id)) return;
+    set.add(id);
+    (classById[id].prereqs ?? []).forEach(grow);
+  };
+  classes
+    .filter((c) => (c.covers ?? []).some((cov) => skills[cov.skill]?.branch === branch))
+    .forEach((c) => grow(c.id));
+  const clayer = {};
+  const cvisiting = new Set();
+  const cd = (id) => {
+    if (clayer[id] !== undefined) return clayer[id];
+    if (cvisiting.has(id)) { errors.push(`class prereq cycle at ${id}`); return 0; }
+    cvisiting.add(id);
+    const ps = (classById[id].prereqs ?? []).filter((p) => set.has(p));
+    clayer[id] = ps.length ? 1 + Math.max(...ps.map(cd)) : 0;
+    cvisiting.delete(id);
+    return clayer[id];
+  };
+  const dagNodes = [...set].map((id) => ({
+    id,
+    title: classById[id].title,
+    layer: cd(id),
+    prereqs: (classById[id].prereqs ?? []).filter((p) => set.has(p)),
+    covers: (classById[id].covers ?? []).map((cov) => ({
+      skill: cov.skill, depth: cov.depth, branch: skills[cov.skill].branch,
+    })),
+  }));
+  return { branch, nodes: dagNodes };
+});
+if (errors.length) {
+  console.error(`BUILD FAILED — ${errors.length} error(s):`);
+  errors.forEach((e) => console.error("  - " + e));
+  process.exit(1);
+}
+
+const out = { generated: null, branches: BRANCHES, nodes, majors, makerspaces, classDags };
 fs.writeFileSync(path.join(root, "docs/data.json"), JSON.stringify(out, null, 1));
 console.log(
   `OK: ${nodes.length} skills, ${classes.length} classes, ${majors.length} major(s), ` +

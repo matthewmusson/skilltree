@@ -35,9 +35,12 @@ async function main() {
   for (const id of BAND_ORDER) {
     const b = branches[id];
     if (!b) continue;
-    const s = document.createElement("span");
-    s.innerHTML = `<span class="swatch" style="background:${b.color}"></span>${b.name}`;
-    legend.appendChild(s);
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.innerHTML = `<span class="swatch" style="background:${b.color}"></span>${b.name}`;
+    btn.setAttribute("aria-label", `Go to ${b.name} branch`);
+    btn.addEventListener("click", () => flyToBand(id));
+    legend.appendChild(btn);
   }
   const sel = document.getElementById("major");
   for (const m of majors) {
@@ -52,6 +55,20 @@ async function main() {
   layout();
   render();
   initPanZoom();
+  renderClassDag();
+}
+
+// ---- fly-to-branch camera --------------------------------------------------
+function flyToBand(id) {
+  const band = state.bands.find((b) => b.id === id);
+  if (!band || !state.view) return;
+  const wrap = document.getElementById("graph-wrap");
+  const aspect = wrap.clientWidth / wrap.clientHeight || 1;
+  let vbW = band.w + 2 * BAND_GAP;
+  let vbH = vbW / aspect;
+  if (vbH < state.h * 0.9) { vbH = state.h * 0.9; vbW = vbH * aspect; }
+  const target = [band.x0 + band.w / 2 - vbW / 2, (state.h - vbH) / 2, vbW, vbH];
+  state.view.animateTo(target);
 }
 
 // ---- layout: branch bands (x) × layers bottom-up (y) -----------------------
@@ -159,16 +176,17 @@ function render() {
   const gNodes = document.createElementNS(SVG, "g");
   svg.append(gChrome, gEdges, gNodes);
 
-  // band separators + labels (labels sit above the top row)
-  state.bands.forEach((b, i) => {
-    if (i > 0) {
-      const line = document.createElementNS(SVG, "line");
-      const xSep = b.x0 - BAND_GAP / 2;
-      line.setAttribute("x1", xSep); line.setAttribute("x2", xSep);
-      line.setAttribute("y1", PAD - 10); line.setAttribute("y2", state.h - PAD + 10);
-      line.setAttribute("class", "band-sep");
-      gChrome.appendChild(line);
-    }
+  // band shading + labels (labels sit above the top row)
+  state.bands.forEach((b) => {
+    const tint = document.createElementNS(SVG, "rect");
+    tint.setAttribute("x", b.x0 - GAP_X / 2);
+    tint.setAttribute("y", PAD - 6);
+    tint.setAttribute("width", b.w + GAP_X);
+    tint.setAttribute("height", state.h - 2 * PAD + 12);
+    tint.setAttribute("rx", 10);
+    tint.setAttribute("fill", branches[b.id].color + "0D");
+    gChrome.appendChild(tint);
+
     const g = document.createElementNS(SVG, "g");
     const chip = document.createElementNS(SVG, "rect");
     const label = document.createElementNS(SVG, "text");
@@ -178,12 +196,16 @@ function render() {
     label.setAttribute("x", b.x0 + b.w / 2);
     label.setAttribute("y", PAD + 12);
     label.setAttribute("text-anchor", "middle");
-    chip.setAttribute("class", "band-chip");
     chip.setAttribute("x", b.x0 + b.w / 2 - name.length * 3.6 - 16);
     chip.setAttribute("y", PAD + 4);
     chip.setAttribute("width", 9); chip.setAttribute("height", 9);
     chip.setAttribute("rx", 2);
     chip.setAttribute("fill", branches[b.id].color);
+    g.setAttribute("class", "band-head");
+    g.setAttribute("role", "button");
+    g.setAttribute("aria-label", `Go to ${branches[b.id].name} branch`);
+    g.style.cursor = "pointer";
+    g.addEventListener("click", () => flyToBand(b.id));
     g.append(chip, label);
     gChrome.appendChild(g);
   });
@@ -350,6 +372,126 @@ function initPanZoom() {
     vb = [px - (px - vb[0]) * f, py - (py - vb[1]) * f, vb[2] * f, vb[3] * f];
     apply();
   }, { passive: false });
+
+  let animId = null;
+  state.view = {
+    animateTo(target) {
+      if (animId) cancelAnimationFrame(animId);
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        vb = target; apply(); return;
+      }
+      const from = [...vb], t0 = performance.now(), DUR = 380;
+      const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
+      const step = (now) => {
+        const t = easeOutQuart(Math.min(1, (now - t0) / DUR));
+        vb = from.map((v, i) => v + (target[i] - v) * t);
+        apply();
+        if (t < 1) animId = requestAnimationFrame(step);
+      };
+      animId = requestAnimationFrame(step);
+    },
+  };
+}
+
+// ---- class-level DAG (bottom-up, same grammar as the skill graph) ----------
+const C_W = 150, C_H = 44, C_GAP_X = 46, C_GAP_Y = 64, C_PAD = 24;
+
+function renderClassDag() {
+  const dag = state.data.classDags?.[0];
+  const svg = document.getElementById("class-graph");
+  if (!dag || !svg) return;
+  const { branches } = state.data;
+  const byId = Object.fromEntries(dag.nodes.map((n) => [n.id, n]));
+  const maxLayer = Math.max(...dag.nodes.map((n) => n.layer));
+
+  const layers = [];
+  for (const n of dag.nodes) (layers[n.layer] ??= []).push(n);
+  const maxRow = Math.max(...layers.map((L) => L.length));
+  const w = Math.max(maxRow * (C_W + C_GAP_X) - C_GAP_X + 2 * C_PAD, 600);
+  const h = (maxLayer + 1) * (C_H + C_GAP_Y) - C_GAP_Y + 2 * C_PAD;
+  svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
+
+  // order each layer by prereq barycenter, then center it
+  const pos = {};
+  layers.forEach((L) => L.forEach((n, i) => (pos[n.id] = i)));
+  for (let pass = 0; pass < 2; pass++)
+    for (const L of layers) {
+      L.sort((a, b) => cb(a) - cb(b));
+      L.forEach((n, i) => (pos[n.id] = i));
+    }
+  function cb(n) {
+    const ps = n.prereqs.filter((p) => byId[p]);
+    return ps.length ? ps.reduce((s, p) => s + pos[p], 0) / ps.length : pos[n.id];
+  }
+  for (const L of layers) {
+    const rowW = L.length * (C_W + C_GAP_X) - C_GAP_X;
+    L.forEach((n, i) => {
+      n.x = (w - rowW) / 2 + i * (C_W + C_GAP_X);
+      n.y = C_PAD + (maxLayer - n.layer) * (C_H + C_GAP_Y);
+    });
+  }
+
+  svg.innerHTML = "";
+  const gE = document.createElementNS(SVG, "g");
+  const gN = document.createElementNS(SVG, "g");
+  svg.append(gE, gN);
+  for (const n of dag.nodes)
+    for (const p of n.prereqs) {
+      const a = byId[p];
+      const path = document.createElementNS(SVG, "path");
+      const x1 = a.x + C_W / 2, y1 = a.y, x2 = n.x + C_W / 2, y2 = n.y + C_H;
+      const d = Math.max(24, (y1 - y2) * 0.45);
+      path.setAttribute("d", `M${x1},${y1} C${x1},${y1 - d} ${x2},${y2 + d} ${x2},${y2}`);
+      path.setAttribute("class", "edge");
+      gE.appendChild(path);
+    }
+  for (const n of dag.nodes) {
+    // border takes the branch color of the first skill the class covers
+    const color = n.covers.length ? branches[n.covers[0].branch].color : "#4b4f57";
+    const g = document.createElementNS(SVG, "g");
+    g.setAttribute("class", "cnode");
+    g.setAttribute("transform", `translate(${n.x},${n.y})`);
+    g.setAttribute("tabindex", "0");
+    g.setAttribute("role", "button");
+    g.setAttribute("aria-label", `${n.id}: ${n.title}`);
+    const rect = document.createElementNS(SVG, "rect");
+    rect.setAttribute("width", C_W); rect.setAttribute("height", C_H);
+    rect.setAttribute("rx", 6); rect.setAttribute("stroke", color);
+    const code = document.createElementNS(SVG, "text");
+    code.setAttribute("class", "code");
+    code.setAttribute("x", C_W / 2); code.setAttribute("y", 18);
+    code.setAttribute("text-anchor", "middle");
+    code.textContent = n.id;
+    const name = document.createElementNS(SVG, "text");
+    name.setAttribute("class", "cname");
+    name.setAttribute("x", C_W / 2); name.setAttribute("y", 33);
+    name.setAttribute("text-anchor", "middle");
+    name.textContent = n.title.length > 26 ? n.title.slice(0, 25) + "…" : n.title;
+    const tip = document.createElementNS(SVG, "title");
+    tip.textContent = `${n.id} — ${n.title}`;
+    g.append(tip, rect, code, name);
+    const pick = () => selectClass(n);
+    g.addEventListener("click", pick);
+    g.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); } });
+    gN.appendChild(g);
+  }
+}
+
+function selectClass(c) {
+  const { branches } = state.data;
+  const el = document.getElementById("panel-body");
+  el.innerHTML = `
+    <h2><span class="class-code">${esc(c.id)}</span></h2>
+    <section><h3>Class</h3><p>${esc(c.title)}</p></section>
+    ${c.covers.length ? `<section><h3>Skills it covers</h3>
+      <ul>${c.covers.map((cov) => `<li><button class="prereq-link" data-id="${esc(cov.skill)}">${esc(state.byId[cov.skill]?.title ?? cov.skill)}</button> <span class="depth">(${esc(cov.depth)}, ${esc(branches[cov.branch].name)})</span></li>`).join("")}</ul></section>` : ""}
+    ${c.prereqs.length ? `<section><h3>Prerequisite classes</h3>
+      <p>${c.prereqs.map((p) => `<span class="class-code">${esc(p)}</span>`).join(" · ")}</p></section>` : ""}
+    <p class="note">Class-level prerequisites are draft; verify against the bulletin.</p>
+  `;
+  el.querySelectorAll(".prereq-link").forEach((a) =>
+    a.addEventListener("click", () => select(a.dataset.id)));
+  document.getElementById("panel").hidden = false;
 }
 
 main();

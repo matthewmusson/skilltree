@@ -2132,7 +2132,13 @@
     "Brohan et al., RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control (2023)",
     "Ha & Schmidhuber, World Models (2018)"
    ],
-   "classes": [],
+   "classes": [
+    {
+     "id": "CS 224R",
+     "title": "Deep Reinforcement Learning",
+     "depth": "touches"
+    }
+   ],
    "demos": []
   },
   {
@@ -2349,7 +2355,13 @@
    "resources": [
     "Thrun, Burgard & Fox, Probabilistic Robotics"
    ],
-   "classes": [],
+   "classes": [
+    {
+     "id": "AA 273",
+     "title": "State Estimation and Filtering for Robotic Perception",
+     "depth": "teaches"
+    }
+   ],
    "demos": []
   },
   {
@@ -2730,6 +2742,173 @@
     "logic analyzers",
     "FPGA dev boards",
     "3D printers"
+   ]
+  }
+ ],
+ "classDags": [
+  {
+   "branch": "robotics",
+   "nodes": [
+    {
+     "id": "CS 224R",
+     "title": "Deep Reinforcement Learning",
+     "layer": 4,
+     "prereqs": [
+      "CS 229"
+     ],
+     "covers": [
+      {
+       "skill": "reinforcement-learning",
+       "depth": "teaches",
+       "branch": "cs-ml"
+      },
+      {
+       "skill": "robot-learning",
+       "depth": "touches",
+       "branch": "robotics"
+      }
+     ]
+    },
+    {
+     "id": "CS 229",
+     "title": "Machine Learning",
+     "layer": 3,
+     "prereqs": [
+      "MATH 51",
+      "CS 106B",
+      "STATS 116"
+     ],
+     "covers": [
+      {
+       "skill": "ml-foundations",
+       "depth": "teaches",
+       "branch": "cs-ml"
+      }
+     ]
+    },
+    {
+     "id": "MATH 51",
+     "title": "Linear Algebra, Multivariable Calculus, and Modern Applications",
+     "layer": 0,
+     "prereqs": [],
+     "covers": [
+      {
+       "skill": "linear-algebra",
+       "depth": "teaches",
+       "branch": "math"
+      },
+      {
+       "skill": "multivariable-calculus",
+       "depth": "touches",
+       "branch": "math"
+      }
+     ]
+    },
+    {
+     "id": "CS 106B",
+     "title": "Programming Abstractions",
+     "layer": 0,
+     "prereqs": [],
+     "covers": [
+      {
+       "skill": "programming-fundamentals",
+       "depth": "teaches",
+       "branch": "cs-systems"
+      }
+     ]
+    },
+    {
+     "id": "STATS 116",
+     "title": "Theory of Probability",
+     "layer": 2,
+     "prereqs": [
+      "MATH 52"
+     ],
+     "covers": [
+      {
+       "skill": "probability-theory",
+       "depth": "teaches",
+       "branch": "math"
+      }
+     ]
+    },
+    {
+     "id": "MATH 52",
+     "title": "Integral Calculus of Several Variables",
+     "layer": 1,
+     "prereqs": [
+      "MATH 51"
+     ],
+     "covers": [
+      {
+       "skill": "multivariable-calculus",
+       "depth": "teaches",
+       "branch": "math"
+      }
+     ]
+    },
+    {
+     "id": "CS 223A",
+     "title": "Introduction to Robotics",
+     "layer": 1,
+     "prereqs": [
+      "MATH 51",
+      "CS 106B"
+     ],
+     "covers": [
+      {
+       "skill": "classical-robotics",
+       "depth": "teaches",
+       "branch": "robotics"
+      }
+     ]
+    },
+    {
+     "id": "ENGR 105",
+     "title": "Feedback Control Design",
+     "layer": 2,
+     "prereqs": [
+      "MATH 53"
+     ],
+     "covers": [
+      {
+       "skill": "control-systems",
+       "depth": "teaches",
+       "branch": "robotics"
+      }
+     ]
+    },
+    {
+     "id": "MATH 53",
+     "title": "Differential Equations with Linear Algebra",
+     "layer": 1,
+     "prereqs": [
+      "MATH 51"
+     ],
+     "covers": [
+      {
+       "skill": "differential-equations",
+       "depth": "teaches",
+       "branch": "math"
+      }
+     ]
+    },
+    {
+     "id": "AA 273",
+     "title": "State Estimation and Filtering for Robotic Perception",
+     "layer": 3,
+     "prereqs": [
+      "MATH 53",
+      "STATS 116"
+     ],
+     "covers": [
+      {
+       "skill": "state-estimation",
+       "depth": "teaches",
+       "branch": "robotics"
+      }
+     ]
+    }
    ]
   }
  ]

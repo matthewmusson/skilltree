@@ -9,10 +9,12 @@ classes:
       - { skill: multivariable-calculus, depth: touches }
   - id: MATH 52
     title: Integral Calculus of Several Variables
+    prereqs: [MATH 51]
     covers:
       - { skill: multivariable-calculus, depth: teaches }
   - id: MATH 53
     title: Differential Equations with Linear Algebra
+    prereqs: [MATH 51]
     covers:
       - { skill: differential-equations, depth: teaches }
   - id: MATH 61CM
@@ -40,10 +42,12 @@ classes:
       - { skill: fourier-analysis, depth: touches }
   - id: MATH 151
     title: Introduction to Probability Theory
+    prereqs: [MATH 52]
     covers:
       - { skill: probability-theory, depth: teaches }
   - id: STATS 116
     title: Theory of Probability
+    prereqs: [MATH 52]
     covers:
       - { skill: probability-theory, depth: teaches }
   - id: STATS 117
@@ -147,6 +151,7 @@ classes:
       - { skill: gpu-programming, depth: teaches }
   - id: CS 229
     title: Machine Learning
+    prereqs: [MATH 51, CS 106B, STATS 116]
     covers:
       - { skill: ml-foundations, depth: teaches }
   - id: CS 230
@@ -162,10 +167,13 @@ classes:
       - { skill: pytorch-engineering, depth: touches }
   - id: CS 224R
     title: Deep Reinforcement Learning
+    prereqs: [CS 229]
     covers:
       - { skill: reinforcement-learning, depth: teaches }
+      - { skill: robot-learning, depth: touches }
   - id: CS 223A
     title: Introduction to Robotics
+    prereqs: [MATH 51, CS 106B]
     covers:
       - { skill: classical-robotics, depth: teaches }
   - id: ENGR 40M
@@ -175,6 +183,7 @@ classes:
       - { skill: circuit-analysis, depth: touches }
   - id: ENGR 105
     title: Feedback Control Design
+    prereqs: [MATH 53]
     covers:
       - { skill: control-systems, depth: teaches }
   - id: EE 101A
@@ -187,6 +196,7 @@ classes:
       - { skill: analog-design, depth: teaches }
   - id: EE 102A
     title: Signal Processing and Linear Systems I
+    prereqs: [MATH 52]
     covers:
       - { skill: signal-processing, depth: teaches }
   - id: EE 108
@@ -266,3 +276,8 @@ classes:
     title: Quantum Information and Measurement
     covers:
       - { skill: quantum-information, depth: teaches }
+  - id: AA 273
+    title: State Estimation and Filtering for Robotic Perception
+    prereqs: [MATH 53, STATS 116]
+    covers:
+      - { skill: state-estimation, depth: teaches }

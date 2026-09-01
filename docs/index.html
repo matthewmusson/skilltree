@@ -20,9 +20,17 @@
   <nav id="legend" aria-label="Branch legend"></nav>
 </header>
 <main>
-  <div id="graph-wrap">
-    <p id="loading">Loading the skill graph…</p>
-    <svg id="graph" role="application" aria-label="Skill prerequisite graph"></svg>
+  <div id="content">
+    <div id="graph-wrap">
+      <p id="loading">Loading the skill graph…</p>
+      <svg id="graph" role="application" aria-label="Skill prerequisite graph"></svg>
+    </div>
+    <section id="class-map">
+      <h2>Class map · <span class="cm-branch">Robotics</span></h2>
+      <p class="cm-note">The Stanford classes behind the robotics branch, arranged by their own
+        prerequisite chains. Draft — verify against the bulletin before trusting a sequence.</p>
+      <svg id="class-graph" role="application" aria-label="Robotics class prerequisite graph"></svg>
+    </section>
   </div>
   <aside id="panel" hidden>
     <button id="panel-close" aria-label="Close">×</button>
