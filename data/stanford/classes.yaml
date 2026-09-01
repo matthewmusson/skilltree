@@ -1,7 +1,11 @@
-# Stanford class -> skill mapping. DRAFT: titles and coverage to be verified
-# against bulletin.stanford.edu before this layer is trusted.
+# Stanford class -> skill mapping.
+# Titles and prerequisites verified against ExploreCourses (the bulletin's
+# course API) on 2026-08-31; raw scrape in explorecourses-cache.json.
+# LIMITATION: the model has no OR-groups. Where the bulletin says "A or B",
+# one representative path was chosen; the cache holds the full prose.
 # depth: teaches (a primary vehicle for the skill) | touches (partial coverage)
 classes:
+  # ---- math ----
   - id: MATH 51
     title: Linear Algebra, Multivariable Calculus, and Modern Applications
     covers:
@@ -13,10 +17,11 @@ classes:
     covers:
       - { skill: multivariable-calculus, depth: teaches }
   - id: MATH 53
-    title: Differential Equations with Linear Algebra
+    title: "Differential Equations with Linear Algebra, Fourier Methods, and Modern Applications"
     prereqs: [MATH 51]
     covers:
       - { skill: differential-equations, depth: teaches }
+      - { skill: fourier-analysis, depth: touches }
   - id: MATH 61CM
     title: "Modern Mathematics: Continuous Methods"
     covers:
@@ -25,142 +30,175 @@ classes:
       - { skill: real-analysis, depth: touches }
   - id: MATH 104
     title: Applied Matrix Theory
+    prereqs: [MATH 51]
     covers:
       - { skill: linear-algebra, depth: teaches }
   - id: MATH 115
     title: Functions of a Real Variable
+    prereqs: [MATH 51]
     covers:
       - { skill: real-analysis, depth: teaches }
   - id: MATH 116
     title: Complex Analysis
+    prereqs: [MATH 52]
     covers:
       - { skill: complex-analysis, depth: teaches }
   - id: MATH 131P
     title: Partial Differential Equations
+    prereqs: [MATH 53]
     covers:
       - { skill: pdes, depth: teaches }
       - { skill: fourier-analysis, depth: touches }
   - id: MATH 151
     title: Introduction to Probability Theory
-    prereqs: [MATH 52]
-    covers:
-      - { skill: probability-theory, depth: teaches }
-  - id: STATS 116
-    title: Theory of Probability
-    prereqs: [MATH 52]
+    prereqs: [MATH 52, MATH 115]   # bulletin: MATH 61CM, or 52 + (56 or 115)
     covers:
       - { skill: probability-theory, depth: teaches }
   - id: STATS 117
-    title: Introduction to Probability II
+    title: Introduction to Probability Theory
     covers:
       - { skill: probability-theory, depth: teaches }
   - id: STATS 118
-    title: Probability Theory and Applications
+    title: Probability Theory for Statistical Inference
+    prereqs: [MATH 51, MATH 52, STATS 117]
     covers:
       - { skill: probability-theory, depth: touches }
       - { skill: statistical-inference, depth: touches }
   - id: STATS 200
-    title: Introduction to Statistical Inference
+    title: Introduction to Theoretical Statistics
+    prereqs: [STATS 118]
     covers:
       - { skill: statistical-inference, depth: teaches }
   - id: CS 103
     title: Mathematical Foundations of Computing
+    prereqs: [CS 106B]
     covers:
       - { skill: discrete-math, depth: teaches }
       - { skill: proof-writing, depth: teaches }
   - id: CME 108
-    title: Introduction to Scientific Computing
+    title: Introduction to Scientific Computing with Machine Learning Applications
+    prereqs: [MATH 53, CS 106B]
     covers:
       - { skill: numerical-methods, depth: teaches }
   - id: EE 364A
     title: Convex Optimization I
+    prereqs: [MATH 104]
     covers:
       - { skill: convex-optimization, depth: teaches }
+  # ---- physics ----
   - id: PHYSICS 41
     title: Mechanics
     covers:
       - { skill: mechanics, depth: teaches }
   - id: PHYSICS 43
     title: Electricity and Magnetism
+    prereqs: [PHYSICS 41]
     covers:
       - { skill: em-fields, depth: teaches }
   - id: PHYSICS 45
     title: Light and Heat
+    prereqs: [PHYSICS 41]
     covers:
       - { skill: waves-optics, depth: teaches }
       - { skill: thermodynamics, depth: touches }
-  - id: PHYSICS 70
-    title: Foundations of Modern Physics
+  - id: ENGR 65
+    title: Modern Physics for Engineers (EE 65)
+    prereqs: [PHYSICS 41]          # replaces retired PHYSICS 70; MATH 53 co-req
     covers:
       - { skill: special-relativity, depth: teaches }
       - { skill: quantum-mechanics, depth: touches }
   - id: PHYSICS 110
     title: Advanced Mechanics
+    prereqs: [PHYSICS 41, MATH 53]
     covers:
       - { skill: lagrangian-mechanics, depth: teaches }
   - id: PHYSICS 120
-    title: Intermediate Electricity and Magnetism I
+    title: Electromagnetism
+    prereqs: [PHYSICS 43, MATH 53]
     covers:
       - { skill: electrodynamics, depth: teaches }
   - id: PHYSICS 121
-    title: Intermediate Electricity and Magnetism II
+    title: Electrodynamics
+    prereqs: [PHYSICS 120]
     covers:
       - { skill: electrodynamics, depth: teaches }
   - id: PHYSICS 130
     title: Quantum Mechanics I
+    prereqs: [ENGR 65, MATH 104]
     covers:
       - { skill: quantum-mechanics, depth: teaches }
   - id: PHYSICS 131
     title: Quantum Mechanics II
+    prereqs: [PHYSICS 130]
     covers:
       - { skill: quantum-mechanics, depth: teaches }
   - id: PHYSICS 170
-    title: Statistical Mechanics and Thermodynamics I
+    title: Thermodynamics, Kinetic Theory, and Statistical Mechanics I
+    prereqs: [PHYSICS 45, STATS 117]
     covers:
       - { skill: statistical-mechanics, depth: teaches }
   - id: PHYSICS 172
-    title: Solid State Physics
+    title: Solid State Physics (APPPHYS 272)
+    prereqs: [PHYSICS 130, PHYSICS 170]
     covers:
       - { skill: solid-state-physics, depth: teaches }
+  - id: CS 259Q
+    title: Quantum Computing
+    prereqs: [MATH 51, PHYSICS 130]   # replaces inactive APPPHYS 227
+    covers:
+      - { skill: quantum-information, depth: teaches }
+  # ---- CS ----
+  - id: CS 106A
+    title: Programming Methodology
+    covers:
+      - { skill: programming-fundamentals, depth: touches }
   - id: CS 106B
     title: Programming Abstractions
+    prereqs: [CS 106A]
     covers:
       - { skill: programming-fundamentals, depth: teaches }
   - id: CS 107
     title: Computer Organization and Systems
+    prereqs: [CS 106B]
     covers:
       - { skill: systems-programming, depth: teaches }
   - id: CS 107E
     title: Computer Systems from the Ground Up
+    prereqs: [CS 106B]
     covers:
       - { skill: systems-programming, depth: teaches }
       - { skill: bare-metal-firmware, depth: teaches }
   - id: CS 111
     title: Operating Systems Principles
+    prereqs: [CS 107]
     covers:
       - { skill: operating-systems, depth: teaches }
       - { skill: concurrency, depth: touches }
   - id: CS 144
     title: Introduction to Computer Networking
+    prereqs: [CS 111]              # bulletin still names retired CS 110
     covers:
       - { skill: networking, depth: teaches }
   - id: CS 149
     title: Parallel Computing
+    prereqs: [CS 107]
     covers:
       - { skill: concurrency, depth: teaches }
       - { skill: gpu-programming, depth: teaches }
   - id: CS 229
-    title: Machine Learning
-    prereqs: [MATH 51, CS 106B, STATS 116]
+    title: Machine Learning (STATS 229)
+    prereqs: [MATH 51, CS 106B, STATS 117]
     covers:
       - { skill: ml-foundations, depth: teaches }
   - id: CS 230
     title: Deep Learning
+    prereqs: [MATH 51, CS 106B]
     covers:
       - { skill: deep-learning, depth: teaches }
       - { skill: pytorch-engineering, depth: touches }
   - id: CS 231N
     title: Deep Learning for Computer Vision
+    prereqs: [MATH 51, CS 106B]
     covers:
       - { skill: computer-vision, depth: teaches }
       - { skill: deep-learning, depth: teaches }
@@ -172,10 +210,16 @@ classes:
       - { skill: reinforcement-learning, depth: teaches }
       - { skill: robot-learning, depth: touches }
   - id: CS 223A
-    title: Introduction to Robotics
+    title: Introduction to Robotics (ME 320)
     prereqs: [MATH 51, CS 106B]
     covers:
       - { skill: classical-robotics, depth: teaches }
+  - id: AA 273
+    title: State Estimation and Filtering for Robotic Perception
+    prereqs: [MATH 53, STATS 117]
+    covers:
+      - { skill: state-estimation, depth: teaches }
+  # ---- EE ----
   - id: ENGR 40M
     title: "An Intro to Making: What is EE"
     covers:
@@ -188,96 +232,119 @@ classes:
       - { skill: control-systems, depth: teaches }
   - id: EE 101A
     title: Circuits I
+    prereqs: [ENGR 40M]
     covers:
       - { skill: circuit-analysis, depth: teaches }
   - id: EE 101B
     title: Circuits II
+    prereqs: [EE 101A]
     covers:
       - { skill: analog-design, depth: teaches }
   - id: EE 102A
-    title: Signal Processing and Linear Systems I
-    prereqs: [MATH 52]
+    title: Signals and Systems I
+    prereqs: [MATH 53]
     covers:
       - { skill: signal-processing, depth: teaches }
   - id: EE 108
     title: Digital System Design
+    prereqs: [ENGR 40M]
     covers:
       - { skill: digital-logic, depth: teaches }
       - { skill: rtl-design, depth: teaches }
   - id: EE 180
-    title: Digital Systems Architecture
+    title: Digital Systems Architecture (CS 180)
+    prereqs: [EE 108, CS 107]
     covers:
       - { skill: computer-architecture, depth: teaches }
   - id: EE 114
-    title: Fundamentals of Analog Integrated Circuit Design
+    title: Fundamentals of Analog Integrated Circuit Design (EE 214A)
+    prereqs: [EE 101B]
     covers:
       - { skill: analog-design, depth: teaches }
   - id: EE 116
-    title: Semiconductor Device Physics
+    title: Semiconductor Devices for Energy and Electronics
+    prereqs: [EE 101A]
     covers:
       - { skill: semiconductor-devices, depth: teaches }
   - id: EE 212
     title: Integrated Circuit Fabrication Processes
+    prereqs: [EE 116]
     covers:
       - { skill: microfabrication, depth: teaches }
-  - id: EE 272A
-    title: Design Projects in VLSI Systems
+  - id: EE 272
+    title: Design Projects in VLSI Systems I
+    prereqs: [EE 108]              # replaces EE 272A, no longer listed
     covers:
       - { skill: asic-flow, depth: teaches }
       - { skill: design-verification, depth: touches }
-  - id: ME 70
-    title: Introductory Fluids Engineering
-    covers:
-      - { skill: fluid-dynamics, depth: teaches }
-  - id: ME 80
-    title: Mechanics of Materials
+  # ---- ME ----
+  - id: ENGR 14
+    title: Intro to Solid Mechanics
+    prereqs: [PHYSICS 41]
     covers:
       - { skill: statics-strength, depth: teaches }
   - id: ME 30
     title: Engineering Thermodynamics
     covers:
       - { skill: thermodynamics, depth: teaches }
+  - id: ME 70
+    title: Introductory Fluids Engineering
+    prereqs: [MATH 53, ENGR 14, ME 30]
+    covers:
+      - { skill: fluid-dynamics, depth: teaches }
+  - id: ME 80
+    title: Mechanics of Materials
+    prereqs: [ENGR 14]
+    covers:
+      - { skill: statics-strength, depth: teaches }
   - id: ME 102
     title: Foundations of Product Realization
+    prereqs: [ENGR 14]
     covers:
       - { skill: cad, depth: teaches }
       - { skill: machining, depth: touches }
       - { skill: additive-manufacturing, depth: touches }
-  - id: ME 112
-    title: Mechanical Systems Design
-    covers:
-      - { skill: mechanism-design, depth: teaches }
+  - id: ME 203
+    title: Design and Manufacturing
+    covers:                        # replaces retired ME 112
+      - { skill: machining, depth: teaches }
+      - { skill: mechanism-design, depth: touches }
+      - { skill: design-for-manufacture, depth: touches }
   - id: ME 335A
     title: Finite Element Analysis
+    prereqs: [ME 80]
     covers:
       - { skill: fea, depth: teaches }
-  - id: MATSCI 143
-    title: Materials Structure and Characterization
+  - id: ENGR 50
+    title: Introduction to Materials Science, Nanotechnology Emphasis (MATSCI 50)
     covers:
       - { skill: materials-selection, depth: touches }
-  - id: CHEM 31
-    title: Chemical Principles
+  - id: MATSCI 143
+    title: Materials Structure and Characterization
+    prereqs: [ENGR 50]
+    covers:
+      - { skill: materials-selection, depth: touches }
+  # ---- bio / chem ----
+  - id: CHEM 31A
+    title: Chemical Principles I
     covers:
       - { skill: general-chemistry, depth: teaches }
+  - id: CHEM 31B
+    title: Chemical Principles II
+    prereqs: [CHEM 31A]
+    covers:
+      - { skill: general-chemistry, depth: teaches }
+  - id: CHEM 33
+    title: Structure and Reactivity of Carbon-Based Molecules
+    prereqs: [CHEM 31B]
+    covers:
+      - { skill: organic-chemistry, depth: teaches }
   - id: BIO 83
-    title: Biochemistry and Molecular Biology
+    title: Biochemistry & Molecular Biology
     covers:
       - { skill: intro-biology, depth: teaches }
       - { skill: biochemistry, depth: touches }
-  - id: CHEM 33
-    title: Structure and Reactivity of Organic Molecules
-    covers:
-      - { skill: organic-chemistry, depth: teaches }
   - id: BIOE 80
-    title: Introduction to Bioengineering
+    title: Introduction to Bioengineering (Engineering Living Matter) (ENGR 80)
     covers:
       - { skill: synthetic-biology, depth: teaches }
-  - id: APPPHYS 227
-    title: Quantum Information and Measurement
-    covers:
-      - { skill: quantum-information, depth: teaches }
-  - id: AA 273
-    title: State Estimation and Filtering for Robotic Perception
-    prereqs: [MATH 53, STATS 116]
-    covers:
-      - { skill: state-estimation, depth: teaches }

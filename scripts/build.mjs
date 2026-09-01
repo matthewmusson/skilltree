@@ -120,7 +120,7 @@ const nodes = Object.values(skills).map((s) => ({
 
 // ---- class-level DAGs per branch -------------------------------------------
 // Seed: classes covering any skill in the branch; expand through class prereqs.
-const CLASS_DAG_BRANCHES = ["robotics"];
+const CLASS_DAG_BRANCHES = Object.keys(BRANCHES);
 const classById = Object.fromEntries(classes.map((c) => [c.id, c]));
 const classDags = CLASS_DAG_BRANCHES.map((branch) => {
   const set = new Set();

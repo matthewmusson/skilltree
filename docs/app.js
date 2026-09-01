@@ -55,7 +55,17 @@ async function main() {
   layout();
   render();
   initPanZoom();
-  renderClassDag();
+
+  const cmSel = document.getElementById("cm-branch");
+  for (const bid of BAND_ORDER) {
+    if (!branches[bid]) continue;
+    const o = document.createElement("option");
+    o.value = bid; o.textContent = branches[bid].name;
+    cmSel.appendChild(o);
+  }
+  cmSel.value = "robotics";
+  cmSel.addEventListener("change", () => renderClassDag(cmSel.value));
+  renderClassDag("robotics");
 }
 
 // ---- fly-to-branch camera --------------------------------------------------
@@ -396,10 +406,17 @@ function initPanZoom() {
 // ---- class-level DAG (bottom-up, same grammar as the skill graph) ----------
 const C_W = 150, C_H = 44, C_GAP_X = 46, C_GAP_Y = 64, C_PAD = 24;
 
-function renderClassDag() {
-  const dag = state.data.classDags?.[0];
+function renderClassDag(branchId) {
+  const dag = state.data.classDags?.find((d) => d.branch === branchId);
   const svg = document.getElementById("class-graph");
-  if (!dag || !svg) return;
+  if (!svg) return;
+  svg.parentElement.querySelector(".cm-empty")?.remove();
+  if (!dag || !dag.nodes.length) {
+    svg.innerHTML = "";
+    svg.insertAdjacentHTML("beforebegin",
+      `<p class="cm-empty">No Stanford classes are mapped to this branch yet — its skills are makerspace- or job-acquired.</p>`);
+    return;
+  }
   const { branches } = state.data;
   const byId = Object.fromEntries(dag.nodes.map((n) => [n.id, n]));
   const maxLayer = Math.max(...dag.nodes.map((n) => n.layer));
