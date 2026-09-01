@@ -1,8 +1,19 @@
-<!-- SEED: re-run /impeccable document once there's code to capture the actual tokens and components. -->
+<!-- SEED (tokens resolved 2026-08-31, contrast-verified): re-run /impeccable document once there's code to capture components. -->
 
 ---
 name: Skilltree
 description: An interactive prerequisite DAG of expert-verifiable engineering skills, with Stanford classes and makerspaces mapped on top.
+colors:
+  bg: "oklch(1 0 0)"
+  surface: "oklch(0.97 0 0)"
+  ink: "oklch(0.21 0.005 260)"
+  muted: "oklch(0.50 0.01 260)"
+  accent: "oklch(0.35 0.11 140)"
+typography:
+  body:
+    fontFamily: "IBM Plex Sans, system-ui, sans-serif"
+  identifier:
+    fontFamily: "IBM Plex Mono, ui-monospace, monospace"
 ---
 
 # Design System: Skilltree
@@ -29,10 +40,16 @@ This system explicitly rejects, per PRODUCT.md: the SaaS dashboard (card grids, 
 Restrained strategy: near-neutral surfaces and graphite ink, one accent at ≤10% of any screen, and a functional branch palette reserved exclusively for graph data.
 
 ### Primary
-- **Graphite** [to be resolved during implementation]: ink and primary UI weight. Body text ≥7:1 against the background.
+- **Graphite** (oklch(0.21 0.005 260), ≈#17181b): ink and all primary UI weight. 17.7:1 against the background — verified, not estimated.
+- **Moss** (oklch(0.35 0.11 140), ≈#124703): the single accent. Links, focus rings, selection state. Deep enough to hold white text (10.9:1) and to read as ink-adjacent rather than decorative. 10.9:1 as link text on the background.
 
 ### Neutral
-- **Background / surface family** [to be resolved during implementation]: pure or near-pure neutral, chroma at or near zero. No warm cream tint.
+- **Paper** (oklch(1 0 0), #ffffff): the background. Pure white, chroma exactly zero — a field manual is printed on paper, not cream.
+- **Surface** (oklch(0.97 0 0), ≈#f5f5f5): panels and wells, one visible step down from paper.
+- **Muted** (oklch(0.50 0.01 260), ≈#606369): secondary text. 6.0:1 on paper, 5.5:1 on surface — above the 4.5:1 floor on both.
+
+### Branch Palette (data only)
+The Okabe-Ito colorblind-safe palette, the scientific-publishing standard: orange #E69F00, sky blue #56B4E9, bluish green #009E73, yellow #F0E442, blue #0072B2, vermillion #D55E00, reddish purple #CC79A7. Branch-to-color assignment locks when the branch list locks; the build validator runs a deuteranopia simulation as a hard gate. Light members (yellow, sky blue) take graphite text; dark members take white.
 
 ### Named Rules
 **The Data-Owns-Color Rule.** Branch hues appear only on graph nodes, edges, and their direct legends/labels. UI chrome never borrows a branch color. If a toolbar, button, or panel is colorful, it is wrong.
@@ -43,13 +60,13 @@ Restrained strategy: near-neutral surfaces and graphite ink, one accent at ≤10
 
 ## 3. Typography
 
-**Body/UI Font:** technical sans [font pairing to be chosen at implementation]
-**Identifier/Data Font:** monospace [to be chosen at implementation]
+**Body/UI Font:** IBM Plex Sans (with system-ui fallback)
+**Identifier/Data Font:** IBM Plex Mono (with ui-monospace fallback)
 
-**Character:** Datasheet energy without terminal cosplay. The sans carries prose and UI at high density; the mono marks anything that is an identifier — class codes (`CS 107`), skill slugs, unit counts — so the eye can separate names from prose instantly.
+**Character:** Datasheet energy without terminal cosplay. Plex was designed by IBM for technical documentation; the sans holds up at density, and the mono is its metric sibling, so identifiers sit in prose without jolting the line. The mono marks anything that is an identifier — class codes (`CS 107`), skill slugs, unit counts — so the eye separates names from prose instantly. Both free, variable, self-hosted.
 
 ### Hierarchy
-[to be resolved during implementation; body line length capped at 65–75ch in detail panels]
+[sizes and weights resolved during implementation; body line length capped at 65–75ch in detail panels]
 
 ### Named Rules
 **The Identifier Rule.** If a string is a code the university or the data model assigns (class code, skill ID, unit count), it is set in mono. If it is human language, it is set in sans. No exceptions, no mixing.
