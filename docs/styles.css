@@ -55,6 +55,27 @@ main { flex: 1; display: flex; min-height: 0; }
 #graph-wrap.dragging { cursor: grabbing; }
 #graph { width: 100%; height: 100%; display: block; }
 
+#loading, .load-error {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+.load-error button {
+  margin-top: 0.6rem;
+  font: 500 0.85rem var(--sans);
+  color: var(--bg);
+  background: var(--accent);
+  border: none;
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+}
+#graph-wrap { position: relative; }
+
 .node rect {
   fill: var(--bg);
   stroke-width: 1.5;
@@ -63,7 +84,14 @@ main { flex: 1; display: flex; min-height: 0; }
 .node text { font: 500 12px var(--sans); fill: var(--ink); pointer-events: none; }
 .node { cursor: pointer; }
 .node:focus { outline: none; }
+.node:focus-visible rect { stroke: var(--accent); }
 .node:focus rect, .node.selected rect { stroke-width: 2.5; }
+.band-sep { stroke: var(--hairline); stroke-width: 1; stroke-dasharray: 2 6; }
+.band-label { font: 500 11px var(--mono); letter-spacing: 0.08em; fill: var(--muted); }
+.band-chip { }
+.prereq-link {
+  border: none; background: none; padding: 0; font: inherit;
+}
 .node.dimmed { opacity: 0.25; }
 .node.covered-touches rect { stroke-dasharray: 5 3; }
 .edge { fill: none; stroke: oklch(0.85 0 0); stroke-width: 1.2; }
