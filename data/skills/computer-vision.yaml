@@ -1,0 +1,26 @@
+id: computer-vision
+title: Computer Vision
+branch: cs-ml
+prereqs: [deep-learning]
+overview: >
+  Computer vision is getting machines to extract meaning from images. The
+  standard task ladder is classification (what is in this image), detection
+  (where are the objects, as boxes), and segmentation (which pixels belong to
+  what). Modern models are either convolutional networks or ViTs (vision
+  transformers, which split an image into patches and run a transformer over
+  them). The skill also includes camera geometry basics, how a 3D point maps
+  to a 2D pixel through the camera's intrinsics, and the dataset work
+  (curation, augmentation) that usually moves results more than architecture
+  changes.
+proficiency:
+  - Train a classifier from a pretrained backbone on a new dataset, using appropriate augmentation, and report honest held-out metrics
+  - Implement or fine-tune a detection or segmentation model and evaluate it with the standard metrics (mAP, mean intersection-over-union), explaining what each hides
+  - Explain the ViT patch-embedding pipeline and state when a ViT beats a convolutional network and when it does not, with the data-scale reasoning
+  - Use the pinhole camera model to project 3D points into pixels and back given intrinsics, and undistort an image given a lens model
+  - Audit a dataset for label noise, class imbalance, and train/test leakage, and quantify how a found flaw affected reported metrics
+  - Diagnose a vision model failure by inspecting its errors (confusion matrix, per-slice metrics, qualitative cases) rather than only aggregate scores
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Szeliski, Computer Vision: Algorithms and Applications"

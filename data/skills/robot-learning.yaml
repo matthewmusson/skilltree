@@ -1,0 +1,29 @@
+id: robot-learning
+title: Robot Learning & VLA Models
+branch: robotics
+prereqs: [reinforcement-learning, computer-vision, classical-robotics]
+overview: >
+  Robot learning replaces hand-written robot behavior with learned policies.
+  The main routes are imitation learning, training on demonstrations, and VLA
+  (vision-language-action) models, large networks that take camera images and
+  a language instruction and output robot actions, exemplified by pi0-class
+  architectures. World models, networks that predict how the environment
+  evolves, support planning and simulation-based training. Like language
+  models, robot policies are now built in stages, pre-training on broad data,
+  mid-training on robot-relevant data, and post-training on the target task.
+  This is a frontier node that assumes RL, vision, and classical robotics.
+proficiency:
+  - Implement behavior cloning on a demonstration dataset and diagnose compounding-error failures, applying a fix such as DAgger (dataset aggregation)
+  - Fine-tune a pretrained VLA model on a new task's demonstrations and evaluate success rate on the real or simulated robot honestly, with held-out conditions
+  - Explain how a pi0-class architecture connects a vision-language backbone to continuous action output, including the action-generation head
+  - Train or adapt a world model on interaction data and demonstrate it supports rollout prediction or policy improvement
+  - Design the data mix and evaluation protocol for a pre/mid/post-training pipeline for a robot policy, and justify each stage's data
+  - Take a policy from simulation to hardware, identifying the sim-to-real gaps (dynamics, perception, latency) and measuring the transfer loss
+acquisition:
+  on_the_job_only: false
+  notes: "Moves fast; papers and lab work over any class."
+resources:
+  - "Black et al., pi0: A Vision-Language-Action Flow Model for General Robot Control (2024)"
+  - "Chi et al., Diffusion Policy: Visuomotor Policy Learning via Action Diffusion (2023)"
+  - "Brohan et al., RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control (2023)"
+  - "Ha & Schmidhuber, World Models (2018)"

@@ -1,0 +1,18 @@
+id: sourcing-logistics
+title: Sourcing & Supply Chain Logistics
+branch: supply-chain
+prereqs: []
+overview: >
+  Getting the right parts to the right factory at the right time and cost.
+  Covers bill of materials (BOM) management, vendor selection and audits, lead
+  times, second-sourcing against shortages, and landed-cost thinking
+  (tariffs, freight, inventory carrying cost).
+proficiency:
+  - Build and cost a BOM, flagging single-sourced and long-lead-time parts
+  - Qualify a second source for a critical component and define the switch criteria
+  - Negotiate price breaks against volume commitments without stranding inventory
+  - Trace a line-down event to its supply cause and build the buffer that prevents recurrence
+acquisition:
+  on_the_job_only: true
+  notes: "Operations classes gesture at it; the skill is built inside a real supply chain."
+resources: []

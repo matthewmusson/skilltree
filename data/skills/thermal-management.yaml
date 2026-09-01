@@ -1,0 +1,25 @@
+id: thermal-management
+title: Thermal Management & Cooling
+branch: meche
+prereqs: [thermodynamics, fluid-dynamics]
+overview: >
+  Thermal management is the applied discipline of keeping things at an
+  acceptable temperature, most often electronics. Heat moves by conduction
+  (through solids), convection (carried by moving fluid), and radiation, and
+  the engineer's job is to budget these paths so a chip, motor, or battery
+  stays below its limit. It sits at the junction of thermodynamics, fluid
+  dynamics, and electronics, and it decides whether a product needs a heat
+  sink, a fan, or a redesign. Underestimating it is a classic way hardware
+  products fail in the field.
+proficiency:
+  - Can build a thermal resistance network from junction to ambient and compute steady-state junction temperature for a power device from datasheet values.
+  - Can size a heat sink for a given power dissipation and airflow, and decide between natural and forced convection with supporting numbers.
+  - Can select a fan by reading its pressure-flow curve against the system's flow impedance.
+  - Can choose a thermal interface material (pad, paste, epoxy) and account for its resistance in the budget.
+  - Can estimate radiation heat transfer and state when it matters (vacuum, sealed enclosures, high temperatures) versus when it is negligible.
+  - Can instrument a prototype with thermocouples or a thermal camera and reconcile measured temperatures with the predicted budget.
+acquisition:
+  on_the_job_only: false
+  notes: "Taught piecemeal; real proficiency comes from thermal design on a product."
+resources:
+  - "Incropera & DeWitt, Fundamentals of Heat and Mass Transfer"

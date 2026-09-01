@@ -1,0 +1,23 @@
+id: general-chemistry
+title: General Chemistry
+branch: bio-chem
+prereqs: []
+overview: >
+  General chemistry is the introductory study of matter and its
+  transformations: what atoms and molecules are, how they bond, and how
+  reactions proceed. It covers stoichiometry (the bookkeeping of reactions),
+  thermochemistry (the energy of reactions), kinetics (their speed), and
+  equilibria (their balance points). It is the entry point to the materials
+  and biological branches of engineering; almost any work with matter at the
+  molecular level assumes it.
+proficiency:
+  - Balance chemical equations and compute reactant and product quantities, including limiting-reagent and yield calculations.
+  - Predict molecular geometry and polarity from Lewis structures and valence-shell electron-pair repulsion (VSEPR) rules.
+  - Compute reaction enthalpies from bond energies or formation data and determine whether a reaction releases or absorbs heat.
+  - Determine a rate law from concentration-versus-time data and compute rate constants and half-lives.
+  - Compute equilibrium concentrations from an equilibrium constant and predict how a system shifts under changed conditions.
+  - Compute pH of acid, base, and buffer solutions.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources: []

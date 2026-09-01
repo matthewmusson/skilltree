@@ -1,0 +1,15 @@
+# Stanford major -> suggested class sequence. DRAFT: Engineering Physics only;
+# sequences to be verified against bulletin.stanford.edu.
+# A major's skill coverage is DERIVED at build time (sequence -> classes -> skills).
+majors:
+  - id: engineering-physics
+    name: Engineering Physics (BS)
+    sequence:
+      - year: 1
+        classes: [MATH 51, MATH 52, MATH 53, PHYSICS 41, PHYSICS 43, CS 106B, CHEM 31]
+      - year: 2
+        classes: [PHYSICS 45, PHYSICS 70, PHYSICS 110, MATH 131P, ENGR 40M, CS 107]
+      - year: 3
+        classes: [PHYSICS 120, PHYSICS 130, PHYSICS 170, EE 101A, MATH 151, ENGR 105]
+      - year: 4
+        classes: [PHYSICS 131, PHYSICS 121, EE 116, PHYSICS 172, STATS 200]

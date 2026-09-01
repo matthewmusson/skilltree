@@ -1,0 +1,23 @@
+id: multivariable-calculus
+title: Multivariable Calculus
+branch: math
+prereqs: [calculus]
+overview: >
+  Multivariable calculus extends calculus to functions of several inputs, such as
+  temperature over a 3D region or profit as a function of many design choices. It
+  covers partial derivatives, the gradient (the direction of steepest increase),
+  multiple integrals over areas and volumes, and the vector operators divergence
+  and curl that describe how fields spread and rotate. It is foundational: fluid
+  mechanics, electromagnetism, optimization, and machine learning all state their
+  core equations in this language.
+proficiency:
+  - Compute partial derivatives, gradients, and directional derivatives of scalar functions of several variables
+  - Set up and evaluate double and triple integrals, including changes to polar, cylindrical, and spherical coordinates with the correct Jacobian
+  - Compute line and surface integrals of scalar and vector fields
+  - Apply Green's, Stokes', and the divergence theorems to convert between integral types and verify a result both ways
+  - Find and classify critical points of a multivariable function using the Hessian, including constrained optima via Lagrange multipliers
+  - Linearize a multivariable function about a point and quantify the approximation error
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources: []

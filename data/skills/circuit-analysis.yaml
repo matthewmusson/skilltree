@@ -1,0 +1,24 @@
+id: circuit-analysis
+title: Circuit Analysis
+branch: ee-circuits
+prereqs: [calculus, differential-equations]
+overview: >
+  Circuit analysis is the mathematics of electrical networks: given a circuit
+  of sources, resistors, capacitors, and inductors, predict every voltage and
+  current. It rests on Kirchhoff's laws (charge and energy conservation
+  applied to circuits) and grows into transient analysis, alternating current
+  (AC) behavior, and frequency response. It is the single most foundational
+  skill in electrical engineering; every later topic, from amplifier design to
+  power supplies, is an application of it.
+proficiency:
+  - Can solve any linear resistive network using Kirchhoff's laws, node-voltage, and mesh-current methods, and check the answer by power balance.
+  - Can reduce a network to its Thevenin or Norton equivalent and use it to predict loading effects.
+  - Can derive and solve the differential equations for RC, RL, and RLC transients, and sketch the response including time constants and damping regimes.
+  - Can analyze AC steady state with phasors and complex impedance, including computing average and reactive power.
+  - Can derive a transfer function for a filter network and sketch its Bode magnitude and phase plots by hand, identifying poles, zeros, and corner frequencies.
+  - Can verify a hand analysis against an LTspice simulation and resolve discrepancies.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Agarwal & Lang, Foundations of Analog and Digital Electronic Circuits"

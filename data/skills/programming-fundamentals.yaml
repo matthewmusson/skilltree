@@ -1,0 +1,24 @@
+id: programming-fundamentals
+title: Programming Fundamentals
+branch: cs-systems
+prereqs: []
+overview: >
+  Programming fundamentals is the ability to write correct programs and know
+  why they are correct. It covers the core data structures (arrays, lists,
+  hash tables, trees, graphs), recursion, and big-O analysis, which is the
+  standard way to describe how an algorithm's cost grows with input size. Just
+  as important are the working habits: a debugging method that isolates causes
+  instead of guessing, tests that pin behavior down, and version control to
+  track and share changes. Everything else in software builds on this node.
+proficiency:
+  - Implement the standard data structures (dynamic array, linked list, hash table, binary search tree, heap) from scratch and state the big-O cost of each operation
+  - Choose the right data structure for a stated problem and defend the choice with complexity and memory arguments
+  - Write and reason about recursive solutions, including base cases, and convert between recursive and iterative forms
+  - Debug a failing program by forming a hypothesis, bisecting the cause with print statements or a debugger, and confirming the fix with a test
+  - Write unit tests that cover normal cases, edge cases, and error paths for code they have written
+  - Use Git for daily work, committing in coherent units, writing useful messages, branching, merging, and recovering from mistakes
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Cormen, Leiserson, Rivest & Stein, Introduction to Algorithms"

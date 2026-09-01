@@ -1,0 +1,24 @@
+id: machining
+title: Machining & Shop Fabrication
+branch: meche
+prereqs: [cad]
+overview: >
+  Machining is making parts by cutting material away with shop tools: the mill
+  (cuts flat and prismatic features), the lathe (cuts round parts), plus the
+  drill press, bandsaw, sheet-metal brake, and welding equipment. It is how
+  strong, precise metal parts get made when 3D printing is not good enough.
+  Beyond running the machines, the skill includes knowing how to hold work
+  securely, how fast to cut a given material, and how to measure the result.
+  It also feeds back into design: engineers who have machined parts design
+  parts that are cheaper and easier to make.
+proficiency:
+  - Can safely operate a manual mill and lathe to produce a part with features located to within a few thousandths of an inch.
+  - Can choose appropriate speeds and feeds for aluminum, steel, and plastics, and explain the choice in terms of tool diameter and material.
+  - Can select and set up workholding (vise, clamps, chuck, collets) so the part does not move or distort during cutting.
+  - Can measure parts with calipers and micrometers and state the measurement uncertainty of each instrument.
+  - Can bend sheet metal to a target dimension accounting for bend allowance, and produce a basic structural weld.
+  - Can revise a CAD design for manufacturability, such as replacing internal sharp corners with radii a tool can actually cut.
+acquisition:
+  on_the_job_only: false
+  notes: "Learned through shop training and projects, not lecture."
+resources: []

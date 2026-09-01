@@ -1,0 +1,23 @@
+id: electronic-prototyping
+title: Electronic Prototyping & Test
+branch: ee-circuits
+prereqs: [circuit-analysis]
+overview: >
+  Electronic prototyping is the hands-on craft of building and debugging real
+  circuits: breadboarding, soldering, reading component datasheets, and
+  driving bench instruments. It is where circuit theory meets physical
+  hardware, and it is the practical foundation for all electronics work. An
+  engineer without bench skills can analyze circuits but cannot find out why
+  the one on the desk does not work.
+proficiency:
+  - Can build a working circuit from a schematic on a breadboard with sensible layout and stable power distribution.
+  - Can solder through-hole and surface-mount device (SMD) components cleanly, and rework a bad joint with wick or a hot-air station.
+  - Can extract the parameters that matter from a component datasheet (absolute maximums, typical vs guaranteed specs, application notes) and apply them.
+  - Can set up a bench power supply with a current limit chosen to protect the circuit under test.
+  - Can use a multimeter and oscilloscope to trace a fault to a specific node, including proper probe grounding and triggering on the event of interest.
+  - Can use a function generator and oscilloscope together to measure a circuit's frequency response.
+acquisition:
+  on_the_job_only: false
+  notes: "Bench fluency comes from hours at a bench, in a makerspace or lab course."
+resources:
+  - "Horowitz & Hill, The Art of Electronics"

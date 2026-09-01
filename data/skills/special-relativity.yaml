@@ -1,0 +1,22 @@
+id: special-relativity
+title: Special Relativity
+branch: physics
+prereqs: [mechanics]
+overview: >
+  Special relativity is Einstein's theory of how space and time measurements
+  change between observers moving at constant speed relative to each other. It
+  replaces absolute time with a unified spacetime, described by Lorentz
+  transformations, and reworks momentum and energy so they stay consistent near
+  the speed of light. It is a compact, self-contained subject that every later
+  topic in particle physics, accelerator design, and satellite timing depends on.
+proficiency:
+  - Apply Lorentz transformations to convert positions and times between reference frames and compute time dilation and length contraction.
+  - Resolve standard paradoxes (twin, pole-in-barn) quantitatively using relativity of simultaneity.
+  - Compute with 4-vectors, using the invariant interval and invariant mass to simplify problems.
+  - Solve relativistic collision and decay problems using conservation of energy-momentum.
+  - Derive the velocity addition formula and apply it to compound motion.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Morin, Special Relativity: For the Enthusiastic Beginner"

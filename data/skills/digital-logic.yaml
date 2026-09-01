@@ -1,0 +1,24 @@
+id: digital-logic
+title: Digital Logic Design
+branch: ee-digital
+prereqs: []
+overview: >
+  Digital logic is the discipline of building computation out of gates, circuits
+  that treat voltages as 0s and 1s. It covers Boolean algebra, combinational
+  circuits (outputs depend only on current inputs), sequential circuits (outputs
+  depend on stored state), and finite state machines (FSMs), which model any
+  system that steps through states on a clock. It is the foundation of the
+  entire digital hardware stack: every processor, memory, and hardware
+  accelerator reduces to these primitives.
+proficiency:
+  - Simplify a Boolean expression using Karnaugh maps or Boolean identities and build the minimal gate-level circuit
+  - Design a combinational block (adder, multiplexer, decoder) from a truth table and verify it exhaustively
+  - Design a Moore or Mealy finite state machine from an informal spec, including state encoding and next-state logic
+  - Compute setup and hold time margins for a flip-flop path and identify which path limits the maximum clock frequency
+  - Explain how a CMOS (complementary metal-oxide-semiconductor) transistor pair implements an inverter, and how gates compose from transistors
+  - Trace a timing diagram for a clocked circuit across several cycles, including propagation delays
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Harris & Harris, Digital Design and Computer Architecture"

@@ -1,0 +1,24 @@
+id: rtl-design
+title: RTL Design (Verilog/FPGA)
+branch: ee-digital
+prereqs: [digital-logic, programming-fundamentals]
+overview: >
+  Register-transfer level (RTL) design means describing hardware as data moving
+  between registers on each clock edge, written in a hardware description
+  language such as SystemVerilog. The text looks like code but describes
+  parallel circuits, not sequential instructions, so the core skill is thinking
+  in terms of what circuit the synthesis tool will build. An FPGA
+  (field-programmable gate array) is a reconfigurable chip that lets you deploy
+  and test RTL without fabricating silicon. This skill is the working language
+  of digital hardware engineering, one level above raw gates.
+proficiency:
+  - Write synthesizable SystemVerilog for a pipelined datapath and state machine, and predict the registers and logic the synthesis tool will infer
+  - Identify and fix common RTL bugs such as unintended latches, blocking versus nonblocking assignment misuse, and incomplete sensitivity
+  - Pipeline a combinational design to meet a target clock frequency and reason about the latency and throughput tradeoff
+  - Safely move a signal between two clock domains using synchronizers or an asynchronous FIFO (first-in first-out buffer), and explain metastability
+  - Bring a design up on a physical FPGA board, including pin constraints, timing constraints, and on-chip debug
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Harris & Harris, Digital Design and Computer Architecture"

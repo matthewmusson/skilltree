@@ -1,0 +1,18 @@
+id: manufacturing-scale-up
+title: Manufacturing Scale-Up (NPI)
+branch: supply-chain
+prereqs: [design-for-manufacture]
+overview: >
+  Taking a working design from prototype to volume production, the process
+  industry calls New Product Introduction (NPI). Covers the EVT/DVT/PVT build
+  stages (engineering, design, and production validation), factory line
+  bring-up, and yield ramp.
+proficiency:
+  - Plan an EVT/DVT/PVT build sequence with exit criteria for each stage
+  - Diagnose a yield drop on a production line and trace it to a process or design cause
+  - Write a manufacturing work instruction a line operator can follow without you present
+  - Decide what to test in-line versus end-of-line and justify the cost tradeoff
+acquisition:
+  on_the_job_only: true
+  notes: "No class simulates a factory ramp; learned in industry NPI roles."
+resources: []

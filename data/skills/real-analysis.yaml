@@ -1,0 +1,25 @@
+id: real-analysis
+title: Real Analysis
+branch: math
+prereqs: [proof-writing, calculus]
+overview: >
+  Real analysis is calculus rebuilt on rigorous foundations. It proves, rather
+  than assumes, when limits exist, when functions are continuous, when sequences
+  and series converge, and when the informal moves of calculus, such as swapping
+  a limit with an integral, are actually valid. The key new idea is uniform
+  convergence, a stronger notion of "functions approaching a limit" that makes
+  those swaps legal. It is a specialized skill for most engineers but essential
+  for anyone doing theoretical work in optimization, probability, or numerical
+  analysis.
+proficiency:
+  - Prove convergence or divergence of a given sequence or series directly from the epsilon-N definition
+  - Prove a function continuous or uniformly continuous from the definition, and exhibit counterexamples separating the two notions
+  - State and apply the completeness axiom, Bolzano-Weierstrass, and the intermediate and extreme value theorems in proofs
+  - Determine whether a sequence of functions converges pointwise or uniformly and prove which limit-swapping operations are justified
+  - Prove a bounded function Riemann integrable or not using upper and lower sums
+  - Derive the standard theorems of calculus, such as the mean value theorem and the fundamental theorem of calculus, from first principles
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Rudin, Principles of Mathematical Analysis"

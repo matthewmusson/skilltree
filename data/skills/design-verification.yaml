@@ -1,0 +1,23 @@
+id: design-verification
+title: Design Verification
+branch: ee-digital
+prereqs: [rtl-design]
+overview: >
+  Design verification is the practice of proving that a hardware design does
+  what its specification says before it is manufactured. Because fixing a bug
+  after fabrication of an ASIC (application-specific integrated circuit) costs
+  months and millions, verification consumes the majority of engineering time
+  on real chip projects. The toolkit includes testbenches that drive the
+  design, assertions that state invariants in the code, coverage metrics that
+  measure what has been exercised, and constrained-random stimulus that finds
+  cases no one thought to write by hand.
+proficiency:
+  - Build a self-checking testbench for an RTL block, with stimulus generation, a reference model, and automatic pass/fail comparison
+  - Write SystemVerilog Assertions (SVA) that capture protocol and invariant properties, and debug an assertion failure back to the design bug
+  - Define and close a coverage plan, including code coverage and functional covergroups, and justify each coverage hole that is waived
+  - Write constrained-random stimulus with constraints that hit corner cases a directed test would miss
+  - Read and extend a UVM (Universal Verification Methodology) testbench, identifying its drivers, monitors, scoreboards, and sequences
+acquisition:
+  on_the_job_only: false
+  notes: "Industry-scale verification is learned on the job; classes cover fundamentals only."
+resources: []

@@ -1,0 +1,22 @@
+id: mechanics
+title: Classical Mechanics
+branch: physics
+prereqs: [calculus]
+overview: >
+  Classical mechanics is the physics of forces and motion: how objects move
+  when pushed, pulled, spun, or dropped. It is built on Newton's laws, plus the
+  conservation of momentum, energy, and angular momentum. It is the most
+  foundational subject in physics; nearly every other physics topic and most of
+  mechanical, aerospace, and robotics engineering builds on it.
+proficiency:
+  - Set up and solve F = ma problems in awkward geometries (inclined planes, pulleys, accelerating frames) using free-body diagrams.
+  - Compute collision outcomes using conservation of momentum and energy, including elastic and inelastic cases.
+  - Derive the motion of rotating rigid bodies using torque, moment of inertia, and angular momentum.
+  - Solve the simple harmonic oscillator, including damped and driven cases, and identify oscillatory behavior in new systems.
+  - Compute orbital motion in a central gravitational force, including orbit shape and period from initial conditions.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Morin, Introduction to Classical Mechanics (Red Morin)"
+  - "Feynman, Lectures on Physics Vol I"

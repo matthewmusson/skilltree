@@ -1,0 +1,2703 @@
+{
+ "generated": null,
+ "branches": {
+  "math": {
+   "name": "Math",
+   "color": "#4b4f57"
+  },
+  "physics": {
+   "name": "Physics",
+   "color": "#0072B2"
+  },
+  "meche": {
+   "name": "MechE",
+   "color": "#D55E00"
+  },
+  "ee-circuits": {
+   "name": "EE · Circuits",
+   "color": "#E69F00"
+  },
+  "ee-digital": {
+   "name": "EE · Digital",
+   "color": "#CC79A7"
+  },
+  "cs-systems": {
+   "name": "CS · Systems",
+   "color": "#56B4E9"
+  },
+  "cs-ml": {
+   "name": "CS · ML",
+   "color": "#009E73"
+  },
+  "robotics": {
+   "name": "Robotics",
+   "color": "#332288"
+  },
+  "supply-chain": {
+   "name": "Supply Chain",
+   "color": "#882255"
+  },
+  "bio-chem": {
+   "name": "BioE / ChemE",
+   "color": "#8B8000"
+  }
+ },
+ "nodes": [
+  {
+   "id": "additive-manufacturing",
+   "title": "3D Printing & Additive Manufacturing",
+   "branch": "meche",
+   "layer": 1,
+   "prereqs": [
+    "cad"
+   ],
+   "overview": "Additive manufacturing builds parts by depositing or curing material layer by layer, in contrast to machining, which removes material. The two common desktop processes are FDM (Fused Deposition Modeling, which extrudes melted plastic filament) and SLA (Stereolithography, which cures liquid resin with light). It is the fastest and cheapest way to turn a CAD model into a physical part, which makes it the default prototyping tool in modern mechanical work. The skill is less about pressing print and more about designing parts that print well and choosing the right process and material.",
+   "proficiency": [
+    "Can take a CAD model through a slicer (PrusaSlicer, Cura, or Bambu Studio), choose layer height, infill, and supports, and get a successful print on the first or second attempt.",
+    "Can select among PLA, PETG, ABS, and common resins based on strength, temperature resistance, and print difficulty, and justify the choice.",
+    "Can design for the process, including orienting parts to manage overhangs and layer-direction strength anisotropy, and sizing clearances for mating printed parts.",
+    "Can diagnose common failures such as warping, stringing, layer adhesion problems, and under-extrusion, and fix them via settings or design changes.",
+    "Can run an SLA workflow end to end, including wash and post-cure, and knows when resin is the wrong choice for a functional part."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [],
+   "classes": [
+    {
+     "id": "ME 102",
+     "title": "Foundations of Product Realization",
+     "depth": "touches"
+    }
+   ],
+   "demos": [
+    {
+     "space": "prl",
+     "note": "Print a multi-part assembly with dimensional tolerances."
+    },
+    {
+     "space": "lab64",
+     "note": "Print enclosures for electronics projects."
+    }
+   ]
+  },
+  {
+   "id": "ai-assisted-development",
+   "title": "AI-Assisted Development",
+   "branch": "cs-systems",
+   "layer": 1,
+   "prereqs": [
+    "programming-fundamentals"
+   ],
+   "overview": "AI-assisted development is the practice of doing engineering with coding agents, AI systems that can read a codebase, write code, run tools, and iterate on their own output. The skill is not prompting tricks. It is decomposing work into tasks an agent can execute reliably, writing specs precise enough that the output is checkable, reviewing generated code as skeptically as a human's, and keeping ownership of debugging and design rather than deferring to the agent. Done well it multiplies output; done lazily it produces code nobody on the team actually understands.",
+   "proficiency": [
+    "Decompose a multi-day feature into agent-sized tasks with explicit interfaces and acceptance tests, so each task's output is verifiable in isolation",
+    "Write a spec for an agent that a second engineer could also implement from, including constraints, non-goals, and the tests that define done",
+    "Review agent-generated code and catch real defects (wrong edge cases, silent behavior changes, invented APIs) before merge, at the same bar as human code review",
+    "Drive a debugging session where the agent gathers evidence but the human owns the hypothesis, and articulate the root cause independently of the agent's explanation",
+    "Build and maintain personal workflows (reusable prompts, project context files, custom skills or commands) and show they reduce time-to-merge on real work",
+    "Recognize when a task is a poor fit for delegation (novel algorithms, ambiguous requirements, high blast radius) and do it by hand"
+   ],
+   "acquisition": {
+    "on_the_job_only": true,
+    "notes": "No class teaches this; built through deliberate practice on real projects."
+   },
+   "resources": [],
+   "classes": [],
+   "demos": []
+  },
+  {
+   "id": "analog-design",
+   "title": "Analog Circuit Design",
+   "branch": "ee-circuits",
+   "layer": 3,
+   "prereqs": [
+    "circuit-analysis"
+   ],
+   "overview": "Analog design is the creation of circuits that process continuous signals: amplifiers, filters, and the transistor stages inside them. The workhorse building block is the operational amplifier (op-amp), a high-gain amplifier used with feedback to make precise circuits, backed by discrete transistors, the BJT (bipolar junction transistor) and MOSFET (metal-oxide-semiconductor field-effect transistor). It is a central electrical engineering skill because the physical world is analog; every sensor interface and audio or power stage passes through analog design before anything digital happens.",
+   "proficiency": [
+    "Can design standard op-amp circuits (inverting, non-inverting, difference, transimpedance) with component values chosen for the required gain, input impedance, and bandwidth.",
+    "Can design passive and active filters (Sallen-Key, multiple feedback) to meet a cutoff and rolloff specification.",
+    "Can bias a BJT or MOSFET into a stable operating point and compute the resulting small-signal gain.",
+    "Can apply the gain-bandwidth product to predict when a chosen op-amp will fail to meet a spec, and select a better part.",
+    "Can identify the dominant noise source in a signal chain and estimate output noise from datasheet noise densities.",
+    "Can simulate a design in LTspice, including transient, AC, and noise analyses, and explain divergences between simulation and the built circuit in terms of parasitics."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Horowitz & Hill, The Art of Electronics"
+   ],
+   "classes": [
+    {
+     "id": "EE 101B",
+     "title": "Circuits II",
+     "depth": "teaches"
+    },
+    {
+     "id": "EE 114",
+     "title": "Fundamentals of Analog Integrated Circuit Design",
+     "depth": "teaches"
+    }
+   ],
+   "demos": [
+    {
+     "space": "lab64",
+     "note": "Build and measure filters and op-amp stages on the bench."
+    }
+   ]
+  },
+  {
+   "id": "asic-flow",
+   "title": "ASIC Design Flow",
+   "branch": "ee-digital",
+   "layer": 6,
+   "prereqs": [
+    "rtl-design",
+    "semiconductor-devices"
+   ],
+   "overview": "The ASIC (application-specific integrated circuit) design flow is the chain of steps that turns register-transfer level (RTL) code into a manufacturable chip: synthesis maps the code to gates from a technology library, floorplanning and place-and-route arrange those gates and wires on silicon, static timing analysis (STA) proves the clock speed is met, and power analysis checks the energy budget. The flow ends at tapeout, the point when the final layout is sent to a fabrication plant. Every decision trades among power, performance, and area, together called PPA. This is a specialized skill that assumes solid RTL and device physics grounding.",
+   "proficiency": [
+    "Run a design through synthesis and place-and-route with commercial or open-source tools, from RTL to a routed layout that passes design rule checks",
+    "Read a static timing analysis report, identify the critical path, and fix a setup or hold violation through constraints, restructuring, or physical changes",
+    "Write timing constraints (clocks, input/output delays, false paths, multicycle paths) for a design and defend each exception",
+    "Estimate and reduce dynamic and leakage power using clock gating, voltage/frequency choices, and cell selection, and quantify the effect",
+    "Make and justify a PPA tradeoff, for example accepting area growth to close timing, with numbers from tool reports"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": "Real tapeout experience is industry or research; classes simulate the flow."
+   },
+   "resources": [],
+   "classes": [
+    {
+     "id": "EE 272A",
+     "title": "Design Projects in VLSI Systems",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "bare-metal-firmware",
+   "title": "Bare-Metal & Embedded Firmware",
+   "branch": "cs-systems",
+   "layer": 2,
+   "prereqs": [
+    "systems-programming",
+    "digital-logic"
+   ],
+   "overview": "Bare-metal firmware is software that runs on a microcontroller with no operating system underneath: your code is the only thing on the chip. You control hardware by reading and writing memory-mapped registers, respond to events through interrupts, and talk to other chips over serial buses such as UART (universal asynchronous receiver-transmitter), SPI (serial peripheral interface), and I2C (inter-integrated circuit). The defining skills are reading a thousand-page vendor reference manual to find the three registers you need, and debugging over a hardware probe using JTAG or SWD (serial wire debug) when there is no console to print to.",
+   "proficiency": [
+    "Bring up a microcontroller peripheral (timer, GPIO, ADC) from the reference manual alone, configuring clocks and registers without vendor library code",
+    "Write an interrupt service routine that is short, reentrancy-safe, and communicates with the main loop through volatile flags or queues",
+    "Implement a driver for a UART, SPI, or I2C device and verify the bus traffic with a logic analyzer or oscilloscope",
+    "Debug a hard fault over JTAG/SWD by halting the core, reading the fault registers and stack, and identifying the offending instruction",
+    "Read a linker script and memory map to place code and data in flash and RAM, and explain what runs before main()",
+    "Measure and meet a real-time constraint, such as servicing an interrupt within a bounded latency"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [],
+   "classes": [
+    {
+     "id": "CS 107E",
+     "title": "Computer Systems from the Ground Up",
+     "depth": "teaches"
+    }
+   ],
+   "demos": [
+    {
+     "space": "lab64",
+     "note": "Bring up a microcontroller board with your own drivers."
+    }
+   ]
+  },
+  {
+   "id": "biochemistry",
+   "title": "Biochemistry",
+   "branch": "bio-chem",
+   "layer": 2,
+   "prereqs": [
+    "organic-chemistry",
+    "intro-biology"
+   ],
+   "overview": "Biochemistry is the chemistry of life's molecules: how proteins fold into functional shapes, how enzymes speed up reactions by many orders of magnitude, and how metabolic pathways convert food into energy and building blocks. It treats the cell as a chemical machine and its proteins as molecular machines with moving parts. It is the core subject connecting chemistry to biology, and it is assumed background for drug development, synthetic biology, and biomedical research.",
+   "proficiency": [
+    "Predict how a protein's structure and stability change under mutation, pH shift, or temperature change, using the hierarchy from amino acid sequence to folded structure.",
+    "Compute enzyme kinetic parameters (Km, Vmax, kcat) from rate data and distinguish competitive from noncompetitive inhibition from the data.",
+    "Trace glycolysis, the citric acid cycle, and oxidative phosphorylation, accounting for ATP and electron-carrier bookkeeping at each stage.",
+    "Predict the direction of a metabolic reaction from free-energy changes and cellular concentrations.",
+    "Explain how a molecular machine such as ATP synthase or a motor protein converts chemical energy into mechanical work."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [],
+   "classes": [
+    {
+     "id": "BIO 83",
+     "title": "Biochemistry and Molecular Biology",
+     "depth": "touches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "bioinstrumentation",
+   "title": "Bioinstrumentation",
+   "branch": "bio-chem",
+   "layer": 4,
+   "prereqs": [
+    "electronic-prototyping",
+    "intro-biology"
+   ],
+   "overview": "Bioinstrumentation is the design of sensors and electronics that measure biological signals: heartbeats, nerve impulses, muscle activity, and chemical concentrations. The core difficulty is that these signals are tiny, often microvolts, and buried in electrical noise, so the field centers on amplification, noise rejection, transducers that convert biological quantities into electrical ones, and safety isolation that protects the person being measured. It is a specialized skill at the junction of electronics and biology, central to medical devices and lab research tools.",
+   "proficiency": [
+    "Design an instrumentation-amplifier front end that recovers a microvolt-level biological signal, computing the gain, bandwidth, and common-mode rejection required.",
+    "Identify the dominant noise source in a biosignal recording (mains interference, motion artifact, amplifier noise) from the raw trace and fix it.",
+    "Select and apply an appropriate transducer (electrode, photodiode, thermistor, strain gauge) for a given biological quantity and characterize its response.",
+    "Implement safety isolation between a subject and mains-powered equipment and verify leakage current against limits.",
+    "Choose filter cutoffs and sampling rates for a given biosignal and justify them against the signal's frequency content."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": "Usually learned in research labs or medtech industry; few dedicated classes."
+   },
+   "resources": [],
+   "classes": [],
+   "demos": [
+    {
+     "space": "lab64",
+     "note": "Build a biosignal amplifier (ECG/EMG) with proper isolation."
+    }
+   ]
+  },
+  {
+   "id": "biophysics",
+   "title": "Biophysics",
+   "branch": "bio-chem",
+   "layer": 4,
+   "prereqs": [
+    "statistical-mechanics",
+    "intro-biology"
+   ],
+   "overview": "Biophysics builds quantitative physical models of biological systems. It asks how molecules find each other by diffusion, how molecular motors generate force from chemical energy, how ion concentration differences across a cell membrane create electrical voltages, and how single-molecule instruments measure all of this. It is a specialized interdisciplinary field that turns qualitative biology into numbers a physicist or engineer can check.",
+   "proficiency": [
+    "Compute diffusion timescales and length scales for molecules in a cell and determine when diffusion alone suffices for transport.",
+    "Model a molecular motor or receptor as a system of states with transition rates and compute its speed, force, or occupancy.",
+    "Derive the Nernst equilibrium potential for an ion across a membrane and compute a cell's resting potential from ion concentrations.",
+    "Estimate the energy scales of biological processes (bond, thermal, motor step) in units of kBT and use them to judge what is physically plausible.",
+    "Interpret single-molecule data, such as an optical-trap force-extension curve, and extract physical parameters from it."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Phillips et al., Physical Biology of the Cell"
+   ],
+   "classes": [],
+   "demos": []
+  },
+  {
+   "id": "build-toolchains",
+   "title": "Build Systems, Linking & Toolchains",
+   "branch": "cs-systems",
+   "layer": 2,
+   "prereqs": [
+    "systems-programming"
+   ],
+   "overview": "This skill covers how source files become executables: the compiler turns code into assembly, the assembler turns assembly into object files full of symbols, and the linker stitches those object files and libraries into a program. It includes static linking (code copied into the binary) versus dynamic linking (code loaded at run time), build tools like Make and CMake that orchestrate the steps, and cross-compilation, building on one machine for a different one. It is unglamorous but load-bearing: every C, C++, embedded, and performance project eventually breaks here.",
+   "proficiency": [
+    "Explain each stage from source to executable (preprocess, compile, assemble, link) and produce and inspect the intermediate artifacts of each",
+    "Diagnose an undefined-symbol or duplicate-symbol linker error using tools like nm and objdump, and fix it",
+    "Write a Makefile with correct dependencies and incremental rebuilds, and a CMake build for a multi-directory project with external libraries",
+    "Explain static versus dynamic linking tradeoffs and debug a runtime shared-library failure (missing or wrong-version .so/.dll)",
+    "Set up a cross-compilation toolchain targeting a different architecture and verify the produced binary runs on the target"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Bryant & O'Hallaron, Computer Systems: A Programmer's Perspective"
+   ],
+   "classes": [],
+   "demos": []
+  },
+  {
+   "id": "cad",
+   "title": "CAD & Solid Modeling",
+   "branch": "meche",
+   "layer": 0,
+   "prereqs": [],
+   "overview": "Computer-Aided Design (CAD) is the practice of building precise 3D models of physical parts and assemblies in software. It is the starting point for nearly all mechanical engineering work: every part that gets 3D printed, machined, or molded begins as a CAD model, and the model carries the dimensions and tolerances that manufacturing needs. Parametric CAD tools like Fusion 360, SolidWorks, and Onshape let you define geometry through sketches and features so that a design updates cleanly when a dimension changes. This is among the most foundational skills in the mechanical branch; almost everything downstream depends on it.",
+   "proficiency": [
+    "Can model a multi-feature part in Fusion 360, SolidWorks, or Onshape using fully constrained sketches, extrudes, revolves, and fillets.",
+    "Can structure a model with design intent so that changing one driving dimension propagates correctly without breaking downstream features.",
+    "Can produce a 2D engineering drawing with dimensions, tolerances, and section views that a machinist could work from.",
+    "Can build a multi-part assembly with mates or joints that reflect the real degrees of freedom, and check for interference.",
+    "Can reverse-model an existing physical part from caliper measurements to within its functional tolerances."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [],
+   "classes": [
+    {
+     "id": "ME 102",
+     "title": "Foundations of Product Realization",
+     "depth": "teaches"
+    }
+   ],
+   "demos": [
+    {
+     "space": "prl",
+     "note": "Model a part, then manufacture it on any PRL machine."
+    }
+   ]
+  },
+  {
+   "id": "calculus",
+   "title": "Single-Variable Calculus",
+   "branch": "math",
+   "layer": 0,
+   "prereqs": [],
+   "overview": "Calculus is the mathematics of continuous change. It studies limits (the value a quantity approaches), derivatives (instantaneous rates of change), integrals (accumulated totals such as areas and distances), and Taylor series (approximating a function by polynomials). It is the root of the entire quantitative engineering curriculum; nearly every later math, physics, and modeling skill assumes it.",
+   "proficiency": [
+    "Compute derivatives of composite, implicit, and inverse functions using the chain, product, and quotient rules",
+    "Evaluate definite and indefinite integrals using substitution, integration by parts, and partial fractions",
+    "Set up an integral from a word problem by identifying the quantity being accumulated and its differential element",
+    "Derive the Taylor series of a function about a point and bound the truncation error",
+    "Determine whether an infinite series converges using ratio, comparison, and integral tests",
+    "Solve optimization and related-rates problems by translating them into derivative conditions"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [],
+   "classes": [],
+   "demos": []
+  },
+  {
+   "id": "circuit-analysis",
+   "title": "Circuit Analysis",
+   "branch": "ee-circuits",
+   "layer": 2,
+   "prereqs": [
+    "calculus",
+    "differential-equations"
+   ],
+   "overview": "Circuit analysis is the mathematics of electrical networks: given a circuit of sources, resistors, capacitors, and inductors, predict every voltage and current. It rests on Kirchhoff's laws (charge and energy conservation applied to circuits) and grows into transient analysis, alternating current (AC) behavior, and frequency response. It is the single most foundational skill in electrical engineering; every later topic, from amplifier design to power supplies, is an application of it.",
+   "proficiency": [
+    "Can solve any linear resistive network using Kirchhoff's laws, node-voltage, and mesh-current methods, and check the answer by power balance.",
+    "Can reduce a network to its Thevenin or Norton equivalent and use it to predict loading effects.",
+    "Can derive and solve the differential equations for RC, RL, and RLC transients, and sketch the response including time constants and damping regimes.",
+    "Can analyze AC steady state with phasors and complex impedance, including computing average and reactive power.",
+    "Can derive a transfer function for a filter network and sketch its Bode magnitude and phase plots by hand, identifying poles, zeros, and corner frequencies.",
+    "Can verify a hand analysis against an LTspice simulation and resolve discrepancies."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Agarwal & Lang, Foundations of Analog and Digital Electronic Circuits"
+   ],
+   "classes": [
+    {
+     "id": "ENGR 40M",
+     "title": "An Intro to Making: What is EE",
+     "depth": "touches"
+    },
+    {
+     "id": "EE 101A",
+     "title": "Circuits I",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "classical-robotics",
+   "title": "Classical Robotics: Kinematics & Control",
+   "branch": "robotics",
+   "layer": 4,
+   "prereqs": [
+    "linear-algebra",
+    "control-systems"
+   ],
+   "overview": "Classical robotics is the mathematics of making a mechanism move where you want. Kinematics maps joint angles to where the hand ends up (forward) and back (inverse); the Jacobian is the matrix linking joint velocities to hand velocities. Rotations must be represented carefully, with rotation matrices or quaternions (a four-number encoding that avoids the singularities of angle triples). Control runs at different frequencies in a stack, from kilohertz joint servo loops up to slower planners, which is why where computation runs (on the robot at the edge, or in the cloud with network latency) is an engineering constraint, not a detail. Learned robot policies sit on top of this layer.",
+   "proficiency": [
+    "Convert between rotation representations (matrix, quaternion, axis-angle, Euler angles) and state the failure modes of each, including gimbal lock",
+    "Derive the forward kinematics of a serial arm from its link parameters and verify against a simulator",
+    "Solve inverse kinematics both analytically for a simple arm and numerically via the Jacobian for a general one, handling unreachable targets and singularities",
+    "Compute the manipulator Jacobian and use it to map forces and velocities between joint space and task space",
+    "Explain joint-space versus task-space control and implement a working controller of each kind on a simulated arm",
+    "Budget a control stack's frequencies and latencies, and determine which layers can tolerate cloud inference round trips and which must run at the edge"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Lynch & Park, Modern Robotics: Mechanics, Planning, and Control"
+   ],
+   "classes": [
+    {
+     "id": "CS 223A",
+     "title": "Introduction to Robotics",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "complex-analysis",
+   "title": "Complex Analysis",
+   "branch": "math",
+   "layer": 2,
+   "prereqs": [
+    "multivariable-calculus"
+   ],
+   "overview": "Complex analysis is calculus for functions of a complex variable, a number with a real and an imaginary part. Functions that are differentiable in this setting, called analytic functions, are far more rigid and better behaved than real ones, which yields powerful tools: contour integration (integrating along paths in the plane), the residue theorem (evaluating hard integrals by inspecting isolated singular points), and conformal maps (angle-preserving transformations). It is a specialized skill that feeds signal processing, control theory, and fluid and field problems.",
+   "proficiency": [
+    "Verify analyticity of a function using the Cauchy-Riemann equations and identify where it fails",
+    "Compute contour integrals directly and via Cauchy's integral formula",
+    "Locate and classify singularities, compute residues, and evaluate real definite integrals by the residue theorem",
+    "Derive Laurent series expansions of a function in specified annular regions",
+    "Construct a conformal map between two given simple domains and verify it",
+    "Explain and apply the connection between pole locations and the stability or frequency response of a linear system"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [],
+   "classes": [
+    {
+     "id": "MATH 116",
+     "title": "Complex Analysis",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "computer-architecture",
+   "title": "Computer Architecture",
+   "branch": "ee-digital",
+   "layer": 2,
+   "prereqs": [
+    "digital-logic",
+    "systems-programming"
+   ],
+   "overview": "Computer architecture is the study of how processors execute programs: how an instruction set architecture (ISA), the contract between software and hardware, gets implemented as a machine that fetches, decodes, and executes instructions. It covers pipelining, the hazards that break naive pipelines, caches and the memory hierarchy, and branch prediction. It sits between digital logic below and systems software above, and it is the vocabulary for every performance conversation about CPUs and accelerators.",
+   "proficiency": [
+    "Trace an instruction through a 5-stage pipeline and identify structural, data, and control hazards, plus the forwarding or stalls that resolve them",
+    "Compute cache hit rates and average memory access time for a given cache configuration and access pattern",
+    "Explain why a specific loop is slow on real hardware by reasoning about cache misses, branch mispredictions, or pipeline stalls, and verify with performance counters",
+    "Design or extend a simple ISA and implement a single-cycle or pipelined processor for it in RTL or a simulator",
+    "Compare in-order and out-of-order execution and state which workloads each helps and why",
+    "Apply Amdahl's Law and iron-law CPI (cycles per instruction) reasoning to predict the payoff of a proposed hardware change"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Hennessy & Patterson, Computer Architecture: A Quantitative Approach",
+    "Patterson & Hennessy, Computer Organization and Design"
+   ],
+   "classes": [
+    {
+     "id": "EE 180",
+     "title": "Digital Systems Architecture",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "computer-vision",
+   "title": "Computer Vision",
+   "branch": "cs-ml",
+   "layer": 5,
+   "prereqs": [
+    "deep-learning"
+   ],
+   "overview": "Computer vision is getting machines to extract meaning from images. The standard task ladder is classification (what is in this image), detection (where are the objects, as boxes), and segmentation (which pixels belong to what). Modern models are either convolutional networks or ViTs (vision transformers, which split an image into patches and run a transformer over them). The skill also includes camera geometry basics, how a 3D point maps to a 2D pixel through the camera's intrinsics, and the dataset work (curation, augmentation) that usually moves results more than architecture changes.",
+   "proficiency": [
+    "Train a classifier from a pretrained backbone on a new dataset, using appropriate augmentation, and report honest held-out metrics",
+    "Implement or fine-tune a detection or segmentation model and evaluate it with the standard metrics (mAP, mean intersection-over-union), explaining what each hides",
+    "Explain the ViT patch-embedding pipeline and state when a ViT beats a convolutional network and when it does not, with the data-scale reasoning",
+    "Use the pinhole camera model to project 3D points into pixels and back given intrinsics, and undistort an image given a lens model",
+    "Audit a dataset for label noise, class imbalance, and train/test leakage, and quantify how a found flaw affected reported metrics",
+    "Diagnose a vision model failure by inspecting its errors (confusion matrix, per-slice metrics, qualitative cases) rather than only aggregate scores"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Szeliski, Computer Vision: Algorithms and Applications"
+   ],
+   "classes": [
+    {
+     "id": "CS 231N",
+     "title": "Deep Learning for Computer Vision",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "concurrency",
+   "title": "Concurrency & Parallelism",
+   "branch": "cs-systems",
+   "layer": 3,
+   "prereqs": [
+    "operating-systems"
+   ],
+   "overview": "Concurrency is structuring a program as multiple threads of execution that share data, and parallelism is running them at the same time on multiple cores for speed. The hard part is correctness under interleaving. Locks, atomic operations, and the memory model (the rules for when one thread's writes become visible to another) exist to tame data races and deadlocks, two bug classes that are timing-dependent and brutal to reproduce. The skill also includes decomposing a real problem into parallel work that actually scales.",
+   "proficiency": [
+    "Write a correct multithreaded program using threads, mutexes, and condition variables, with no data races under a race detector such as ThreadSanitizer",
+    "Diagnose a deadlock from stack traces, identify the lock-ordering cycle, and fix it",
+    "Explain what a memory model guarantees, why unsynchronized access is a data race even when it \"seems to work\", and where acquire/release ordering is required",
+    "Implement a lock-free construct such as an atomic counter or single-producer single-consumer queue using compare-and-swap, and argue its correctness",
+    "Decompose a real workload into parallel tasks, predict its speedup ceiling with Amdahl's Law, and measure the achieved scaling across cores",
+    "Identify false sharing or contention in a profile and restructure data layout to remove it"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Arpaci-Dusseau, Operating Systems: Three Easy Pieces"
+   ],
+   "classes": [
+    {
+     "id": "CS 111",
+     "title": "Operating Systems Principles",
+     "depth": "touches"
+    },
+    {
+     "id": "CS 149",
+     "title": "Parallel Computing",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "control-systems",
+   "title": "Control Systems",
+   "branch": "robotics",
+   "layer": 3,
+   "prereqs": [
+    "signal-processing",
+    "linear-algebra"
+   ],
+   "overview": "Control systems engineering is the design of feedback: measuring a system's output, comparing it to a target, and computing a correction, so that motors hold speed, drones stay level, and ovens hold temperature. The theory analyzes when a feedback loop is stable and how fast and accurately it responds. It sits on top of signals and systems and is used across electrical, mechanical, aerospace, and chemical engineering; robotics in particular is largely applied control.",
+   "proficiency": [
+    "Can model a physical system (motor, thermal mass, mass-spring-damper) as a transfer function or state-space model and validate it against step-response data.",
+    "Can design and hand-tune a PID (proportional-integral-derivative) controller on real hardware and articulate what each term contributes and what breaks when it is too large.",
+    "Can assess closed-loop stability using gain and phase margins from a Bode plot and translate margin requirements into controller adjustments.",
+    "Can sketch a root locus and use it to predict how closed-loop poles move with gain.",
+    "Can convert between transfer-function and state-space representations, check controllability and observability, and design a state-feedback controller by pole placement.",
+    "Can discretize a continuous controller for implementation on a microcontroller and choose a sample rate that does not destroy the phase margin."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Astrom & Murray, Feedback Systems"
+   ],
+   "classes": [
+    {
+     "id": "ENGR 105",
+     "title": "Feedback Control Design",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "convex-optimization",
+   "title": "Convex Optimization",
+   "branch": "math",
+   "layer": 2,
+   "prereqs": [
+    "linear-algebra",
+    "multivariable-calculus"
+   ],
+   "overview": "Convex optimization is the theory and practice of minimizing convex functions (bowl-shaped, so any local minimum is global) over convex sets (regions with no dents). Its machinery includes duality (a paired problem that bounds the original), the Karush-Kuhn-Tucker (KKT) conditions that certify optimality, and standard problem classes: linear programs (LP), quadratic programs (QP), and semidefinite programs (SDP). It is a specialized but widely applied skill, central to control, machine learning, resource allocation, and engineering design.",
+   "proficiency": [
+    "Prove a given set or function convex using definitions and composition rules",
+    "Recognize and transform a practical problem into a standard class such as LP, QP, or SDP, or show it is not convex",
+    "Derive the Lagrangian dual of a problem, state weak and strong duality, and check a constraint qualification such as Slater's condition",
+    "Write down and verify the KKT conditions for a constrained problem and use them to solve small instances analytically",
+    "Formulate and solve problems in a modeling tool such as CVXPY, and diagnose infeasibility or unboundedness reported by the solver",
+    "Explain what gradient descent and interior point methods converge to on a convex problem and at what rate, and verify empirically"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Boyd & Vandenberghe, Convex Optimization"
+   ],
+   "classes": [
+    {
+     "id": "EE 364A",
+     "title": "Convex Optimization I",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "deep-learning",
+   "title": "Deep Learning",
+   "branch": "cs-ml",
+   "layer": 4,
+   "prereqs": [
+    "ml-foundations"
+   ],
+   "overview": "Deep learning is machine learning with neural networks of many layers, trained end to end by backpropagation, the algorithm that computes the gradient of the loss with respect to every parameter by applying the chain rule backward through the network. The craft is in what makes training actually work: weight initialization, normalization layers, optimizers such as Adam, and reading training diagnostics like loss curves to tell a broken run from a healthy one. Architectures covered include CNNs (convolutional neural networks, built for images) and RNNs (recurrent neural networks, built for sequences). It is the platform on which transformers, vision, and robot learning all sit.",
+   "proficiency": [
+    "Implement a multilayer network and backpropagation from scratch in NumPy and match gradients against a numerical check",
+    "Implement a CNN and explain the parameter count, receptive field, and output shape of each layer",
+    "Diagnose a failing training run from its loss curves and gradient statistics, distinguishing bad learning rate, bad initialization, data bugs, and overfitting",
+    "Explain why vanishing and exploding gradients occur and apply the fixes (initialization schemes, normalization, residual connections) that address them",
+    "Choose and tune an optimizer and learning-rate schedule for a new problem and justify the choices from observed training behavior",
+    "Reproduce a published result at small scale, matching the reported metric within noise"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Goodfellow, Bengio & Courville, Deep Learning"
+   ],
+   "classes": [
+    {
+     "id": "CS 230",
+     "title": "Deep Learning",
+     "depth": "teaches"
+    },
+    {
+     "id": "CS 231N",
+     "title": "Deep Learning for Computer Vision",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "design-for-manufacture",
+   "title": "Design for Manufacture",
+   "branch": "supply-chain",
+   "layer": 4,
+   "prereqs": [
+    "cad",
+    "materials-selection"
+   ],
+   "overview": "Designing parts so they can be made cheaply and reliably at volume, where the manufacturing method (injection molding, casting, stamping, machining) drives the design rules. Draft angles, tolerances, part count, and assembly steps become first-class design constraints.",
+   "proficiency": [
+    "Redesign a 3D-printed prototype part for injection molding, with draft, uniform wall thickness, and gate placement",
+    "Estimate per-unit cost of a part across processes and quantities",
+    "Run a tolerance stack-up and assign tolerances only where the function needs them",
+    "Reduce an assembly's part count and fastener types without losing function"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": "Classes introduce the rules; judgment comes from taking a product through tooling."
+   },
+   "resources": [
+    "Boothroyd, Product Design for Manufacture and Assembly"
+   ],
+   "classes": [],
+   "demos": []
+  },
+  {
+   "id": "design-verification",
+   "title": "Design Verification",
+   "branch": "ee-digital",
+   "layer": 2,
+   "prereqs": [
+    "rtl-design"
+   ],
+   "overview": "Design verification is the practice of proving that a hardware design does what its specification says before it is manufactured. Because fixing a bug after fabrication of an ASIC (application-specific integrated circuit) costs months and millions, verification consumes the majority of engineering time on real chip projects. The toolkit includes testbenches that drive the design, assertions that state invariants in the code, coverage metrics that measure what has been exercised, and constrained-random stimulus that finds cases no one thought to write by hand.",
+   "proficiency": [
+    "Build a self-checking testbench for an RTL block, with stimulus generation, a reference model, and automatic pass/fail comparison",
+    "Write SystemVerilog Assertions (SVA) that capture protocol and invariant properties, and debug an assertion failure back to the design bug",
+    "Define and close a coverage plan, including code coverage and functional covergroups, and justify each coverage hole that is waived",
+    "Write constrained-random stimulus with constraints that hit corner cases a directed test would miss",
+    "Read and extend a UVM (Universal Verification Methodology) testbench, identifying its drivers, monitors, scoreboards, and sequences"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": "Industry-scale verification is learned on the job; classes cover fundamentals only."
+   },
+   "resources": [],
+   "classes": [
+    {
+     "id": "EE 272A",
+     "title": "Design Projects in VLSI Systems",
+     "depth": "touches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "differential-equations",
+   "title": "Ordinary Differential Equations",
+   "branch": "math",
+   "layer": 1,
+   "prereqs": [
+    "calculus"
+   ],
+   "overview": "An ordinary differential equation (ODE) relates a function of one variable, usually time, to its own derivatives; it is how engineering describes systems that evolve, such as circuits, vibrating structures, and chemical reactors. The skill covers solving first and second order equations, systems of linear ODEs, phase portraits (pictures of how solutions flow), stability of equilibria, and the Laplace transform (a tool that turns ODEs into algebra). It is foundational for controls, dynamics, and simulation.",
+   "proficiency": [
+    "Solve first-order ODEs by separation of variables, integrating factors, and exact-equation methods",
+    "Solve linear constant-coefficient second-order ODEs, including forced and resonant cases, and interpret damping regimes physically",
+    "Solve linear systems of ODEs via eigendecomposition and sketch the corresponding phase portrait",
+    "Classify equilibria of a nonlinear system by linearization and state when that classification is trustworthy",
+    "Apply the Laplace transform to solve initial value problems with discontinuous or impulsive forcing",
+    "Derive the ODE governing a physical system from first principles, such as a spring-mass-damper or an RC circuit"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [],
+   "classes": [
+    {
+     "id": "MATH 53",
+     "title": "Differential Equations with Linear Algebra",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "digital-logic",
+   "title": "Digital Logic Design",
+   "branch": "ee-digital",
+   "layer": 0,
+   "prereqs": [],
+   "overview": "Digital logic is the discipline of building computation out of gates, circuits that treat voltages as 0s and 1s. It covers Boolean algebra, combinational circuits (outputs depend only on current inputs), sequential circuits (outputs depend on stored state), and finite state machines (FSMs), which model any system that steps through states on a clock. It is the foundation of the entire digital hardware stack: every processor, memory, and hardware accelerator reduces to these primitives.",
+   "proficiency": [
+    "Simplify a Boolean expression using Karnaugh maps or Boolean identities and build the minimal gate-level circuit",
+    "Design a combinational block (adder, multiplexer, decoder) from a truth table and verify it exhaustively",
+    "Design a Moore or Mealy finite state machine from an informal spec, including state encoding and next-state logic",
+    "Compute setup and hold time margins for a flip-flop path and identify which path limits the maximum clock frequency",
+    "Explain how a CMOS (complementary metal-oxide-semiconductor) transistor pair implements an inverter, and how gates compose from transistors",
+    "Trace a timing diagram for a clocked circuit across several cycles, including propagation delays"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Harris & Harris, Digital Design and Computer Architecture"
+   ],
+   "classes": [
+    {
+     "id": "EE 108",
+     "title": "Digital System Design",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "discrete-math",
+   "title": "Discrete Mathematics",
+   "branch": "math",
+   "layer": 1,
+   "prereqs": [
+    "proof-writing"
+   ],
+   "overview": "Discrete mathematics studies structures made of separate, countable pieces rather than continuous quantities: counting arrangements (combinatorics), networks of nodes and links (graph theory), formal logic, and recurrences (sequences defined by rules referencing earlier terms). It is the mathematical backbone of computer science, underlying algorithms, data structures, cryptography, and network design, and it is the standard proving ground for proof technique.",
+   "proficiency": [
+    "Count arrangements and selections using permutations, combinations, inclusion-exclusion, and the pigeonhole principle",
+    "Prove properties of graphs, such as conditions for connectivity, the existence of Euler circuits, or bounds on edges in trees",
+    "Solve linear recurrences with constant coefficients and verify the closed form by induction",
+    "Manipulate propositional and predicate logic formulas, including building truth tables and proving logical equivalences",
+    "Prove statements in elementary number theory, such as results about divisibility and modular arithmetic",
+    "Model a concrete problem, such as scheduling or routing, as a graph or counting problem and justify the model"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [],
+   "classes": [
+    {
+     "id": "CS 103",
+     "title": "Mathematical Foundations of Computing",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "electrodynamics",
+   "title": "Advanced Electrodynamics",
+   "branch": "physics",
+   "layer": 3,
+   "prereqs": [
+    "em-fields",
+    "pdes"
+   ],
+   "overview": "Advanced electrodynamics takes Maxwell's equations, the laws governing electric and magnetic fields, and applies them to hard realistic problems: fields near conductors of given shape, electromagnetic radiation from moving charges, waves guided through pipes and cables, and field behavior inside materials. It is a specialized upper-level physics course, and it is the theory underneath antenna design, radio-frequency engineering, and photonics.",
+   "proficiency": [
+    "Solve electrostatic boundary-value problems using separation of variables, method of images, and multipole expansions.",
+    "Compute the fields and radiated power of an oscillating dipole antenna.",
+    "Derive the allowed propagation modes and cutoff frequencies of a rectangular waveguide.",
+    "Compute reflection and transmission of electromagnetic waves at interfaces between materials, including polarization effects.",
+    "Model fields inside dielectric and magnetic materials using polarization, magnetization, and the auxiliary fields D and H."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Griffiths, Introduction to Electrodynamics"
+   ],
+   "classes": [
+    {
+     "id": "PHYSICS 120",
+     "title": "Intermediate Electricity and Magnetism I",
+     "depth": "teaches"
+    },
+    {
+     "id": "PHYSICS 121",
+     "title": "Intermediate Electricity and Magnetism II",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "electronic-prototyping",
+   "title": "Electronic Prototyping & Test",
+   "branch": "ee-circuits",
+   "layer": 3,
+   "prereqs": [
+    "circuit-analysis"
+   ],
+   "overview": "Electronic prototyping is the hands-on craft of building and debugging real circuits: breadboarding, soldering, reading component datasheets, and driving bench instruments. It is where circuit theory meets physical hardware, and it is the practical foundation for all electronics work. An engineer without bench skills can analyze circuits but cannot find out why the one on the desk does not work.",
+   "proficiency": [
+    "Can build a working circuit from a schematic on a breadboard with sensible layout and stable power distribution.",
+    "Can solder through-hole and surface-mount device (SMD) components cleanly, and rework a bad joint with wick or a hot-air station.",
+    "Can extract the parameters that matter from a component datasheet (absolute maximums, typical vs guaranteed specs, application notes) and apply them.",
+    "Can set up a bench power supply with a current limit chosen to protect the circuit under test.",
+    "Can use a multimeter and oscilloscope to trace a fault to a specific node, including proper probe grounding and triggering on the event of interest.",
+    "Can use a function generator and oscilloscope together to measure a circuit's frequency response."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": "Bench fluency comes from hours at a bench, in a makerspace or lab course."
+   },
+   "resources": [
+    "Horowitz & Hill, The Art of Electronics"
+   ],
+   "classes": [
+    {
+     "id": "ENGR 40M",
+     "title": "An Intro to Making: What is EE",
+     "depth": "teaches"
+    }
+   ],
+   "demos": [
+    {
+     "space": "lab64",
+     "note": "Breadboard, solder, and debug a circuit at a full bench."
+    }
+   ]
+  },
+  {
+   "id": "em-fields",
+   "title": "Electricity & Magnetism",
+   "branch": "physics",
+   "layer": 2,
+   "prereqs": [
+    "mechanics",
+    "multivariable-calculus"
+   ],
+   "overview": "Electricity and magnetism (E&M) is the study of electric charges, the fields they create, and how those fields exert forces. It covers electric fields, potentials, magnetic fields, and their unification in Maxwell's equations, the four laws that govern all classical electromagnetic phenomena including light. It is one of the two pillars of undergraduate physics alongside mechanics, and it is the foundation for all electrical engineering.",
+   "proficiency": [
+    "Compute electric fields and potentials from charge distributions using Coulomb's law and Gauss's law, choosing the method suited to the symmetry.",
+    "Compute magnetic fields from current distributions using Ampere's law and the Biot-Savart law.",
+    "Apply Faraday's law to compute induced voltages and currents in changing magnetic fields.",
+    "State Maxwell's equations in both integral and differential form and explain what each term means physically.",
+    "Derive that light is an electromagnetic wave from Maxwell's equations in vacuum.",
+    "Analyze circuits with resistors, capacitors, and inductors from field principles."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Purcell & Morin, Electricity and Magnetism",
+    "Feynman, Lectures on Physics Vol II"
+   ],
+   "classes": [
+    {
+     "id": "PHYSICS 43",
+     "title": "Electricity and Magnetism",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "fea",
+   "title": "Finite Element Analysis",
+   "branch": "meche",
+   "layer": 3,
+   "prereqs": [
+    "statics-strength",
+    "numerical-methods"
+   ],
+   "overview": "Finite Element Analysis (FEA) is a numerical method that predicts stress and deformation in shapes too complicated for hand formulas. The software splits a part into many small elements (the mesh), solves the equations of elasticity on each, and stitches the results together. It is a standard tool in mechanical design for validating parts before they are built. The skill is a specialized layer on top of strength of materials, and its core is judgment: a solver always produces colorful stress plots, and the analyst's job is to know when they are wrong.",
+   "proficiency": [
+    "Can set up a static stress study in SolidWorks Simulation, Fusion 360, or Ansys with loads and constraints that match how the part is actually held and loaded.",
+    "Can explain what meshing does, choose between shell and solid elements for a given geometry, and refine the mesh where gradients are steep.",
+    "Can run a convergence study and report a stress value only after showing it is mesh-independent.",
+    "Can identify artificial stress singularities at sharp corners and point constraints, and avoid quoting them as real stresses.",
+    "Can sanity-check an FEA result against a hand calculation on a simplified version of the geometry and reconcile disagreements."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [],
+   "classes": [
+    {
+     "id": "ME 335A",
+     "title": "Finite Element Analysis",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "fluid-dynamics",
+   "title": "Fluid Dynamics",
+   "branch": "meche",
+   "layer": 2,
+   "prereqs": [
+    "multivariable-calculus",
+    "mechanics"
+   ],
+   "overview": "Fluid dynamics is the study of how liquids and gases move and the forces they exert. It covers everything from water in a pipe to air over a wing, built on conservation of mass (continuity), energy (Bernoulli's equation), and momentum (the Navier-Stokes equations). It is a core mechanical engineering subject, required for aerodynamics, pumps and piping, cooling, and propulsion. Much of the practical skill lies in dimensional analysis: using dimensionless numbers like the Reynolds number to know which physical effects dominate a given flow.",
+   "proficiency": [
+    "Can apply continuity and Bernoulli's equation to pipe and nozzle flows, and state when Bernoulli is invalid (viscous losses, unsteady flow, compressibility).",
+    "Can compute the Reynolds number for a flow, classify it as laminar or turbulent, and predict pipe pressure drop using friction factor correlations or a Moody chart.",
+    "Can estimate drag and lift on a body from published coefficients and explain how they vary with Reynolds number.",
+    "Can explain each term of the Navier-Stokes equations physically and identify which terms drop out in common limiting cases.",
+    "Can use dimensional analysis (Buckingham pi) to reduce an experimental problem to its dimensionless groups and design a scaled test.",
+    "Can read a Computational Fluid Dynamics (CFD) result critically, checking mesh resolution near walls and mass conservation before believing the pretty picture."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "White, Fluid Mechanics"
+   ],
+   "classes": [
+    {
+     "id": "ME 70",
+     "title": "Introductory Fluids Engineering",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "general-chemistry",
+   "title": "General Chemistry",
+   "branch": "bio-chem",
+   "layer": 0,
+   "prereqs": [],
+   "overview": "General chemistry is the introductory study of matter and its transformations: what atoms and molecules are, how they bond, and how reactions proceed. It covers stoichiometry (the bookkeeping of reactions), thermochemistry (the energy of reactions), kinetics (their speed), and equilibria (their balance points). It is the entry point to the materials and biological branches of engineering; almost any work with matter at the molecular level assumes it.",
+   "proficiency": [
+    "Balance chemical equations and compute reactant and product quantities, including limiting-reagent and yield calculations.",
+    "Predict molecular geometry and polarity from Lewis structures and valence-shell electron-pair repulsion (VSEPR) rules.",
+    "Compute reaction enthalpies from bond energies or formation data and determine whether a reaction releases or absorbs heat.",
+    "Determine a rate law from concentration-versus-time data and compute rate constants and half-lives.",
+    "Compute equilibrium concentrations from an equilibrium constant and predict how a system shifts under changed conditions.",
+    "Compute pH of acid, base, and buffer solutions."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [],
+   "classes": [
+    {
+     "id": "CHEM 31",
+     "title": "Chemical Principles",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "gpu-programming",
+   "title": "GPU Programming (CUDA)",
+   "branch": "cs-systems",
+   "layer": 4,
+   "prereqs": [
+    "concurrency",
+    "computer-architecture"
+   ],
+   "overview": "GPU (graphics processing unit) programming is writing code for a processor built around thousands of small cores executing in lockstep groups, a model NVIDIA calls SIMT (single instruction, multiple threads). In CUDA, NVIDIA's programming platform, you write kernels, functions launched across a grid of threads, and performance lives or dies on memory behavior. Coalescing (adjacent threads reading adjacent addresses), fast on-chip shared memory, and occupancy (how many threads are resident to hide latency) matter more than arithmetic. This skill underpins modern machine learning performance work and scientific computing.",
+   "proficiency": [
+    "Write a correct CUDA kernel with proper grid/block indexing, boundary handling, and synchronization, and verify it against a CPU reference",
+    "Restructure a kernel's memory accesses for coalescing and use shared memory with correct barriers, measuring the speedup from each change",
+    "Compute a kernel's occupancy from its register and shared-memory usage and state whether raising occupancy would help that kernel",
+    "Profile a kernel with Nsight Compute, read the memory and compute throughput sections, and name the actual bottleneck",
+    "Place a kernel on a roofline plot from its arithmetic intensity and the hardware's peak FLOPS and memory bandwidth, and state its speedup ceiling",
+    "Overlap data transfers with computation using streams and asynchronous copies, and demonstrate the overlap in a timeline trace"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": "Few classes teach it well; most proficiency is project-built."
+   },
+   "resources": [
+    "Kirk & Hwu, Programming Massively Parallel Processors"
+   ],
+   "classes": [
+    {
+     "id": "CS 149",
+     "title": "Parallel Computing",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "intro-biology",
+   "title": "Molecular & Cell Biology Foundations",
+   "branch": "bio-chem",
+   "layer": 0,
+   "prereqs": [],
+   "overview": "This is the introductory study of how cells work at the molecular level. It centers on the central dogma, the flow of information from DNA to RNA to protein, along with cell structure, how cells extract energy from food, and how biologists actually measure these things in the lab. It is the entry point to the biological branch; biochemistry, synthetic biology, and biomedical work all assume it.",
+   "proficiency": [
+    "Trace a gene from DNA sequence through transcription and translation to protein, including the role of the genetic code.",
+    "Identify the major cell structures (nucleus, mitochondria, membranes, ribosomes) and state the function of each.",
+    "Outline how cells extract energy from glucose through glycolysis and respiration, and where ATP, the cell's energy currency, is produced and spent.",
+    "Explain how DNA replicates and how mutations arise and propagate.",
+    "Read a molecular biology figure (gel electrophoresis, polymerase chain reaction (PCR) result, fluorescence microscopy image) and state what the experiment shows."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [],
+   "classes": [
+    {
+     "id": "BIO 83",
+     "title": "Biochemistry and Molecular Biology",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "lagrangian-mechanics",
+   "title": "Lagrangian & Hamiltonian Mechanics",
+   "branch": "physics",
+   "layer": 2,
+   "prereqs": [
+    "mechanics",
+    "differential-equations"
+   ],
+   "overview": "Lagrangian and Hamiltonian mechanics are reformulations of Newton's laws built on a single quantity called the action; nature picks the path that makes the action stationary. This viewpoint turns hard force-balance problems into systematic calculus and reveals that every symmetry of a system implies a conserved quantity (Noether's theorem). It is the working language of advanced physics, and the same machinery drives the dynamics engines used in robotics and simulation.",
+   "proficiency": [
+    "Write down the Lagrangian for a constrained mechanical system in generalized coordinates and derive its equations of motion from the Euler-Lagrange equations.",
+    "Identify symmetries of a Lagrangian and derive the corresponding conserved quantities via Noether's theorem.",
+    "Construct the Hamiltonian from a Lagrangian by Legendre transform and write Hamilton's equations.",
+    "Solve small-oscillation problems by finding normal modes from the Lagrangian.",
+    "Derive the equations of motion for a multi-link mechanism, such as a double pendulum or robot arm, where direct force analysis is impractical."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [],
+   "classes": [
+    {
+     "id": "PHYSICS 110",
+     "title": "Advanced Mechanics",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "linear-algebra",
+   "title": "Linear Algebra",
+   "branch": "math",
+   "layer": 1,
+   "prereqs": [
+    "calculus"
+   ],
+   "overview": "Linear algebra is the study of vectors (lists of numbers treated as single objects), matrices (grids of numbers that transform vectors), and the spaces they live in. Core tools include eigendecomposition (finding the directions a transformation only stretches) and the singular value decomposition, or SVD (a factorization that reveals the strongest actions of any matrix). Alongside calculus it is the most reused math in engineering; graphics, controls, structural analysis, statistics, and machine learning are all built on it.",
+   "proficiency": [
+    "Solve linear systems by Gaussian elimination and characterize the solution set via rank, null space, and column space",
+    "Compute eigenvalues and eigenvectors of a matrix and diagonalize it when possible",
+    "Compute the SVD of a small matrix by hand and interpret its factors geometrically",
+    "Construct orthonormal bases via Gram-Schmidt and use projection to solve least-squares problems",
+    "Prove basic statements about vector spaces, such as linear independence of a given set or that a map is invertible",
+    "Implement matrix operations in code and predict how numerical scale (conditioning) affects the answer"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Strang, Introduction to Linear Algebra"
+   ],
+   "classes": [
+    {
+     "id": "MATH 51",
+     "title": "Linear Algebra, Multivariable Calculus, and Modern Applications",
+     "depth": "teaches"
+    },
+    {
+     "id": "MATH 61CM",
+     "title": "Modern Mathematics: Continuous Methods",
+     "depth": "teaches"
+    },
+    {
+     "id": "MATH 104",
+     "title": "Applied Matrix Theory",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "machining",
+   "title": "Machining & Shop Fabrication",
+   "branch": "meche",
+   "layer": 1,
+   "prereqs": [
+    "cad"
+   ],
+   "overview": "Machining is making parts by cutting material away with shop tools: the mill (cuts flat and prismatic features), the lathe (cuts round parts), plus the drill press, bandsaw, sheet-metal brake, and welding equipment. It is how strong, precise metal parts get made when 3D printing is not good enough. Beyond running the machines, the skill includes knowing how to hold work securely, how fast to cut a given material, and how to measure the result. It also feeds back into design: engineers who have machined parts design parts that are cheaper and easier to make.",
+   "proficiency": [
+    "Can safely operate a manual mill and lathe to produce a part with features located to within a few thousandths of an inch.",
+    "Can choose appropriate speeds and feeds for aluminum, steel, and plastics, and explain the choice in terms of tool diameter and material.",
+    "Can select and set up workholding (vise, clamps, chuck, collets) so the part does not move or distort during cutting.",
+    "Can measure parts with calipers and micrometers and state the measurement uncertainty of each instrument.",
+    "Can bend sheet metal to a target dimension accounting for bend allowance, and produce a basic structural weld.",
+    "Can revise a CAD design for manufacturability, such as replacing internal sharp corners with radii a tool can actually cut."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": "Learned through shop training and projects, not lecture."
+   },
+   "resources": [],
+   "classes": [
+    {
+     "id": "ME 102",
+     "title": "Foundations of Product Realization",
+     "depth": "touches"
+    }
+   ],
+   "demos": [
+    {
+     "space": "prl",
+     "note": "PRL training courses; make a machined project part on mill and lathe."
+    }
+   ]
+  },
+  {
+   "id": "manufacturing-scale-up",
+   "title": "Manufacturing Scale-Up (NPI)",
+   "branch": "supply-chain",
+   "layer": 5,
+   "prereqs": [
+    "design-for-manufacture"
+   ],
+   "overview": "Taking a working design from prototype to volume production, the process industry calls New Product Introduction (NPI). Covers the EVT/DVT/PVT build stages (engineering, design, and production validation), factory line bring-up, and yield ramp.",
+   "proficiency": [
+    "Plan an EVT/DVT/PVT build sequence with exit criteria for each stage",
+    "Diagnose a yield drop on a production line and trace it to a process or design cause",
+    "Write a manufacturing work instruction a line operator can follow without you present",
+    "Decide what to test in-line versus end-of-line and justify the cost tradeoff"
+   ],
+   "acquisition": {
+    "on_the_job_only": true,
+    "notes": "No class simulates a factory ramp; learned in industry NPI roles."
+   },
+   "resources": [],
+   "classes": [],
+   "demos": []
+  },
+  {
+   "id": "materials-selection",
+   "title": "Materials Science & Selection",
+   "branch": "meche",
+   "layer": 3,
+   "prereqs": [
+    "general-chemistry",
+    "statics-strength"
+   ],
+   "overview": "Materials science explains why metals, polymers, ceramics, and composites behave differently, from their internal structure up to bulk properties like stiffness, strength, and toughness. Materials selection is the engineering application: choosing the material for a part given its loads, environment, weight budget, and cost. It is a foundational subject that quietly underlies every mechanical design decision, since the best geometry in the wrong material still fails.",
+   "proficiency": [
+    "Can distinguish stiffness, yield strength, ultimate strength, toughness, and hardness, and read all of them off a stress-strain curve.",
+    "Can use Ashby charts to shortlist materials for a constraint like maximum stiffness per unit mass, and defend the shortlist.",
+    "Can estimate fatigue life for a cyclically loaded metal part using an S-N curve and explain why fatigue kills parts loaded far below yield.",
+    "Can compare common engineering materials (6061 aluminum, mild and alloy steels, ABS, nylon, carbon fiber composite) on strength, stiffness, density, and cost for a specific part.",
+    "Can decide when a carbon fiber layup beats machined aluminum for a component, accounting for anisotropy, joints, and manufacturing effort.",
+    "Can identify environmental failure modes (corrosion, UV degradation, creep at temperature) relevant to a material in its service environment."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Ashby, Materials Selection in Mechanical Design",
+    "Callister & Rethwisch, Materials Science and Engineering: An Introduction"
+   ],
+   "classes": [
+    {
+     "id": "MATSCI 143",
+     "title": "Materials Structure and Characterization",
+     "depth": "touches"
+    }
+   ],
+   "demos": [
+    {
+     "space": "prl",
+     "note": "Composites layup station; compare material choices on a real part."
+    }
+   ]
+  },
+  {
+   "id": "mechanics",
+   "title": "Classical Mechanics",
+   "branch": "physics",
+   "layer": 1,
+   "prereqs": [
+    "calculus"
+   ],
+   "overview": "Classical mechanics is the physics of forces and motion: how objects move when pushed, pulled, spun, or dropped. It is built on Newton's laws, plus the conservation of momentum, energy, and angular momentum. It is the most foundational subject in physics; nearly every other physics topic and most of mechanical, aerospace, and robotics engineering builds on it.",
+   "proficiency": [
+    "Set up and solve F = ma problems in awkward geometries (inclined planes, pulleys, accelerating frames) using free-body diagrams.",
+    "Compute collision outcomes using conservation of momentum and energy, including elastic and inelastic cases.",
+    "Derive the motion of rotating rigid bodies using torque, moment of inertia, and angular momentum.",
+    "Solve the simple harmonic oscillator, including damped and driven cases, and identify oscillatory behavior in new systems.",
+    "Compute orbital motion in a central gravitational force, including orbit shape and period from initial conditions."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Morin, Introduction to Classical Mechanics (Red Morin)",
+    "Feynman, Lectures on Physics Vol I"
+   ],
+   "classes": [
+    {
+     "id": "PHYSICS 41",
+     "title": "Mechanics",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "mechanism-design",
+   "title": "Mechanism & Machine Design",
+   "branch": "meche",
+   "layer": 3,
+   "prereqs": [
+    "cad",
+    "statics-strength"
+   ],
+   "overview": "Mechanism design is the selection and arrangement of the moving parts of a machine: gears, belts, bearings, linkages, and lead screws, plus the motors that drive them. It sits between structural analysis and real hardware, turning a requirement like \"lift 5 kg in 2 seconds\" into a specific motor, gear ratio, and bearing arrangement. It is the defining skill of anyone who builds robots or machines, and it depends on both CAD fluency and stress analysis.",
+   "proficiency": [
+    "Can size a motor for a task from torque, speed, and duty cycle requirements, and choose among brushed DC, brushless DC (BLDC), and stepper motors with justification.",
+    "Can design a gear or belt transmission to hit a target ratio, checking tooth loading and belt tension against published limits.",
+    "Can select bearings for a shaft given radial and axial loads and expected life, and design the shaft shoulders and fits that locate them.",
+    "Can synthesize a four-bar linkage or lead-screw drive to produce a required motion, including computing mechanical advantage through the range of travel.",
+    "Can compute a tolerance stack-up across an assembly and predict resulting play or backlash, then reduce it by design (preload, adjustment features, tighter tolerances only where needed)."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Budynas & Nisbett, Shigley's Mechanical Engineering Design"
+   ],
+   "classes": [
+    {
+     "id": "ME 112",
+     "title": "Mechanical Systems Design",
+     "depth": "teaches"
+    }
+   ],
+   "demos": [
+    {
+     "space": "prl",
+     "note": "Build a geared or linkage mechanism end to end."
+    }
+   ]
+  },
+  {
+   "id": "microfabrication",
+   "title": "Microfabrication & Cleanroom Processes",
+   "branch": "ee-circuits",
+   "layer": 6,
+   "prereqs": [
+    "semiconductor-devices",
+    "materials-selection"
+   ],
+   "overview": "Microfabrication is the set of processes used to build chips and microscale devices on silicon wafers inside a cleanroom, a filtered environment where airborne dust is controlled because a single particle can destroy a device. The core steps are photolithography (printing patterns with light), deposition (adding thin films), etching (removing material selectively), and doping (implanting impurities to change electrical behavior), repeated in sequence as a process flow. It is a highly specialized skill at the far end of the electronics branch, practiced in university nanofabs and semiconductor industry fabs.",
+   "proficiency": [
+    "Can run a photolithography cycle end to end (spin coat, softbake, expose, develop) and hit a target feature size on a test pattern.",
+    "Can select and run a deposition method (thermal or e-beam evaporation, sputtering, chemical vapor deposition) appropriate to the film and step coverage required.",
+    "Can choose between wet and plasma etching for a given film, considering selectivity and isotropy, and stop an etch at the intended layer.",
+    "Can design a multi-step process flow with correct step ordering, mask alignment strategy, and thermal budget constraints.",
+    "Can characterize results with cleanroom metrology (profilometer, ellipsometer, optical and electron microscopy) and diagnose a failed run from the measurements.",
+    "Can follow cleanroom protocol, including gowning, chemical handling for acids and solvents, and tool qualification procedures."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": "Requires cleanroom access (e.g. a university nanofab); lecture alone does not confer the skill."
+   },
+   "resources": [
+    "Campbell, Fabrication Engineering at the Micro- and Nanoscale"
+   ],
+   "classes": [
+    {
+     "id": "EE 212",
+     "title": "Integrated Circuit Fabrication Processes",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "ml-foundations",
+   "title": "Machine Learning Foundations",
+   "branch": "cs-ml",
+   "layer": 3,
+   "prereqs": [
+    "linear-algebra",
+    "probability-theory"
+   ],
+   "overview": "Machine learning (ML) is fitting functions to data instead of programming them by hand. Supervised learning fits a function from labeled examples, unsupervised learning finds structure without labels. The core machinery is a loss function measuring how wrong the model is, gradient descent to reduce that loss, and regularization to keep the model from memorizing the training set. Equally central is evaluation methodology, the discipline of measuring performance on data the model has never seen. This node is the base of the entire ML branch; everything deeper assumes it.",
+   "proficiency": [
+    "Implement linear and logistic regression from scratch, including the gradient derivation, and verify against a library implementation",
+    "Derive the gradient of a given loss function by hand and check it numerically with finite differences",
+    "Diagnose overfitting versus underfitting from train and validation curves and choose the right response (more data, regularization, capacity change)",
+    "Design a train/validation/test split that avoids leakage for a given dataset, including grouped or time-ordered data, and defend it",
+    "Select and justify an evaluation metric (accuracy, precision/recall, AUC, calibration) for a stated problem, including class-imbalance cases",
+    "Explain the bias-variance decomposition and predict how changing model capacity or dataset size moves each term"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Hastie, Tibshirani & Friedman, The Elements of Statistical Learning",
+    "Bishop, Pattern Recognition and Machine Learning"
+   ],
+   "classes": [
+    {
+     "id": "CS 229",
+     "title": "Machine Learning",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "ml-systems-performance",
+   "title": "ML Systems & Performance",
+   "branch": "cs-ml",
+   "layer": 6,
+   "prereqs": [
+    "pytorch-engineering",
+    "gpu-programming"
+   ],
+   "overview": "ML systems and performance is the engineering of making training and inference fast and cheap on real hardware. The recurring theme is that modern accelerators are usually limited by memory bandwidth, not arithmetic, so the levers are kernel fusion (merging operations to avoid round trips to memory), quantization (running in lower-precision number formats), and serving optimizations such as batching and KV-cache management (reusing cached attention state during generation). The skill is diagnostic first: profile, find the true bottleneck, then apply the right lever. It is a specialized node combining ML and GPU systems knowledge.",
+   "proficiency": [
+    "Profile a training or inference run end to end and attribute time to data loading, host-device transfer, kernels, and communication, with evidence from traces",
+    "Determine from arithmetic intensity whether an operation is memory-bandwidth-bound or compute-bound and predict the ceiling of any optimization before trying it",
+    "Apply kernel fusion via a compiler (e.g. torch.compile) or a hand-written fused kernel and measure the reduction in memory traffic and wall time",
+    "Quantize a model to int8 or fp8, measure both the speedup and the accuracy delta, and identify layers that must stay in higher precision",
+    "Optimize a serving deployment using batching and KV-cache management, and report the throughput and latency tradeoff curve",
+    "Estimate the hardware cost of a proposed training run from model size, token count, and cluster specs, within a factor of two"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": "Frontier-lab territory; classes lag industry practice."
+   },
+   "resources": [],
+   "classes": [],
+   "demos": []
+  },
+  {
+   "id": "modern-cpp",
+   "title": "Modern C++ (or Rust) at Scale",
+   "branch": "cs-systems",
+   "layer": 2,
+   "prereqs": [
+    "systems-programming"
+   ],
+   "overview": "This skill is writing safe, fast code in a large C++ or Rust codebase, where the language gives you manual-memory performance but expects discipline in return. The core ideas are RAII (Resource Acquisition Is Initialization, tying a resource's lifetime to an object's scope), ownership and move semantics that make it explicit which code is responsible for freeing what, and generics (C++ templates or Rust traits) for writing code once across many types. At scale the skill shifts from syntax to judgment: designing APIs others cannot misuse and changing shared code without breaking it.",
+   "proficiency": [
+    "Write C++ or Rust that manages resources through RAII and smart pointers or ownership, with no leaks, double frees, or dangling references under sanitizers",
+    "Explain when a move happens versus a copy in a given code sample, and restructure code to eliminate unnecessary copies",
+    "Write a generic function or container with templates or traits, and decode the compiler errors when an instantiation fails",
+    "Use the standard library (STL containers, algorithms, iterators, or Rust equivalents) idiomatically instead of hand-rolling loops",
+    "Design a library API with clear ownership rules, const-correctness or borrow rules, and error handling, and document its contract",
+    "Navigate and safely modify a codebase of 100k+ lines, using the build system and tests to bound the blast radius of a change"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Meyers, Effective Modern C++",
+    "Klabnik & Nichols, The Rust Programming Language"
+   ],
+   "classes": [],
+   "demos": []
+  },
+  {
+   "id": "multivariable-calculus",
+   "title": "Multivariable Calculus",
+   "branch": "math",
+   "layer": 1,
+   "prereqs": [
+    "calculus"
+   ],
+   "overview": "Multivariable calculus extends calculus to functions of several inputs, such as temperature over a 3D region or profit as a function of many design choices. It covers partial derivatives, the gradient (the direction of steepest increase), multiple integrals over areas and volumes, and the vector operators divergence and curl that describe how fields spread and rotate. It is foundational: fluid mechanics, electromagnetism, optimization, and machine learning all state their core equations in this language.",
+   "proficiency": [
+    "Compute partial derivatives, gradients, and directional derivatives of scalar functions of several variables",
+    "Set up and evaluate double and triple integrals, including changes to polar, cylindrical, and spherical coordinates with the correct Jacobian",
+    "Compute line and surface integrals of scalar and vector fields",
+    "Apply Green's, Stokes', and the divergence theorems to convert between integral types and verify a result both ways",
+    "Find and classify critical points of a multivariable function using the Hessian, including constrained optima via Lagrange multipliers",
+    "Linearize a multivariable function about a point and quantify the approximation error"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [],
+   "classes": [
+    {
+     "id": "MATH 51",
+     "title": "Linear Algebra, Multivariable Calculus, and Modern Applications",
+     "depth": "touches"
+    },
+    {
+     "id": "MATH 52",
+     "title": "Integral Calculus of Several Variables",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "networking",
+   "title": "Computer Networking",
+   "branch": "cs-systems",
+   "layer": 3,
+   "prereqs": [
+    "operating-systems"
+   ],
+   "overview": "Computer networking is how programs on different machines talk. The core stack is TCP/IP (Transmission Control Protocol over Internet Protocol), which delivers reliable byte streams over an unreliable packet network, and HTTP (Hypertext Transfer Protocol) on top of it for most application traffic. Programs reach the network through sockets, the operating system's interface for network communication. The engineering skill is reasoning about latency (delay per round trip) versus bandwidth (bytes per second) as separate resources, and debugging by looking at the actual packets on the wire.",
+   "proficiency": [
+    "Write a working TCP client and server with the sockets API, handling partial reads, connection teardown, and multiple concurrent clients",
+    "Trace what happens when a browser loads a URL, from DNS (Domain Name System) lookup through the TCP handshake, TLS, and the HTTP request/response",
+    "Predict whether a transfer is latency-bound or bandwidth-bound from round-trip time and link speed, and compute the expected duration",
+    "Capture traffic with tcpdump or Wireshark and diagnose a real failure such as a hung connection, retransmission storm, or misbehaving proxy",
+    "Explain how TCP achieves reliability and congestion control (sequence numbers, acknowledgments, windows) and how that produces observed throughput behavior"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Kurose & Ross, Computer Networking: A Top-Down Approach"
+   ],
+   "classes": [
+    {
+     "id": "CS 144",
+     "title": "Introduction to Computer Networking",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "numerical-methods",
+   "title": "Numerical Methods",
+   "branch": "math",
+   "layer": 2,
+   "prereqs": [
+    "linear-algebra",
+    "differential-equations",
+    "programming-fundamentals"
+   ],
+   "overview": "Numerical methods is the study of how continuous mathematics is actually computed on machines that store numbers with finite precision. It covers floating point arithmetic and its rounding errors, conditioning (how sensitive a problem's answer is to small input changes), solvers for linear systems, integrators that step ordinary differential equations forward in time, interpolation (fitting a curve through data points), and quadrature (numerical integration). Every simulation an engineer runs rests on these algorithms, so this skill is broadly foundational for computational work.",
+   "proficiency": [
+    "Predict when a floating point computation loses accuracy, such as catastrophic cancellation, and restructure the formula to avoid it",
+    "Compute or estimate the condition number of a problem and distinguish ill-conditioning from an unstable algorithm",
+    "Implement and compare direct and iterative linear solvers, such as LU decomposition and conjugate gradient, and choose between them for a given system",
+    "Implement explicit and implicit ODE integrators, verify their order of accuracy empirically, and identify stiffness from solver behavior",
+    "Construct polynomial and spline interpolants and explain when high-degree polynomial interpolation fails",
+    "Select and apply a quadrature rule to meet a stated error tolerance, verifying the error estimate numerically"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [],
+   "classes": [
+    {
+     "id": "CME 108",
+     "title": "Introduction to Scientific Computing",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "operating-systems",
+   "title": "Operating Systems",
+   "branch": "cs-systems",
+   "layer": 2,
+   "prereqs": [
+    "systems-programming"
+   ],
+   "overview": "An operating system (OS) is the software that multiplexes one machine among many programs: it schedules processes and threads onto CPUs, gives each process the illusion of its own memory through virtual memory, stores data durably through filesystems, and exposes all of it to programs through system calls (syscalls). Studying OS means learning these mechanisms deeply enough to build or modify them, usually by writing pieces of a real or teaching kernel. It is a pillar of systems engineering: performance work, concurrency, networking, and security all lean on this mental model.",
+   "proficiency": [
+    "Explain the process and thread lifecycle and implement a program using fork, exec, wait, and pipes correctly",
+    "Trace a virtual address through page tables to a physical address, and explain what the kernel does on a page fault, including copy-on-write and swapping",
+    "Implement or modify a scheduler in a teaching kernel and measure how the policy changes latency and throughput for a workload",
+    "Explain what happens during a syscall from user code to kernel and back, and use strace or equivalent to debug a program from its syscall trace",
+    "Describe how a journaling filesystem lays out inodes, directories, and data blocks, and reason about what survives a crash at a given point",
+    "Implement a working synchronization primitive (lock or condition variable) on top of hardware atomics"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Arpaci-Dusseau, Operating Systems: Three Easy Pieces"
+   ],
+   "classes": [
+    {
+     "id": "CS 111",
+     "title": "Operating Systems Principles",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "organic-chemistry",
+   "title": "Organic Chemistry",
+   "branch": "bio-chem",
+   "layer": 1,
+   "prereqs": [
+    "general-chemistry"
+   ],
+   "overview": "Organic chemistry is the chemistry of carbon-based molecules, the compounds that make up living matter, plastics, and most drugs. It focuses on structure (how atoms arrange in three dimensions), mechanism (the step-by-step electron movements of a reaction), and synthesis (planning a sequence of reactions to build a target molecule). It is a core mid-level course and the gateway to biochemistry, pharmaceuticals, and polymer work.",
+   "proficiency": [
+    "Name organic molecules and draw their three-dimensional structures, including identifying stereocenters and assigning R/S configuration.",
+    "Draw the arrow-pushing mechanism for standard reaction classes (substitution, elimination, addition, carbonyl chemistry) and predict the major product.",
+    "Rank compounds by acidity, basicity, or reactivity using structural arguments (resonance, induction, hybridization).",
+    "Propose a multi-step synthesis of a simple target molecule from given starting materials.",
+    "Assign a structure to an unknown compound from nuclear magnetic resonance (NMR), infrared (IR), and mass spectrometry data."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [],
+   "classes": [
+    {
+     "id": "CHEM 33",
+     "title": "Structure and Reactivity of Organic Molecules",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "pcb-design",
+   "title": "PCB Design",
+   "branch": "ee-circuits",
+   "layer": 4,
+   "prereqs": [
+    "electronic-prototyping",
+    "analog-design"
+   ],
+   "overview": "Printed circuit board (PCB) design is the process of turning a schematic into a manufacturable board: capturing the circuit in software, laying out the copper traces and component footprints, and sending the files to a fabrication house. It is the step that turns a breadboard prototype into real hardware, and it is a required skill for shipping any electronic product. Layout is not clerical; trace routing, grounding, and decoupling decisions determine whether the physical board behaves like the schematic.",
+   "proficiency": [
+    "Can capture a schematic in KiCad or Altium with correct symbols, net names, and an organized sheet a reviewer can follow.",
+    "Can create or verify a component footprint against the manufacturer's land-pattern drawing before committing it to a board.",
+    "Can choose a layer stackup and lay out a board with a solid ground plane, appropriate trace widths for current, and decoupling capacitors placed at each IC's power pins.",
+    "Can run design rule checks against a fab house's capabilities (JLCPCB, OSH Park, or similar) and generate correct Gerber and drill files.",
+    {
+     "Can bring up a fabricated board methodically": "visual inspection, resistance checks on power rails, current-limited first power, then functional test block by block."
+    },
+    "Can apply design-for-manufacture rules such as component orientation for assembly, testpoint placement, and adequate courtyard clearances."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [],
+   "classes": [],
+   "demos": [
+    {
+     "space": "lab64",
+     "note": "Design in KiCad, fab, then reflow and bring up your own board."
+    }
+   ]
+  },
+  {
+   "id": "pdes",
+   "title": "Partial Differential Equations",
+   "branch": "math",
+   "layer": 2,
+   "prereqs": [
+    "differential-equations",
+    "multivariable-calculus"
+   ],
+   "overview": "A partial differential equation (PDE) relates a function of several variables, such as temperature over space and time, to its partial derivatives. The classic examples are the heat equation (diffusion), the wave equation (vibration and propagation), and Laplace's equation (steady states). The skill covers solving these by separation of variables and Fourier methods (building solutions from sums of sines and cosines) and handling boundary conditions, the constraints imposed at the edges of the domain. It feeds electromagnetism, fluid mechanics, heat transfer, and finite element analysis (FEA), the standard computational method for structures.",
+   "proficiency": [
+    "Classify a second-order linear PDE as elliptic, parabolic, or hyperbolic and state what that implies about its behavior",
+    "Solve the heat, wave, and Laplace equations on simple domains by separation of variables",
+    "Compute the Fourier series of a given function and use it to satisfy initial and boundary conditions",
+    "Choose and justify boundary condition types, such as fixed-value versus fixed-flux, from the physics of a problem",
+    "Derive a PDE from a conservation law, such as energy balance yielding the heat equation",
+    "Use d'Alembert's solution to analyze wave propagation and reflection on a line"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [],
+   "classes": [
+    {
+     "id": "MATH 131P",
+     "title": "Partial Differential Equations",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "power-electronics",
+   "title": "Power Electronics",
+   "branch": "ee-circuits",
+   "layer": 4,
+   "prereqs": [
+    "analog-design"
+   ],
+   "overview": "Power electronics is the design of circuits that convert electrical power efficiently: taking a battery or wall voltage and producing the stable rails everything else runs on. The core distinction is linear regulators, which are simple but burn excess voltage as heat, versus switching converters, which chop the input at high frequency through an inductor to hit efficiencies above 90 percent. Every battery-powered or mains-powered product contains this work, making it a practical requirement for hardware engineers even though it is a specialized corner of the curriculum.",
+   "proficiency": [
+    "Can choose between a linear regulator and a switching converter for a given rail using a quantitative efficiency and thermal argument.",
+    "Can design a buck or boost converter around a controller IC, selecting the inductor for target ripple current and the input and output capacitors for ripple voltage and RMS current rating.",
+    "Can compute converter losses (conduction, switching, inductor core) and verify the design against its thermal budget.",
+    "Can lay out a switching converter PCB with tight hot loops and correct feedback-node routing, and explain why layout failures show up as noise and instability.",
+    "Can design or configure a lithium battery charging circuit that respects constant-current and constant-voltage phases and pack protection limits.",
+    "Can measure converter efficiency, load regulation, and output ripple on the bench with an oscilloscope and electronic load."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": "Class coverage is thin; most engineers learn this designing real supplies."
+   },
+   "resources": [
+    "Erickson & Maksimovic, Fundamentals of Power Electronics"
+   ],
+   "classes": [],
+   "demos": [
+    {
+     "space": "lab64",
+     "note": "Build a buck converter; measure efficiency and ripple."
+    }
+   ]
+  },
+  {
+   "id": "probability-theory",
+   "title": "Probability Theory",
+   "branch": "math",
+   "layer": 2,
+   "prereqs": [
+    "multivariable-calculus"
+   ],
+   "overview": "Probability theory is the calculus-based study of uncertainty. It covers random variables (numerical outcomes of chance processes), their distributions, expectation (long-run average value), conditioning (updating probabilities on new information), and limit theorems such as the law of large numbers and the central limit theorem, which explain why averages stabilize and why the bell curve is everywhere. It is the foundation for statistics, machine learning, statistical mechanics, and reliability engineering.",
+   "proficiency": [
+    "Compute probabilities of compound events using conditioning, independence, and Bayes' rule",
+    "Derive the distribution of a transformed random variable, including sums and functions of jointly distributed variables",
+    "Compute expectations, variances, and covariances, including via indicator variables and conditional expectation",
+    "Recognize when a real process matches a named distribution such as binomial, Poisson, exponential, or normal, and justify the match from its assumptions",
+    "State and apply the law of large numbers and the central limit theorem, including computing a normal approximation with error awareness",
+    "Set up and run a Monte Carlo simulation to check an analytic probability answer"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Blitzstein & Hwang, Introduction to Probability"
+   ],
+   "classes": [
+    {
+     "id": "MATH 151",
+     "title": "Introduction to Probability Theory",
+     "depth": "teaches"
+    },
+    {
+     "id": "STATS 116",
+     "title": "Theory of Probability",
+     "depth": "teaches"
+    },
+    {
+     "id": "STATS 117",
+     "title": "Introduction to Probability II",
+     "depth": "teaches"
+    },
+    {
+     "id": "STATS 118",
+     "title": "Probability Theory and Applications",
+     "depth": "touches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "programming-fundamentals",
+   "title": "Programming Fundamentals",
+   "branch": "cs-systems",
+   "layer": 0,
+   "prereqs": [],
+   "overview": "Programming fundamentals is the ability to write correct programs and know why they are correct. It covers the core data structures (arrays, lists, hash tables, trees, graphs), recursion, and big-O analysis, which is the standard way to describe how an algorithm's cost grows with input size. Just as important are the working habits: a debugging method that isolates causes instead of guessing, tests that pin behavior down, and version control to track and share changes. Everything else in software builds on this node.",
+   "proficiency": [
+    "Implement the standard data structures (dynamic array, linked list, hash table, binary search tree, heap) from scratch and state the big-O cost of each operation",
+    "Choose the right data structure for a stated problem and defend the choice with complexity and memory arguments",
+    "Write and reason about recursive solutions, including base cases, and convert between recursive and iterative forms",
+    "Debug a failing program by forming a hypothesis, bisecting the cause with print statements or a debugger, and confirming the fix with a test",
+    "Write unit tests that cover normal cases, edge cases, and error paths for code they have written",
+    "Use Git for daily work, committing in coherent units, writing useful messages, branching, merging, and recovering from mistakes"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Cormen, Leiserson, Rivest & Stein, Introduction to Algorithms"
+   ],
+   "classes": [
+    {
+     "id": "CS 106B",
+     "title": "Programming Abstractions",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "proof-writing",
+   "title": "Mathematical Proof Writing",
+   "branch": "math",
+   "layer": 0,
+   "prereqs": [],
+   "overview": "Proof writing is the craft of reading and producing airtight mathematical arguments: statements justified step by step from definitions and prior results, with no gaps. Core techniques include induction (proving a claim for all whole numbers by a base case and a stepping rule), contradiction (assuming the opposite and deriving an impossibility), epsilon-delta arguments (making \"arbitrarily close\" precise), and careful handling of quantifiers such as \"for all\" and \"there exists\". It is the entry point to all rigorous mathematics, including real analysis and discrete math.",
+   "proficiency": [
+    "Prove statements about integers and sequences by ordinary and strong induction, stating the induction hypothesis explicitly",
+    "Construct proofs by contradiction and by contrapositive, and identify which framing a given claim favors",
+    "Write a correct epsilon-delta proof that a specific limit holds",
+    "Negate a nested quantified statement correctly and use the negation to structure a disproof or counterexample",
+    "Diagnose the flaw in a plausible but invalid proof, such as a circular argument or an unjustified quantifier swap",
+    "Translate an informal claim into precise notation with all variables quantified and all terms defined"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Velleman, How to Prove It"
+   ],
+   "classes": [
+    {
+     "id": "MATH 61CM",
+     "title": "Modern Mathematics: Continuous Methods",
+     "depth": "teaches"
+    },
+    {
+     "id": "CS 103",
+     "title": "Mathematical Foundations of Computing",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "pytorch-engineering",
+   "title": "PyTorch Engineering",
+   "branch": "cs-ml",
+   "layer": 5,
+   "prereqs": [
+    "deep-learning",
+    "programming-fundamentals"
+   ],
+   "overview": "PyTorch is the dominant library for building and training neural networks in research. This skill is engineering fluency in it: using autograd (the automatic differentiation engine that records operations and computes gradients), writing custom modules and losses, building data pipelines that keep the GPU fed, and using the standard performance tools, mixed precision (computing in lower-precision floats for speed) and distributed data parallel (DDP, replicating the model across GPUs and averaging gradients). It also includes the unglamorous daily work of debugging shape errors and hunting NaNs (not-a-number values that poison training).",
+   "proficiency": [
+    "Implement a custom nn.Module and loss function with correct autograd behavior, and explain when and why to use detach, no_grad, or a custom backward",
+    "Build a Dataset/DataLoader pipeline with workers, batching, and augmentation that keeps GPU utilization high, and prove it with a profiler trace",
+    "Track a NaN or inf in training to its source using hooks, anomaly detection, and bisection of the model and data",
+    "Debug shape and dtype errors systematically from tensor shapes at each boundary rather than trial-and-error reshaping",
+    "Convert a training loop to mixed precision with gradient scaling and verify both the speedup and unchanged convergence",
+    "Scale a training run across multiple GPUs with distributed data parallel, handling seeding, samplers, and checkpointing correctly"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [],
+   "classes": [
+    {
+     "id": "CS 230",
+     "title": "Deep Learning",
+     "depth": "touches"
+    },
+    {
+     "id": "CS 231N",
+     "title": "Deep Learning for Computer Vision",
+     "depth": "touches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "quality-and-test",
+   "title": "Quality Engineering & Test",
+   "branch": "supply-chain",
+   "layer": 4,
+   "prereqs": [
+    "statistical-inference"
+   ],
+   "overview": "Keeping a manufactured product inside spec using statistics. Statistical process control (SPC) watches a line's drift, capability indices quantify margin, and reliability testing (accelerated life, HALT/HASS) predicts field failures before customers find them.",
+   "proficiency": [
+    "Set up an SPC control chart and act correctly on out-of-control signals",
+    "Compute process capability (Cpk) and translate it into an expected defect rate",
+    "Design an accelerated life test and defend the acceleration model",
+    "Run a root-cause investigation (8D, fishbone) that ends in a verified fix"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": "Statistics classes teach the math; applying it to a real line is industry work."
+   },
+   "resources": [],
+   "classes": [],
+   "demos": []
+  },
+  {
+   "id": "quantum-information",
+   "title": "Quantum Information & Computing",
+   "branch": "physics",
+   "layer": 4,
+   "prereqs": [
+    "quantum-mechanics"
+   ],
+   "overview": "Quantum information studies computation and communication using quantum systems. The basic unit is the qubit, a two-level quantum system that can exist in superpositions of 0 and 1, and computations are sequences of quantum gates acting on entangled qubits. The field covers what quantum computers can do faster than classical ones, and why decoherence, the loss of quantum behavior through environmental interaction, makes building them hard. It is a specialized topic sitting at the intersection of physics, computer science, and a growing hardware industry.",
+   "proficiency": [
+    "Compute the action of standard gates (Hadamard, CNOT, Pauli, phase) on multi-qubit states, by hand for small circuits.",
+    "Determine whether a given two-qubit state is entangled and compute measurement statistics for each party.",
+    "Trace through Deutsch-Jozsa and Grover's algorithm on small instances and state where the quantum speedup comes from.",
+    "Explain the quantum no-cloning theorem and derive it from linearity.",
+    "Describe how a simple error-correcting code (the three-qubit bit-flip code) detects and corrects an error without measuring the encoded state."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Nielsen & Chuang, Quantum Computation and Quantum Information"
+   ],
+   "classes": [
+    {
+     "id": "APPPHYS 227",
+     "title": "Quantum Information and Measurement",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "quantum-mechanics",
+   "title": "Quantum Mechanics",
+   "branch": "physics",
+   "layer": 3,
+   "prereqs": [
+    "linear-algebra",
+    "waves-optics"
+   ],
+   "overview": "Quantum mechanics is the physics of atoms, electrons, and light at the smallest scales, where outcomes are probabilistic and states are described by wavefunctions. Its mathematics is linear algebra: states are vectors, measurable quantities are operators, and the Schrodinger equation governs how states evolve in time. It is the foundation for semiconductors, lasers, chemistry, and quantum computing, and it is a required core subject for any physics-adjacent engineering path.",
+   "proficiency": [
+    "Solve the Schrodinger equation for standard potentials (infinite well, harmonic oscillator, hydrogen atom) and interpret the resulting energy levels.",
+    "Compute measurement probabilities and expectation values from a given quantum state using the operator formalism.",
+    "Manipulate spin-1/2 systems with Pauli matrices, including computing outcomes of sequential spin measurements.",
+    "Apply time-independent perturbation theory to compute first-order corrections to energies and states.",
+    "Compute commutators and use them to determine which observables can be simultaneously known, deriving uncertainty relations."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Griffiths, Introduction to Quantum Mechanics"
+   ],
+   "classes": [
+    {
+     "id": "PHYSICS 70",
+     "title": "Foundations of Modern Physics",
+     "depth": "touches"
+    },
+    {
+     "id": "PHYSICS 130",
+     "title": "Quantum Mechanics I",
+     "depth": "teaches"
+    },
+    {
+     "id": "PHYSICS 131",
+     "title": "Quantum Mechanics II",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "real-analysis",
+   "title": "Real Analysis",
+   "branch": "math",
+   "layer": 1,
+   "prereqs": [
+    "proof-writing",
+    "calculus"
+   ],
+   "overview": "Real analysis is calculus rebuilt on rigorous foundations. It proves, rather than assumes, when limits exist, when functions are continuous, when sequences and series converge, and when the informal moves of calculus, such as swapping a limit with an integral, are actually valid. The key new idea is uniform convergence, a stronger notion of \"functions approaching a limit\" that makes those swaps legal. It is a specialized skill for most engineers but essential for anyone doing theoretical work in optimization, probability, or numerical analysis.",
+   "proficiency": [
+    "Prove convergence or divergence of a given sequence or series directly from the epsilon-N definition",
+    "Prove a function continuous or uniformly continuous from the definition, and exhibit counterexamples separating the two notions",
+    "State and apply the completeness axiom, Bolzano-Weierstrass, and the intermediate and extreme value theorems in proofs",
+    "Determine whether a sequence of functions converges pointwise or uniformly and prove which limit-swapping operations are justified",
+    "Prove a bounded function Riemann integrable or not using upper and lower sums",
+    "Derive the standard theorems of calculus, such as the mean value theorem and the fundamental theorem of calculus, from first principles"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Rudin, Principles of Mathematical Analysis"
+   ],
+   "classes": [
+    {
+     "id": "MATH 61CM",
+     "title": "Modern Mathematics: Continuous Methods",
+     "depth": "touches"
+    },
+    {
+     "id": "MATH 115",
+     "title": "Functions of a Real Variable",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "reinforcement-learning",
+   "title": "Reinforcement Learning",
+   "branch": "cs-ml",
+   "layer": 4,
+   "prereqs": [
+    "ml-foundations"
+   ],
+   "overview": "Reinforcement learning (RL) is learning to act: an agent takes actions in an environment, receives rewards, and improves its policy to maximize long-term reward. The formalism is the MDP (Markov decision process), which defines states, actions, transitions, and rewards. The two main solution families are value methods, which estimate how good states and actions are, and policy gradients, which adjust the policy directly; actor-critic methods combine both. RL is distinctively fragile in practice, so the skill includes exploration strategy and reward design, where most real failures originate.",
+   "proficiency": [
+    "Formalize a stated problem as an MDP, defining state, action, reward, and discount, and identify where the Markov assumption is violated",
+    "Implement tabular Q-learning and value iteration from scratch and verify convergence on a small environment",
+    "Derive the policy gradient theorem's estimator (REINFORCE) and explain how a baseline reduces variance without adding bias",
+    "Implement an actor-critic algorithm (e.g. PPO, proximal policy optimization) and get it to solve a standard continuous-control benchmark",
+    "Debug a failing RL run by separating environment bugs, reward bugs, and learning bugs, using diagnostics like value estimates and entropy curves",
+    "Predict how a proposed reward function can be gamed, produce a concrete reward-hacking scenario for it, and redesign the reward to close it"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Sutton & Barto, Reinforcement Learning: An Introduction"
+   ],
+   "classes": [
+    {
+     "id": "CS 224R",
+     "title": "Deep Reinforcement Learning",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "robot-learning",
+   "title": "Robot Learning & VLA Models",
+   "branch": "robotics",
+   "layer": 6,
+   "prereqs": [
+    "reinforcement-learning",
+    "computer-vision",
+    "classical-robotics"
+   ],
+   "overview": "Robot learning replaces hand-written robot behavior with learned policies. The main routes are imitation learning, training on demonstrations, and VLA (vision-language-action) models, large networks that take camera images and a language instruction and output robot actions, exemplified by pi0-class architectures. World models, networks that predict how the environment evolves, support planning and simulation-based training. Like language models, robot policies are now built in stages, pre-training on broad data, mid-training on robot-relevant data, and post-training on the target task. This is a frontier node that assumes RL, vision, and classical robotics.",
+   "proficiency": [
+    "Implement behavior cloning on a demonstration dataset and diagnose compounding-error failures, applying a fix such as DAgger (dataset aggregation)",
+    "Fine-tune a pretrained VLA model on a new task's demonstrations and evaluate success rate on the real or simulated robot honestly, with held-out conditions",
+    "Explain how a pi0-class architecture connects a vision-language backbone to continuous action output, including the action-generation head",
+    "Train or adapt a world model on interaction data and demonstrate it supports rollout prediction or policy improvement",
+    "Design the data mix and evaluation protocol for a pre/mid/post-training pipeline for a robot policy, and justify each stage's data",
+    "Take a policy from simulation to hardware, identifying the sim-to-real gaps (dynamics, perception, latency) and measuring the transfer loss"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": "Moves fast; papers and lab work over any class."
+   },
+   "resources": [
+    "Black et al., pi0: A Vision-Language-Action Flow Model for General Robot Control (2024)",
+    "Chi et al., Diffusion Policy: Visuomotor Policy Learning via Action Diffusion (2023)",
+    "Brohan et al., RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control (2023)",
+    "Ha & Schmidhuber, World Models (2018)"
+   ],
+   "classes": [],
+   "demos": []
+  },
+  {
+   "id": "rtl-design",
+   "title": "RTL Design (Verilog/FPGA)",
+   "branch": "ee-digital",
+   "layer": 1,
+   "prereqs": [
+    "digital-logic",
+    "programming-fundamentals"
+   ],
+   "overview": "Register-transfer level (RTL) design means describing hardware as data moving between registers on each clock edge, written in a hardware description language such as SystemVerilog. The text looks like code but describes parallel circuits, not sequential instructions, so the core skill is thinking in terms of what circuit the synthesis tool will build. An FPGA (field-programmable gate array) is a reconfigurable chip that lets you deploy and test RTL without fabricating silicon. This skill is the working language of digital hardware engineering, one level above raw gates.",
+   "proficiency": [
+    "Write synthesizable SystemVerilog for a pipelined datapath and state machine, and predict the registers and logic the synthesis tool will infer",
+    "Identify and fix common RTL bugs such as unintended latches, blocking versus nonblocking assignment misuse, and incomplete sensitivity",
+    "Pipeline a combinational design to meet a target clock frequency and reason about the latency and throughput tradeoff",
+    "Safely move a signal between two clock domains using synchronizers or an asynchronous FIFO (first-in first-out buffer), and explain metastability",
+    "Bring a design up on a physical FPGA board, including pin constraints, timing constraints, and on-chip debug"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Harris & Harris, Digital Design and Computer Architecture"
+   ],
+   "classes": [
+    {
+     "id": "EE 108",
+     "title": "Digital System Design",
+     "depth": "teaches"
+    }
+   ],
+   "demos": [
+    {
+     "space": "lab64",
+     "note": "Deploy a SystemVerilog design to an FPGA dev board."
+    }
+   ]
+  },
+  {
+   "id": "semiconductor-devices",
+   "title": "Semiconductor Devices",
+   "branch": "ee-circuits",
+   "layer": 5,
+   "prereqs": [
+    "solid-state-physics",
+    "circuit-analysis"
+   ],
+   "overview": "Semiconductor device physics explains how transistors and diodes actually work, starting from how electrons behave in silicon. The central objects are the pn junction, the boundary between differently doped regions that makes a diode, and the MOSFET (metal-oxide-semiconductor field-effect transistor), the switch that all modern chips are built from. The subject connects circuit-level component models to the physics underneath them. It is specialized: circuit designers can treat devices as black boxes, but chip design, device engineering, and fabrication all require this layer.",
+   "proficiency": [
+    "Can derive the diode current-voltage characteristic from pn junction physics and explain depletion width and junction capacitance dependence on bias.",
+    "Can identify a MOSFET's operating region (cutoff, triode, saturation) from terminal voltages and apply the correct current equation in each.",
+    "Can connect datasheet parameters (threshold voltage, on-resistance, gate charge, junction capacitances) to the physical device features that set them.",
+    "Can explain how scaling device dimensions changes speed, power, and leakage, including short-channel effects that break the simple equations.",
+    "Can extract device parameters such as threshold voltage and mobility from measured current-voltage curves."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Sedra & Smith, Microelectronic Circuits",
+    "Pierret, Semiconductor Device Fundamentals"
+   ],
+   "classes": [
+    {
+     "id": "EE 116",
+     "title": "Semiconductor Device Physics",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "signal-processing",
+   "title": "Signals & Systems",
+   "branch": "ee-circuits",
+   "layer": 2,
+   "prereqs": [
+    "differential-equations",
+    "linear-algebra"
+   ],
+   "overview": "Signals and systems is the mathematical theory of how systems transform signals over time, built around linear time-invariant (LTI) systems, ones whose behavior does not change over time and scales linearly with input. Its central tools are convolution and the Fourier, Laplace, and z-transforms, which convert hard time-domain problems into simple frequency-domain algebra. It is a foundational theory course that underpins control systems, digital signal processing, communications, and much of modern measurement.",
+   "proficiency": [
+    "Can compute the output of an LTI system by convolving the input with the impulse response, in both continuous and discrete time.",
+    "Can compute Fourier series and transforms of standard signals and use their properties (shifting, scaling, duality) instead of brute-force integration.",
+    "Can use the Laplace transform to solve linear differential equations and read stability off pole locations.",
+    "Can state and apply the Nyquist-Shannon sampling theorem, predict aliasing for a given signal and sample rate, and specify the required anti-aliasing filter.",
+    "Can analyze discrete-time systems with the z-transform and design a simple FIR or IIR digital filter to a magnitude specification, verifying it in Python or MATLAB."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Oppenheim & Willsky, Signals and Systems"
+   ],
+   "classes": [
+    {
+     "id": "EE 102A",
+     "title": "Signal Processing and Linear Systems I",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "solid-state-physics",
+   "title": "Solid-State Physics",
+   "branch": "physics",
+   "layer": 4,
+   "prereqs": [
+    "quantum-mechanics",
+    "statistical-mechanics"
+   ],
+   "overview": "Solid-state physics applies quantum and statistical mechanics to crystalline solids: how atoms arrange into lattices, how electrons moving through a lattice form energy bands, and how those bands make a material a metal, an insulator, or a semiconductor. It also covers phonons, the quantized vibrations of the lattice. It is the specialized subject that explains why transistors, diodes, and solar cells work, making it the physics backbone of the semiconductor industry.",
+   "proficiency": [
+    "Classify crystal structures by lattice and basis, and compute the reciprocal lattice used to interpret X-ray diffraction.",
+    "Derive the band structure of a one-dimensional lattice using the nearly-free-electron or tight-binding model and identify band gaps.",
+    "Compute carrier concentrations in doped semiconductors as a function of temperature and doping level.",
+    "Explain the operation of a p-n junction diode from band bending and carrier diffusion, and sketch its current-voltage curve.",
+    "Compute the phonon contribution to heat capacity using the Debye model."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": "Classes cover theory; device intuition builds in fab or device-engineering work."
+   },
+   "resources": [
+    "Kittel, Introduction to Solid State Physics"
+   ],
+   "classes": [
+    {
+     "id": "PHYSICS 172",
+     "title": "Solid State Physics",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "sourcing-logistics",
+   "title": "Sourcing & Supply Chain Logistics",
+   "branch": "supply-chain",
+   "layer": 0,
+   "prereqs": [],
+   "overview": "Getting the right parts to the right factory at the right time and cost. Covers bill of materials (BOM) management, vendor selection and audits, lead times, second-sourcing against shortages, and landed-cost thinking (tariffs, freight, inventory carrying cost).",
+   "proficiency": [
+    "Build and cost a BOM, flagging single-sourced and long-lead-time parts",
+    "Qualify a second source for a critical component and define the switch criteria",
+    "Negotiate price breaks against volume commitments without stranding inventory",
+    "Trace a line-down event to its supply cause and build the buffer that prevents recurrence"
+   ],
+   "acquisition": {
+    "on_the_job_only": true,
+    "notes": "Operations classes gesture at it; the skill is built inside a real supply chain."
+   },
+   "resources": [],
+   "classes": [],
+   "demos": []
+  },
+  {
+   "id": "special-relativity",
+   "title": "Special Relativity",
+   "branch": "physics",
+   "layer": 2,
+   "prereqs": [
+    "mechanics"
+   ],
+   "overview": "Special relativity is Einstein's theory of how space and time measurements change between observers moving at constant speed relative to each other. It replaces absolute time with a unified spacetime, described by Lorentz transformations, and reworks momentum and energy so they stay consistent near the speed of light. It is a compact, self-contained subject that every later topic in particle physics, accelerator design, and satellite timing depends on.",
+   "proficiency": [
+    "Apply Lorentz transformations to convert positions and times between reference frames and compute time dilation and length contraction.",
+    "Resolve standard paradoxes (twin, pole-in-barn) quantitatively using relativity of simultaneity.",
+    "Compute with 4-vectors, using the invariant interval and invariant mass to simplify problems.",
+    "Solve relativistic collision and decay problems using conservation of energy-momentum.",
+    "Derive the velocity addition formula and apply it to compound motion."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Morin, Special Relativity: For the Enthusiastic Beginner"
+   ],
+   "classes": [
+    {
+     "id": "PHYSICS 70",
+     "title": "Foundations of Modern Physics",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "state-estimation",
+   "title": "State Estimation & Filtering",
+   "branch": "robotics",
+   "layer": 3,
+   "prereqs": [
+    "probability-theory",
+    "linear-algebra"
+   ],
+   "overview": "Inferring what a system is actually doing from noisy sensors. The Kalman filter is the exact answer for linear systems with Gaussian noise; extended and unscented variants, particle filters, and factor graphs handle the rest. Every robot, rocket, and tracking detector runs one of these in its core loop.",
+   "proficiency": [
+    "Derive the Kalman filter predict and update equations from Bayesian first principles",
+    "Implement an EKF for a nonlinear system and diagnose divergence from bad linearization",
+    "Tune process and measurement noise covariances from data rather than folklore",
+    "Fuse IMU, odometry, and vision measurements at different rates into one state estimate"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Thrun, Burgard & Fox, Probabilistic Robotics"
+   ],
+   "classes": [],
+   "demos": []
+  },
+  {
+   "id": "statics-strength",
+   "title": "Statics & Strength of Materials",
+   "branch": "meche",
+   "layer": 2,
+   "prereqs": [
+    "mechanics"
+   ],
+   "overview": "Statics is the analysis of structures that are not accelerating: given the loads on a bracket, truss, or frame, find the forces inside every member. Strength of materials extends this to ask whether each member survives, using stress (force per unit area) and strain (fractional deformation) to predict bending, buckling, and failure. Together they are the core analytical toolkit of structural mechanical design. Any time an engineer claims a part will not break, this is the math behind the claim.",
+   "proficiency": [
+    "Can draw a correct free-body diagram for a multi-body system, including reaction forces at pins, rollers, and fixed supports.",
+    "Can solve truss member forces by the method of joints or sections and identify zero-force members by inspection.",
+    "Can compute axial, bending, and shear stresses in a loaded beam, including drawing shear and moment diagrams.",
+    "Can size a beam or column against yielding and against Euler buckling, and state which governs.",
+    "Can apply a failure criterion (von Mises for ductile metals, maximum normal stress for brittle materials) and choose a defensible factor of safety.",
+    "Can predict deflection of a cantilever or simply supported beam and verify it against a hand formula or measurement."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Hibbeler, Mechanics of Materials"
+   ],
+   "classes": [
+    {
+     "id": "ME 80",
+     "title": "Mechanics of Materials",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "statistical-inference",
+   "title": "Statistical Inference",
+   "branch": "math",
+   "layer": 3,
+   "prereqs": [
+    "probability-theory"
+   ],
+   "overview": "Statistical inference is the discipline of drawing conclusions about a population or process from limited data. It covers estimators (rules for guessing unknown quantities), the bias-variance tradeoff, confidence intervals (ranges that quantify estimate uncertainty), hypothesis tests (procedures for deciding whether an effect is real), maximum likelihood (the standard recipe for fitting models to data), and the basics of Bayesian inference, which treats unknowns as having probability distributions. It is the core skill for interpreting experiments and validating models in any engineering field.",
+   "proficiency": [
+    "Derive the maximum likelihood estimator for a parameter of a standard distribution and check it against method-of-moments",
+    "Compute the bias, variance, and mean squared error of a given estimator and compare competing estimators",
+    "Construct and correctly interpret a confidence interval, including stating what the confidence level does and does not mean",
+    "Design and execute a hypothesis test, choosing the test statistic, computing the p-value, and stating type I and type II error rates",
+    "Perform a basic Bayesian update from a prior and a likelihood to a posterior, and contrast the conclusion with the frequentist one",
+    "Diagnose common inference failures in a reported analysis, such as multiple comparisons, underpowered tests, or confusing significance with effect size"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Casella & Berger, Statistical Inference"
+   ],
+   "classes": [
+    {
+     "id": "STATS 118",
+     "title": "Probability Theory and Applications",
+     "depth": "touches"
+    },
+    {
+     "id": "STATS 200",
+     "title": "Introduction to Statistical Inference",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "statistical-mechanics",
+   "title": "Statistical Mechanics",
+   "branch": "physics",
+   "layer": 3,
+   "prereqs": [
+    "mechanics",
+    "probability-theory"
+   ],
+   "overview": "Statistical mechanics explains the behavior of large collections of particles (gases, solids, electrons in metals) from the statistics of their microscopic states. Its central tool is the partition function, a sum over states from which temperature-dependent properties like energy, pressure, and entropy follow. It is the bridge between microscopic physics and thermodynamics, and it underlies noise in electronics, chemical reaction rates, and the physics of information.",
+   "proficiency": [
+    "Compute partition functions for simple systems (two-level systems, ideal gases, harmonic oscillators) and derive energy, entropy, and heat capacity from them.",
+    "Choose the correct ensemble (microcanonical, canonical, grand canonical) for a problem and justify the choice.",
+    "Derive the Boltzmann distribution and apply it to compute occupation probabilities at a given temperature.",
+    "Apply Fermi-Dirac and Bose-Einstein statistics to compute properties of electron gases and photon gases.",
+    "Compute entropy from counting microstates and connect it to the thermodynamic definition."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Schroeder, An Introduction to Thermal Physics"
+   ],
+   "classes": [
+    {
+     "id": "PHYSICS 170",
+     "title": "Statistical Mechanics and Thermodynamics I",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "synthetic-biology",
+   "title": "Synthetic Biology",
+   "branch": "bio-chem",
+   "layer": 3,
+   "prereqs": [
+    "biochemistry"
+   ],
+   "overview": "Synthetic biology is the engineering of living cells: designing genetic circuits (networks of genes that switch each other on and off), assembling the DNA that encodes them, inserting it into cells through cloning workflows, and measuring whether the circuit behaves as designed. It treats DNA sequences as composable parts, the way electronics treats components. It is a specialized applied field built directly on biochemistry and molecular biology.",
+   "proficiency": [
+    "Design a genetic circuit (such as a toggle switch or inducible reporter) by choosing promoters, ribosome binding sites, and coding sequences with compatible parts.",
+    {
+     "Plan and execute a cloning workflow": "design primers, amplify fragments by polymerase chain reaction (PCR), assemble them with a method such as Gibson assembly, and verify by sequencing."
+    },
+    "Transform assembled DNA into bacterial cells and select correct clones using antibiotic markers and screening.",
+    "Characterize a circuit's behavior with fluorescence measurements, producing dose-response curves with appropriate controls.",
+    "Diagnose a failed construct by isolating whether the fault is in design, assembly, transformation, or measurement."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": "Lab technique matures in a research lab, not lecture."
+   },
+   "resources": [],
+   "classes": [
+    {
+     "id": "BIOE 80",
+     "title": "Introduction to Bioengineering",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "systems-programming",
+   "title": "Systems Programming in C",
+   "branch": "cs-systems",
+   "layer": 1,
+   "prereqs": [
+    "programming-fundamentals"
+   ],
+   "overview": "Systems programming in C means working at the level where the machine stops being abstract: pointers are addresses, memory is a flat array of bytes you manage yourself with malloc and free, and the stack and heap are real regions with real rules. It also covers undefined behavior, the class of C programs the language standard makes no promises about, and the path from source code through compilation to a running process. This node is the gate to operating systems, embedded work, performance engineering, and computer architecture, because all of them assume you can read memory diagrams fluently.",
+   "proficiency": [
+    "Write correct C using pointers, pointer arithmetic, structs, and dynamic allocation, with no leaks or invalid frees under a checker such as Valgrind or AddressSanitizer",
+    "Draw the memory layout of a running process (text, data, heap, stack) and locate any given variable in it",
+    "Identify undefined behavior in a code sample (out-of-bounds access, use-after-free, signed overflow, strict aliasing) and explain what the compiler is allowed to do",
+    "Implement bit-manipulation routines (masking, shifting, packing fields) and explain two's complement and floating-point representation at the bit level",
+    "Explain what happens between typing ./a.out and main() running, including loading, and use a debugger such as GDB to inspect a crashed process"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Bryant & O'Hallaron, Computer Systems: A Programmer's Perspective",
+    "Kernighan & Ritchie, The C Programming Language"
+   ],
+   "classes": [
+    {
+     "id": "CS 107",
+     "title": "Computer Organization and Systems",
+     "depth": "teaches"
+    },
+    {
+     "id": "CS 107E",
+     "title": "Computer Systems from the Ground Up",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "thermal-management",
+   "title": "Thermal Management & Cooling",
+   "branch": "meche",
+   "layer": 3,
+   "prereqs": [
+    "thermodynamics",
+    "fluid-dynamics"
+   ],
+   "overview": "Thermal management is the applied discipline of keeping things at an acceptable temperature, most often electronics. Heat moves by conduction (through solids), convection (carried by moving fluid), and radiation, and the engineer's job is to budget these paths so a chip, motor, or battery stays below its limit. It sits at the junction of thermodynamics, fluid dynamics, and electronics, and it decides whether a product needs a heat sink, a fan, or a redesign. Underestimating it is a classic way hardware products fail in the field.",
+   "proficiency": [
+    "Can build a thermal resistance network from junction to ambient and compute steady-state junction temperature for a power device from datasheet values.",
+    "Can size a heat sink for a given power dissipation and airflow, and decide between natural and forced convection with supporting numbers.",
+    "Can select a fan by reading its pressure-flow curve against the system's flow impedance.",
+    "Can choose a thermal interface material (pad, paste, epoxy) and account for its resistance in the budget.",
+    "Can estimate radiation heat transfer and state when it matters (vacuum, sealed enclosures, high temperatures) versus when it is negligible.",
+    "Can instrument a prototype with thermocouples or a thermal camera and reconcile measured temperatures with the predicted budget."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": "Taught piecemeal; real proficiency comes from thermal design on a product."
+   },
+   "resources": [
+    "Incropera & DeWitt, Fundamentals of Heat and Mass Transfer"
+   ],
+   "classes": [],
+   "demos": []
+  },
+  {
+   "id": "thermodynamics",
+   "title": "Engineering Thermodynamics",
+   "branch": "meche",
+   "layer": 2,
+   "prereqs": [
+    "mechanics"
+   ],
+   "overview": "Thermodynamics is the physics of energy, heat, and work: what the laws of energy conservation and entropy permit, and what they forbid. In engineering it answers questions like how efficient an engine, refrigerator, or power plant can possibly be, and how much work a given heat flow can produce. It is a foundational course in the mechanical curriculum and the entry point to anything involving engines, HVAC (heating, ventilation, and air conditioning), propulsion, or energy systems.",
+   "proficiency": [
+    "Can apply the first law of thermodynamics to closed and open (control volume) systems, including turbines, compressors, and heat exchangers.",
+    "Can use property tables and charts for steam and refrigerants to find state properties at each point of a cycle.",
+    "Can analyze the Rankine, Brayton, Otto, and vapor-compression refrigeration cycles and compute their thermal efficiency or coefficient of performance.",
+    "Can compute the Carnot limit for a process between two temperatures and explain why no real device beats it.",
+    "Can use entropy balances to identify where a real system loses available work relative to the ideal."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Cengel & Boles, Thermodynamics: An Engineering Approach"
+   ],
+   "classes": [
+    {
+     "id": "PHYSICS 45",
+     "title": "Light and Heat",
+     "depth": "touches"
+    },
+    {
+     "id": "ME 30",
+     "title": "Engineering Thermodynamics",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  },
+  {
+   "id": "transformer-architectures",
+   "title": "Transformer Architectures",
+   "branch": "cs-ml",
+   "layer": 5,
+   "prereqs": [
+    "deep-learning"
+   ],
+   "overview": "The transformer is the neural network architecture behind modern language models and much of vision. Its core operation is scaled dot-product attention (SDPA), which lets every position in a sequence gather information from every other position, weighted by learned relevance. Around that sit multi-head attention (several attention operations in parallel), positional encodings (since attention alone is order-blind), and two family layouts, encoder-decoder (for input-to-output mapping like translation) and decoder-only (for next-token generation like GPT-style models). The KV cache (storing past keys and values so generation does not recompute them) is the central inference-time mechanism.",
+   "proficiency": [
+    "Implement scaled dot-product attention and multi-head attention from scratch, including masking, and match a reference implementation numerically",
+    "Implement a KV cache for autoregressive generation and show the resulting speedup and its memory cost as a function of sequence length",
+    "Explain and implement at least two positional encoding schemes (e.g. sinusoidal, rotary) and state what breaks without one",
+    "Choose between encoder-decoder and decoder-only layouts for a stated task and justify the choice with the attention masking each implies",
+    "Compute the parameter count, FLOPs, and attention memory of a transformer configuration by hand, and explain why naive attention is quadratic in sequence length",
+    "Explain how flash attention reorders the computation to avoid materializing the full attention matrix, and when it changes what is feasible"
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [
+    "Vaswani et al., Attention Is All You Need"
+   ],
+   "classes": [],
+   "demos": []
+  },
+  {
+   "id": "waves-optics",
+   "title": "Waves & Optics",
+   "branch": "physics",
+   "layer": 2,
+   "prereqs": [
+    "mechanics",
+    "differential-equations"
+   ],
+   "overview": "Waves and optics studies how disturbances travel through space: vibrations on strings, sound, and light. It covers coupled oscillators, the wave equation, interference and diffraction (how waves combine and bend around obstacles), lens-based optics, and Fourier decomposition, which breaks any signal into simple sine waves. It is a core mid-level physics subject and the shared language behind signal processing, imaging, acoustics, and photonics.",
+   "proficiency": [
+    "Derive the wave equation for a stretched string and solve it for standing and traveling waves with given boundary conditions.",
+    "Compute normal modes and frequencies of coupled oscillator systems.",
+    "Predict interference and diffraction patterns for double slits, gratings, and single apertures, including fringe positions and intensities.",
+    "Trace rays through lens and mirror systems to locate images and compute magnification.",
+    "Decompose a periodic signal into its Fourier series and interpret the spectrum."
+   ],
+   "acquisition": {
+    "on_the_job_only": false,
+    "notes": ""
+   },
+   "resources": [],
+   "classes": [
+    {
+     "id": "PHYSICS 45",
+     "title": "Light and Heat",
+     "depth": "teaches"
+    }
+   ],
+   "demos": []
+  }
+ ],
+ "majors": [
+  {
+   "id": "engineering-physics",
+   "name": "Engineering Physics (BS)",
+   "sequence": [
+    {
+     "year": 1,
+     "classes": [
+      "MATH 51",
+      "MATH 52",
+      "MATH 53",
+      "PHYSICS 41",
+      "PHYSICS 43",
+      "CS 106B",
+      "CHEM 31"
+     ]
+    },
+    {
+     "year": 2,
+     "classes": [
+      "PHYSICS 45",
+      "PHYSICS 70",
+      "PHYSICS 110",
+      "MATH 131P",
+      "ENGR 40M",
+      "CS 107"
+     ]
+    },
+    {
+     "year": 3,
+     "classes": [
+      "PHYSICS 120",
+      "PHYSICS 130",
+      "PHYSICS 170",
+      "EE 101A",
+      "MATH 151",
+      "ENGR 105"
+     ]
+    },
+    {
+     "year": 4,
+     "classes": [
+      "PHYSICS 131",
+      "PHYSICS 121",
+      "EE 116",
+      "PHYSICS 172",
+      "STATS 200"
+     ]
+    }
+   ]
+  }
+ ],
+ "makerspaces": [
+  {
+   "id": "prl",
+   "name": "Product Realization Lab (PRL)",
+   "tools": [
+    "manual mills",
+    "lathes",
+    "CNC mills",
+    "waterjet",
+    "TIG/MIG welders",
+    "sheet-metal brake",
+    "FDM/SLA printers",
+    "laser cutters",
+    "composites layup"
+   ]
+  },
+  {
+   "id": "lab64",
+   "name": "Lab64 (EE Makerspace)",
+   "tools": [
+    "soldering stations",
+    "oscilloscopes",
+    "function generators",
+    "power supplies",
+    "PCB reflow oven",
+    "logic analyzers",
+    "FPGA dev boards",
+    "3D printers"
+   ]
+  }
+ ]
+}

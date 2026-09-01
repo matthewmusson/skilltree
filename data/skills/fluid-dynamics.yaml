@@ -1,0 +1,25 @@
+id: fluid-dynamics
+title: Fluid Dynamics
+branch: meche
+prereqs: [multivariable-calculus, mechanics]
+overview: >
+  Fluid dynamics is the study of how liquids and gases move and the forces
+  they exert. It covers everything from water in a pipe to air over a wing,
+  built on conservation of mass (continuity), energy (Bernoulli's equation),
+  and momentum (the Navier-Stokes equations). It is a core mechanical
+  engineering subject, required for aerodynamics, pumps and piping, cooling,
+  and propulsion. Much of the practical skill lies in dimensional analysis:
+  using dimensionless numbers like the Reynolds number to know which physical
+  effects dominate a given flow.
+proficiency:
+  - Can apply continuity and Bernoulli's equation to pipe and nozzle flows, and state when Bernoulli is invalid (viscous losses, unsteady flow, compressibility).
+  - Can compute the Reynolds number for a flow, classify it as laminar or turbulent, and predict pipe pressure drop using friction factor correlations or a Moody chart.
+  - Can estimate drag and lift on a body from published coefficients and explain how they vary with Reynolds number.
+  - Can explain each term of the Navier-Stokes equations physically and identify which terms drop out in common limiting cases.
+  - Can use dimensional analysis (Buckingham pi) to reduce an experimental problem to its dimensionless groups and design a scaled test.
+  - Can read a Computational Fluid Dynamics (CFD) result critically, checking mesh resolution near walls and mass conservation before believing the pretty picture.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "White, Fluid Mechanics"

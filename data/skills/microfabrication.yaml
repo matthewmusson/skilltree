@@ -1,0 +1,26 @@
+id: microfabrication
+title: Microfabrication & Cleanroom Processes
+branch: ee-circuits
+prereqs: [semiconductor-devices, materials-selection]
+overview: >
+  Microfabrication is the set of processes used to build chips and
+  microscale devices on silicon wafers inside a cleanroom, a filtered
+  environment where airborne dust is controlled because a single particle can
+  destroy a device. The core steps are photolithography (printing patterns
+  with light), deposition (adding thin films), etching (removing material
+  selectively), and doping (implanting impurities to change electrical
+  behavior), repeated in sequence as a process flow. It is a highly
+  specialized skill at the far end of the electronics branch, practiced in
+  university nanofabs and semiconductor industry fabs.
+proficiency:
+  - Can run a photolithography cycle end to end (spin coat, softbake, expose, develop) and hit a target feature size on a test pattern.
+  - Can select and run a deposition method (thermal or e-beam evaporation, sputtering, chemical vapor deposition) appropriate to the film and step coverage required.
+  - Can choose between wet and plasma etching for a given film, considering selectivity and isotropy, and stop an etch at the intended layer.
+  - Can design a multi-step process flow with correct step ordering, mask alignment strategy, and thermal budget constraints.
+  - Can characterize results with cleanroom metrology (profilometer, ellipsometer, optical and electron microscopy) and diagnose a failed run from the measurements.
+  - Can follow cleanroom protocol, including gowning, chemical handling for acids and solvents, and tool qualification procedures.
+acquisition:
+  on_the_job_only: false
+  notes: "Requires cleanroom access (e.g. a university nanofab); lecture alone does not confer the skill."
+resources:
+  - "Campbell, Fabrication Engineering at the Micro- and Nanoscale"

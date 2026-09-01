@@ -1,0 +1,25 @@
+id: pdes
+title: Partial Differential Equations
+branch: math
+prereqs: [differential-equations, multivariable-calculus]
+overview: >
+  A partial differential equation (PDE) relates a function of several variables,
+  such as temperature over space and time, to its partial derivatives. The
+  classic examples are the heat equation (diffusion), the wave equation
+  (vibration and propagation), and Laplace's equation (steady states). The
+  skill covers solving these by separation of variables and Fourier methods
+  (building solutions from sums of sines and cosines) and handling boundary
+  conditions, the constraints imposed at the edges of the domain. It feeds
+  electromagnetism, fluid mechanics, heat transfer, and finite element
+  analysis (FEA), the standard computational method for structures.
+proficiency:
+  - Classify a second-order linear PDE as elliptic, parabolic, or hyperbolic and state what that implies about its behavior
+  - Solve the heat, wave, and Laplace equations on simple domains by separation of variables
+  - Compute the Fourier series of a given function and use it to satisfy initial and boundary conditions
+  - Choose and justify boundary condition types, such as fixed-value versus fixed-flux, from the physics of a problem
+  - Derive a PDE from a conservation law, such as energy balance yielding the heat equation
+  - Use d'Alembert's solution to analyze wave propagation and reflection on a line
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources: []

@@ -1,0 +1,25 @@
+id: materials-selection
+title: Materials Science & Selection
+branch: meche
+prereqs: [general-chemistry, statics-strength]
+overview: >
+  Materials science explains why metals, polymers, ceramics, and composites
+  behave differently, from their internal structure up to bulk properties like
+  stiffness, strength, and toughness. Materials selection is the engineering
+  application: choosing the material for a part given its loads, environment,
+  weight budget, and cost. It is a foundational subject that quietly underlies
+  every mechanical design decision, since the best geometry in the wrong
+  material still fails.
+proficiency:
+  - Can distinguish stiffness, yield strength, ultimate strength, toughness, and hardness, and read all of them off a stress-strain curve.
+  - Can use Ashby charts to shortlist materials for a constraint like maximum stiffness per unit mass, and defend the shortlist.
+  - Can estimate fatigue life for a cyclically loaded metal part using an S-N curve and explain why fatigue kills parts loaded far below yield.
+  - Can compare common engineering materials (6061 aluminum, mild and alloy steels, ABS, nylon, carbon fiber composite) on strength, stiffness, density, and cost for a specific part.
+  - Can decide when a carbon fiber layup beats machined aluminum for a component, accounting for anisotropy, joints, and manufacturing effort.
+  - Can identify environmental failure modes (corrosion, UV degradation, creep at temperature) relevant to a material in its service environment.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Ashby, Materials Selection in Mechanical Design"
+  - "Callister & Rethwisch, Materials Science and Engineering: An Introduction"

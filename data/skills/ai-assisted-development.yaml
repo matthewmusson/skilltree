@@ -1,0 +1,24 @@
+id: ai-assisted-development
+title: AI-Assisted Development
+branch: cs-systems
+prereqs: [programming-fundamentals]
+overview: >
+  AI-assisted development is the practice of doing engineering with coding
+  agents, AI systems that can read a codebase, write code, run tools, and
+  iterate on their own output. The skill is not prompting tricks. It is
+  decomposing work into tasks an agent can execute reliably, writing specs
+  precise enough that the output is checkable, reviewing generated code as
+  skeptically as a human's, and keeping ownership of debugging and design
+  rather than deferring to the agent. Done well it multiplies output; done
+  lazily it produces code nobody on the team actually understands.
+proficiency:
+  - Decompose a multi-day feature into agent-sized tasks with explicit interfaces and acceptance tests, so each task's output is verifiable in isolation
+  - Write a spec for an agent that a second engineer could also implement from, including constraints, non-goals, and the tests that define done
+  - Review agent-generated code and catch real defects (wrong edge cases, silent behavior changes, invented APIs) before merge, at the same bar as human code review
+  - Drive a debugging session where the agent gathers evidence but the human owns the hypothesis, and articulate the root cause independently of the agent's explanation
+  - Build and maintain personal workflows (reusable prompts, project context files, custom skills or commands) and show they reduce time-to-merge on real work
+  - Recognize when a task is a poor fit for delegation (novel algorithms, ambiguous requirements, high blast radius) and do it by hand
+acquisition:
+  on_the_job_only: true
+  notes: "No class teaches this; built through deliberate practice on real projects."
+resources: []

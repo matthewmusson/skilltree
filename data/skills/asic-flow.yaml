@@ -1,0 +1,24 @@
+id: asic-flow
+title: ASIC Design Flow
+branch: ee-digital
+prereqs: [rtl-design, semiconductor-devices]
+overview: >
+  The ASIC (application-specific integrated circuit) design flow is the chain
+  of steps that turns register-transfer level (RTL) code into a manufacturable
+  chip: synthesis maps the code to gates from a technology library,
+  floorplanning and place-and-route arrange those gates and wires on silicon,
+  static timing analysis (STA) proves the clock speed is met, and power
+  analysis checks the energy budget. The flow ends at tapeout, the point when
+  the final layout is sent to a fabrication plant. Every decision trades among
+  power, performance, and area, together called PPA. This is a specialized
+  skill that assumes solid RTL and device physics grounding.
+proficiency:
+  - Run a design through synthesis and place-and-route with commercial or open-source tools, from RTL to a routed layout that passes design rule checks
+  - Read a static timing analysis report, identify the critical path, and fix a setup or hold violation through constraints, restructuring, or physical changes
+  - Write timing constraints (clocks, input/output delays, false paths, multicycle paths) for a design and defend each exception
+  - Estimate and reduce dynamic and leakage power using clock gating, voltage/frequency choices, and cell selection, and quantify the effect
+  - Make and justify a PPA tradeoff, for example accepting area growth to close timing, with numbers from tool reports
+acquisition:
+  on_the_job_only: false
+  notes: "Real tapeout experience is industry or research; classes simulate the flow."
+resources: []

@@ -1,0 +1,26 @@
+id: statistical-inference
+title: Statistical Inference
+branch: math
+prereqs: [probability-theory]
+overview: >
+  Statistical inference is the discipline of drawing conclusions about a
+  population or process from limited data. It covers estimators (rules for
+  guessing unknown quantities), the bias-variance tradeoff, confidence
+  intervals (ranges that quantify estimate uncertainty), hypothesis tests
+  (procedures for deciding whether an effect is real), maximum likelihood (the
+  standard recipe for fitting models to data), and the basics of Bayesian
+  inference, which treats unknowns as having probability distributions. It is
+  the core skill for interpreting experiments and validating models in any
+  engineering field.
+proficiency:
+  - Derive the maximum likelihood estimator for a parameter of a standard distribution and check it against method-of-moments
+  - Compute the bias, variance, and mean squared error of a given estimator and compare competing estimators
+  - Construct and correctly interpret a confidence interval, including stating what the confidence level does and does not mean
+  - Design and execute a hypothesis test, choosing the test statistic, computing the p-value, and stating type I and type II error rates
+  - Perform a basic Bayesian update from a prior and a likelihood to a posterior, and contrast the conclusion with the frequentist one
+  - Diagnose common inference failures in a reported analysis, such as multiple comparisons, underpowered tests, or confusing significance with effect size
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Casella & Berger, Statistical Inference"

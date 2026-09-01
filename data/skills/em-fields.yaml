@@ -1,0 +1,24 @@
+id: em-fields
+title: Electricity & Magnetism
+branch: physics
+prereqs: [mechanics, multivariable-calculus]
+overview: >
+  Electricity and magnetism (E&M) is the study of electric charges, the fields
+  they create, and how those fields exert forces. It covers electric fields,
+  potentials, magnetic fields, and their unification in Maxwell's equations,
+  the four laws that govern all classical electromagnetic phenomena including
+  light. It is one of the two pillars of undergraduate physics alongside
+  mechanics, and it is the foundation for all electrical engineering.
+proficiency:
+  - Compute electric fields and potentials from charge distributions using Coulomb's law and Gauss's law, choosing the method suited to the symmetry.
+  - Compute magnetic fields from current distributions using Ampere's law and the Biot-Savart law.
+  - Apply Faraday's law to compute induced voltages and currents in changing magnetic fields.
+  - State Maxwell's equations in both integral and differential form and explain what each term means physically.
+  - Derive that light is an electromagnetic wave from Maxwell's equations in vacuum.
+  - Analyze circuits with resistors, capacitors, and inductors from field principles.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Purcell & Morin, Electricity and Magnetism"
+  - "Feynman, Lectures on Physics Vol II"

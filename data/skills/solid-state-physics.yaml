@@ -1,0 +1,23 @@
+id: solid-state-physics
+title: Solid-State Physics
+branch: physics
+prereqs: [quantum-mechanics, statistical-mechanics]
+overview: >
+  Solid-state physics applies quantum and statistical mechanics to crystalline
+  solids: how atoms arrange into lattices, how electrons moving through a
+  lattice form energy bands, and how those bands make a material a metal, an
+  insulator, or a semiconductor. It also covers phonons, the quantized
+  vibrations of the lattice. It is the specialized subject that explains why
+  transistors, diodes, and solar cells work, making it the physics backbone of
+  the semiconductor industry.
+proficiency:
+  - Classify crystal structures by lattice and basis, and compute the reciprocal lattice used to interpret X-ray diffraction.
+  - Derive the band structure of a one-dimensional lattice using the nearly-free-electron or tight-binding model and identify band gaps.
+  - Compute carrier concentrations in doped semiconductors as a function of temperature and doping level.
+  - Explain the operation of a p-n junction diode from band bending and carrier diffusion, and sketch its current-voltage curve.
+  - Compute the phonon contribution to heat capacity using the Debye model.
+acquisition:
+  on_the_job_only: false
+  notes: "Classes cover theory; device intuition builds in fab or device-engineering work."
+resources:
+  - "Kittel, Introduction to Solid State Physics"

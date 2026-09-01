@@ -1,0 +1,25 @@
+id: computer-architecture
+title: Computer Architecture
+branch: ee-digital
+prereqs: [digital-logic, systems-programming]
+overview: >
+  Computer architecture is the study of how processors execute programs: how an
+  instruction set architecture (ISA), the contract between software and
+  hardware, gets implemented as a machine that fetches, decodes, and executes
+  instructions. It covers pipelining, the hazards that break naive pipelines,
+  caches and the memory hierarchy, and branch prediction. It sits between
+  digital logic below and systems software above, and it is the vocabulary for
+  every performance conversation about CPUs and accelerators.
+proficiency:
+  - Trace an instruction through a 5-stage pipeline and identify structural, data, and control hazards, plus the forwarding or stalls that resolve them
+  - Compute cache hit rates and average memory access time for a given cache configuration and access pattern
+  - Explain why a specific loop is slow on real hardware by reasoning about cache misses, branch mispredictions, or pipeline stalls, and verify with performance counters
+  - Design or extend a simple ISA and implement a single-cycle or pipelined processor for it in RTL or a simulator
+  - Compare in-order and out-of-order execution and state which workloads each helps and why
+  - Apply Amdahl's Law and iron-law CPI (cycles per instruction) reasoning to predict the payoff of a proposed hardware change
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Hennessy & Patterson, Computer Architecture: A Quantitative Approach"
+  - "Patterson & Hennessy, Computer Organization and Design"

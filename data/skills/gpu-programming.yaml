@@ -1,0 +1,26 @@
+id: gpu-programming
+title: GPU Programming (CUDA)
+branch: cs-systems
+prereqs: [concurrency, computer-architecture]
+overview: >
+  GPU (graphics processing unit) programming is writing code for a processor
+  built around thousands of small cores executing in lockstep groups, a model
+  NVIDIA calls SIMT (single instruction, multiple threads). In CUDA, NVIDIA's
+  programming platform, you write kernels, functions launched across a grid of
+  threads, and performance lives or dies on memory behavior. Coalescing
+  (adjacent threads reading adjacent addresses), fast on-chip shared memory,
+  and occupancy (how many threads are resident to hide latency) matter more
+  than arithmetic. This skill underpins modern machine learning performance
+  work and scientific computing.
+proficiency:
+  - Write a correct CUDA kernel with proper grid/block indexing, boundary handling, and synchronization, and verify it against a CPU reference
+  - Restructure a kernel's memory accesses for coalescing and use shared memory with correct barriers, measuring the speedup from each change
+  - Compute a kernel's occupancy from its register and shared-memory usage and state whether raising occupancy would help that kernel
+  - Profile a kernel with Nsight Compute, read the memory and compute throughput sections, and name the actual bottleneck
+  - Place a kernel on a roofline plot from its arithmetic intensity and the hardware's peak FLOPS and memory bandwidth, and state its speedup ceiling
+  - Overlap data transfers with computation using streams and asynchronous copies, and demonstrate the overlap in a timeline trace
+acquisition:
+  on_the_job_only: false
+  notes: "Few classes teach it well; most proficiency is project-built."
+resources:
+  - "Kirk & Hwu, Programming Massively Parallel Processors"

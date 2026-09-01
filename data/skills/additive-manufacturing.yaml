@@ -1,0 +1,23 @@
+id: additive-manufacturing
+title: 3D Printing & Additive Manufacturing
+branch: meche
+prereqs: [cad]
+overview: >
+  Additive manufacturing builds parts by depositing or curing material layer
+  by layer, in contrast to machining, which removes material. The two common
+  desktop processes are FDM (Fused Deposition Modeling, which extrudes melted
+  plastic filament) and SLA (Stereolithography, which cures liquid resin with
+  light). It is the fastest and cheapest way to turn a CAD model into a
+  physical part, which makes it the default prototyping tool in modern
+  mechanical work. The skill is less about pressing print and more about
+  designing parts that print well and choosing the right process and material.
+proficiency:
+  - Can take a CAD model through a slicer (PrusaSlicer, Cura, or Bambu Studio), choose layer height, infill, and supports, and get a successful print on the first or second attempt.
+  - Can select among PLA, PETG, ABS, and common resins based on strength, temperature resistance, and print difficulty, and justify the choice.
+  - Can design for the process, including orienting parts to manage overhangs and layer-direction strength anisotropy, and sizing clearances for mating printed parts.
+  - Can diagnose common failures such as warping, stringing, layer adhesion problems, and under-extrusion, and fix them via settings or design changes.
+  - Can run an SLA workflow end to end, including wash and post-cure, and knows when resin is the wrong choice for a functional part.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources: []

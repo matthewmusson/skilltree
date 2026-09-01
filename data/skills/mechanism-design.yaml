@@ -1,0 +1,23 @@
+id: mechanism-design
+title: Mechanism & Machine Design
+branch: meche
+prereqs: [cad, statics-strength]
+overview: >
+  Mechanism design is the selection and arrangement of the moving parts of a
+  machine: gears, belts, bearings, linkages, and lead screws, plus the motors
+  that drive them. It sits between structural analysis and real hardware,
+  turning a requirement like "lift 5 kg in 2 seconds" into a specific motor,
+  gear ratio, and bearing arrangement. It is the defining skill of anyone who
+  builds robots or machines, and it depends on both CAD fluency and stress
+  analysis.
+proficiency:
+  - Can size a motor for a task from torque, speed, and duty cycle requirements, and choose among brushed DC, brushless DC (BLDC), and stepper motors with justification.
+  - Can design a gear or belt transmission to hit a target ratio, checking tooth loading and belt tension against published limits.
+  - Can select bearings for a shaft given radial and axial loads and expected life, and design the shaft shoulders and fits that locate them.
+  - Can synthesize a four-bar linkage or lead-screw drive to produce a required motion, including computing mechanical advantage through the range of travel.
+  - Can compute a tolerance stack-up across an assembly and predict resulting play or backlash, then reduce it by design (preload, adjustment features, tighter tolerances only where needed).
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Budynas & Nisbett, Shigley's Mechanical Engineering Design"

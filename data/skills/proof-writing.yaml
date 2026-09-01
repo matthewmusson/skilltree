@@ -1,0 +1,25 @@
+id: proof-writing
+title: Mathematical Proof Writing
+branch: math
+prereqs: []
+overview: >
+  Proof writing is the craft of reading and producing airtight mathematical
+  arguments: statements justified step by step from definitions and prior
+  results, with no gaps. Core techniques include induction (proving a claim for
+  all whole numbers by a base case and a stepping rule), contradiction (assuming
+  the opposite and deriving an impossibility), epsilon-delta arguments (making
+  "arbitrarily close" precise), and careful handling of quantifiers such as
+  "for all" and "there exists". It is the entry point to all rigorous
+  mathematics, including real analysis and discrete math.
+proficiency:
+  - Prove statements about integers and sequences by ordinary and strong induction, stating the induction hypothesis explicitly
+  - Construct proofs by contradiction and by contrapositive, and identify which framing a given claim favors
+  - Write a correct epsilon-delta proof that a specific limit holds
+  - Negate a nested quantified statement correctly and use the negation to structure a disproof or counterexample
+  - Diagnose the flaw in a plausible but invalid proof, such as a circular argument or an unjustified quantifier swap
+  - Translate an informal claim into precise notation with all variables quantified and all terms defined
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Velleman, How to Prove It"

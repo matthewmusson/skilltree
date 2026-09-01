@@ -1,0 +1,25 @@
+id: probability-theory
+title: Probability Theory
+branch: math
+prereqs: [multivariable-calculus]
+overview: >
+  Probability theory is the calculus-based study of uncertainty. It covers
+  random variables (numerical outcomes of chance processes), their
+  distributions, expectation (long-run average value), conditioning (updating
+  probabilities on new information), and limit theorems such as the law of
+  large numbers and the central limit theorem, which explain why averages
+  stabilize and why the bell curve is everywhere. It is the foundation for
+  statistics, machine learning, statistical mechanics, and reliability
+  engineering.
+proficiency:
+  - Compute probabilities of compound events using conditioning, independence, and Bayes' rule
+  - Derive the distribution of a transformed random variable, including sums and functions of jointly distributed variables
+  - Compute expectations, variances, and covariances, including via indicator variables and conditional expectation
+  - Recognize when a real process matches a named distribution such as binomial, Poisson, exponential, or normal, and justify the match from its assumptions
+  - State and apply the law of large numbers and the central limit theorem, including computing a normal approximation with error awareness
+  - Set up and run a Monte Carlo simulation to check an analytic probability answer
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Blitzstein & Hwang, Introduction to Probability"

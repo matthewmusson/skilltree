@@ -1,0 +1,23 @@
+id: statistical-mechanics
+title: Statistical Mechanics
+branch: physics
+prereqs: [mechanics, probability-theory]
+overview: >
+  Statistical mechanics explains the behavior of large collections of particles
+  (gases, solids, electrons in metals) from the statistics of their microscopic
+  states. Its central tool is the partition function, a sum over states from
+  which temperature-dependent properties like energy, pressure, and entropy
+  follow. It is the bridge between microscopic physics and thermodynamics, and
+  it underlies noise in electronics, chemical reaction rates, and the physics
+  of information.
+proficiency:
+  - Compute partition functions for simple systems (two-level systems, ideal gases, harmonic oscillators) and derive energy, entropy, and heat capacity from them.
+  - Choose the correct ensemble (microcanonical, canonical, grand canonical) for a problem and justify the choice.
+  - Derive the Boltzmann distribution and apply it to compute occupation probabilities at a given temperature.
+  - Apply Fermi-Dirac and Bose-Einstein statistics to compute properties of electron gases and photon gases.
+  - Compute entropy from counting microstates and connect it to the thermodynamic definition.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Schroeder, An Introduction to Thermal Physics"

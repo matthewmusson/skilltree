@@ -1,0 +1,25 @@
+id: concurrency
+title: Concurrency & Parallelism
+branch: cs-systems
+prereqs: [operating-systems]
+overview: >
+  Concurrency is structuring a program as multiple threads of execution that
+  share data, and parallelism is running them at the same time on multiple
+  cores for speed. The hard part is correctness under interleaving. Locks,
+  atomic operations, and the memory model (the rules for when one thread's
+  writes become visible to another) exist to tame data races and deadlocks,
+  two bug classes that are timing-dependent and brutal to reproduce. The
+  skill also includes decomposing a real problem into parallel work that
+  actually scales.
+proficiency:
+  - Write a correct multithreaded program using threads, mutexes, and condition variables, with no data races under a race detector such as ThreadSanitizer
+  - Diagnose a deadlock from stack traces, identify the lock-ordering cycle, and fix it
+  - Explain what a memory model guarantees, why unsynchronized access is a data race even when it "seems to work", and where acquire/release ordering is required
+  - Implement a lock-free construct such as an atomic counter or single-producer single-consumer queue using compare-and-swap, and argue its correctness
+  - Decompose a real workload into parallel tasks, predict its speedup ceiling with Amdahl's Law, and measure the achieved scaling across cores
+  - Identify false sharing or contention in a profile and restructure data layout to remove it
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Arpaci-Dusseau, Operating Systems: Three Easy Pieces"

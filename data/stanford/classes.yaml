@@ -1,0 +1,267 @@
+# Stanford class -> skill mapping. DRAFT: titles and coverage to be verified
+# against bulletin.stanford.edu before this layer is trusted.
+# depth: teaches (a primary vehicle for the skill) | touches (partial coverage)
+classes:
+  - id: MATH 51
+    title: Linear Algebra, Multivariable Calculus, and Modern Applications
+    covers:
+      - { skill: linear-algebra, depth: teaches }
+      - { skill: multivariable-calculus, depth: touches }
+  - id: MATH 52
+    title: Integral Calculus of Several Variables
+    covers:
+      - { skill: multivariable-calculus, depth: teaches }
+  - id: MATH 53
+    title: Differential Equations with Linear Algebra
+    covers:
+      - { skill: differential-equations, depth: teaches }
+  - id: MATH 61CM
+    title: "Modern Mathematics: Continuous Methods"
+    covers:
+      - { skill: proof-writing, depth: teaches }
+      - { skill: linear-algebra, depth: teaches }
+      - { skill: real-analysis, depth: touches }
+  - id: MATH 104
+    title: Applied Matrix Theory
+    covers:
+      - { skill: linear-algebra, depth: teaches }
+  - id: MATH 115
+    title: Functions of a Real Variable
+    covers:
+      - { skill: real-analysis, depth: teaches }
+  - id: MATH 116
+    title: Complex Analysis
+    covers:
+      - { skill: complex-analysis, depth: teaches }
+  - id: MATH 131P
+    title: Partial Differential Equations
+    covers:
+      - { skill: pdes, depth: teaches }
+  - id: MATH 151
+    title: Introduction to Probability Theory
+    covers:
+      - { skill: probability-theory, depth: teaches }
+  - id: STATS 116
+    title: Theory of Probability
+    covers:
+      - { skill: probability-theory, depth: teaches }
+  - id: STATS 117
+    title: Introduction to Probability II
+    covers:
+      - { skill: probability-theory, depth: teaches }
+  - id: STATS 118
+    title: Probability Theory and Applications
+    covers:
+      - { skill: probability-theory, depth: touches }
+      - { skill: statistical-inference, depth: touches }
+  - id: STATS 200
+    title: Introduction to Statistical Inference
+    covers:
+      - { skill: statistical-inference, depth: teaches }
+  - id: CS 103
+    title: Mathematical Foundations of Computing
+    covers:
+      - { skill: discrete-math, depth: teaches }
+      - { skill: proof-writing, depth: teaches }
+  - id: CME 108
+    title: Introduction to Scientific Computing
+    covers:
+      - { skill: numerical-methods, depth: teaches }
+  - id: EE 364A
+    title: Convex Optimization I
+    covers:
+      - { skill: convex-optimization, depth: teaches }
+  - id: PHYSICS 41
+    title: Mechanics
+    covers:
+      - { skill: mechanics, depth: teaches }
+  - id: PHYSICS 43
+    title: Electricity and Magnetism
+    covers:
+      - { skill: em-fields, depth: teaches }
+  - id: PHYSICS 45
+    title: Light and Heat
+    covers:
+      - { skill: waves-optics, depth: teaches }
+      - { skill: thermodynamics, depth: touches }
+  - id: PHYSICS 70
+    title: Foundations of Modern Physics
+    covers:
+      - { skill: special-relativity, depth: teaches }
+      - { skill: quantum-mechanics, depth: touches }
+  - id: PHYSICS 110
+    title: Advanced Mechanics
+    covers:
+      - { skill: lagrangian-mechanics, depth: teaches }
+  - id: PHYSICS 120
+    title: Intermediate Electricity and Magnetism I
+    covers:
+      - { skill: electrodynamics, depth: teaches }
+  - id: PHYSICS 121
+    title: Intermediate Electricity and Magnetism II
+    covers:
+      - { skill: electrodynamics, depth: teaches }
+  - id: PHYSICS 130
+    title: Quantum Mechanics I
+    covers:
+      - { skill: quantum-mechanics, depth: teaches }
+  - id: PHYSICS 131
+    title: Quantum Mechanics II
+    covers:
+      - { skill: quantum-mechanics, depth: teaches }
+  - id: PHYSICS 170
+    title: Statistical Mechanics and Thermodynamics I
+    covers:
+      - { skill: statistical-mechanics, depth: teaches }
+  - id: PHYSICS 172
+    title: Solid State Physics
+    covers:
+      - { skill: solid-state-physics, depth: teaches }
+  - id: CS 106B
+    title: Programming Abstractions
+    covers:
+      - { skill: programming-fundamentals, depth: teaches }
+  - id: CS 107
+    title: Computer Organization and Systems
+    covers:
+      - { skill: systems-programming, depth: teaches }
+  - id: CS 107E
+    title: Computer Systems from the Ground Up
+    covers:
+      - { skill: systems-programming, depth: teaches }
+      - { skill: bare-metal-firmware, depth: teaches }
+  - id: CS 111
+    title: Operating Systems Principles
+    covers:
+      - { skill: operating-systems, depth: teaches }
+      - { skill: concurrency, depth: touches }
+  - id: CS 144
+    title: Introduction to Computer Networking
+    covers:
+      - { skill: networking, depth: teaches }
+  - id: CS 149
+    title: Parallel Computing
+    covers:
+      - { skill: concurrency, depth: teaches }
+      - { skill: gpu-programming, depth: teaches }
+  - id: CS 229
+    title: Machine Learning
+    covers:
+      - { skill: ml-foundations, depth: teaches }
+  - id: CS 230
+    title: Deep Learning
+    covers:
+      - { skill: deep-learning, depth: teaches }
+      - { skill: pytorch-engineering, depth: touches }
+  - id: CS 231N
+    title: Deep Learning for Computer Vision
+    covers:
+      - { skill: computer-vision, depth: teaches }
+      - { skill: deep-learning, depth: teaches }
+      - { skill: pytorch-engineering, depth: touches }
+  - id: CS 224R
+    title: Deep Reinforcement Learning
+    covers:
+      - { skill: reinforcement-learning, depth: teaches }
+  - id: CS 223A
+    title: Introduction to Robotics
+    covers:
+      - { skill: classical-robotics, depth: teaches }
+  - id: ENGR 40M
+    title: "An Intro to Making: What is EE"
+    covers:
+      - { skill: electronic-prototyping, depth: teaches }
+      - { skill: circuit-analysis, depth: touches }
+  - id: ENGR 105
+    title: Feedback Control Design
+    covers:
+      - { skill: control-systems, depth: teaches }
+  - id: EE 101A
+    title: Circuits I
+    covers:
+      - { skill: circuit-analysis, depth: teaches }
+  - id: EE 101B
+    title: Circuits II
+    covers:
+      - { skill: analog-design, depth: teaches }
+  - id: EE 102A
+    title: Signal Processing and Linear Systems I
+    covers:
+      - { skill: signal-processing, depth: teaches }
+  - id: EE 108
+    title: Digital System Design
+    covers:
+      - { skill: digital-logic, depth: teaches }
+      - { skill: rtl-design, depth: teaches }
+  - id: EE 180
+    title: Digital Systems Architecture
+    covers:
+      - { skill: computer-architecture, depth: teaches }
+  - id: EE 114
+    title: Fundamentals of Analog Integrated Circuit Design
+    covers:
+      - { skill: analog-design, depth: teaches }
+  - id: EE 116
+    title: Semiconductor Device Physics
+    covers:
+      - { skill: semiconductor-devices, depth: teaches }
+  - id: EE 212
+    title: Integrated Circuit Fabrication Processes
+    covers:
+      - { skill: microfabrication, depth: teaches }
+  - id: EE 272A
+    title: Design Projects in VLSI Systems
+    covers:
+      - { skill: asic-flow, depth: teaches }
+      - { skill: design-verification, depth: touches }
+  - id: ME 70
+    title: Introductory Fluids Engineering
+    covers:
+      - { skill: fluid-dynamics, depth: teaches }
+  - id: ME 80
+    title: Mechanics of Materials
+    covers:
+      - { skill: statics-strength, depth: teaches }
+  - id: ME 30
+    title: Engineering Thermodynamics
+    covers:
+      - { skill: thermodynamics, depth: teaches }
+  - id: ME 102
+    title: Foundations of Product Realization
+    covers:
+      - { skill: cad, depth: teaches }
+      - { skill: machining, depth: touches }
+      - { skill: additive-manufacturing, depth: touches }
+  - id: ME 112
+    title: Mechanical Systems Design
+    covers:
+      - { skill: mechanism-design, depth: teaches }
+  - id: ME 335A
+    title: Finite Element Analysis
+    covers:
+      - { skill: fea, depth: teaches }
+  - id: MATSCI 143
+    title: Materials Structure and Characterization
+    covers:
+      - { skill: materials-selection, depth: touches }
+  - id: CHEM 31
+    title: Chemical Principles
+    covers:
+      - { skill: general-chemistry, depth: teaches }
+  - id: BIO 83
+    title: Biochemistry and Molecular Biology
+    covers:
+      - { skill: intro-biology, depth: teaches }
+      - { skill: biochemistry, depth: touches }
+  - id: CHEM 33
+    title: Structure and Reactivity of Organic Molecules
+    covers:
+      - { skill: organic-chemistry, depth: teaches }
+  - id: BIOE 80
+    title: Introduction to Bioengineering
+    covers:
+      - { skill: synthetic-biology, depth: teaches }
+  - id: APPPHYS 227
+    title: Quantum Information and Measurement
+    covers:
+      - { skill: quantum-information, depth: teaches }

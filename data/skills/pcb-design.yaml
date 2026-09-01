@@ -1,0 +1,23 @@
+id: pcb-design
+title: PCB Design
+branch: ee-circuits
+prereqs: [electronic-prototyping, analog-design]
+overview: >
+  Printed circuit board (PCB) design is the process of turning a schematic
+  into a manufacturable board: capturing the circuit in software, laying out
+  the copper traces and component footprints, and sending the files to a
+  fabrication house. It is the step that turns a breadboard prototype into
+  real hardware, and it is a required skill for shipping any electronic
+  product. Layout is not clerical; trace routing, grounding, and decoupling
+  decisions determine whether the physical board behaves like the schematic.
+proficiency:
+  - Can capture a schematic in KiCad or Altium with correct symbols, net names, and an organized sheet a reviewer can follow.
+  - Can create or verify a component footprint against the manufacturer's land-pattern drawing before committing it to a board.
+  - Can choose a layer stackup and lay out a board with a solid ground plane, appropriate trace widths for current, and decoupling capacitors placed at each IC's power pins.
+  - Can run design rule checks against a fab house's capabilities (JLCPCB, OSH Park, or similar) and generate correct Gerber and drill files.
+  - Can bring up a fabricated board methodically: visual inspection, resistance checks on power rails, current-limited first power, then functional test block by block.
+  - Can apply design-for-manufacture rules such as component orientation for assembly, testpoint placement, and adequate courtyard clearances.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources: []

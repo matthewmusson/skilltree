@@ -1,0 +1,24 @@
+id: quantum-information
+title: Quantum Information & Computing
+branch: physics
+prereqs: [quantum-mechanics]
+overview: >
+  Quantum information studies computation and communication using quantum
+  systems. The basic unit is the qubit, a two-level quantum system that can
+  exist in superpositions of 0 and 1, and computations are sequences of quantum
+  gates acting on entangled qubits. The field covers what quantum computers can
+  do faster than classical ones, and why decoherence, the loss of quantum
+  behavior through environmental interaction, makes building them hard. It is
+  a specialized topic sitting at the intersection of physics, computer science,
+  and a growing hardware industry.
+proficiency:
+  - Compute the action of standard gates (Hadamard, CNOT, Pauli, phase) on multi-qubit states, by hand for small circuits.
+  - Determine whether a given two-qubit state is entangled and compute measurement statistics for each party.
+  - Trace through Deutsch-Jozsa and Grover's algorithm on small instances and state where the quantum speedup comes from.
+  - Explain the quantum no-cloning theorem and derive it from linearity.
+  - Describe how a simple error-correcting code (the three-qubit bit-flip code) detects and corrects an error without measuring the encoded state.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Nielsen & Chuang, Quantum Computation and Quantum Information"

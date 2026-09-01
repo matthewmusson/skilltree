@@ -1,0 +1,25 @@
+id: bare-metal-firmware
+title: Bare-Metal & Embedded Firmware
+branch: cs-systems
+prereqs: [systems-programming, digital-logic]
+overview: >
+  Bare-metal firmware is software that runs on a microcontroller with no
+  operating system underneath: your code is the only thing on the chip. You
+  control hardware by reading and writing memory-mapped registers, respond to
+  events through interrupts, and talk to other chips over serial buses such as
+  UART (universal asynchronous receiver-transmitter), SPI (serial peripheral
+  interface), and I2C (inter-integrated circuit). The defining skills are
+  reading a thousand-page vendor reference manual to find the three registers
+  you need, and debugging over a hardware probe using JTAG or SWD (serial wire
+  debug) when there is no console to print to.
+proficiency:
+  - Bring up a microcontroller peripheral (timer, GPIO, ADC) from the reference manual alone, configuring clocks and registers without vendor library code
+  - Write an interrupt service routine that is short, reentrancy-safe, and communicates with the main loop through volatile flags or queues
+  - Implement a driver for a UART, SPI, or I2C device and verify the bus traffic with a logic analyzer or oscilloscope
+  - Debug a hard fault over JTAG/SWD by halting the core, reading the fault registers and stack, and identifying the offending instruction
+  - Read a linker script and memory map to place code and data in flash and RAM, and explain what runs before main()
+  - Measure and meet a real-time constraint, such as servicing an interrupt within a bounded latency
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources: []

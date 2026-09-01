@@ -1,0 +1,25 @@
+id: networking
+title: Computer Networking
+branch: cs-systems
+prereqs: [operating-systems]
+overview: >
+  Computer networking is how programs on different machines talk. The core
+  stack is TCP/IP (Transmission Control Protocol over Internet Protocol),
+  which delivers reliable byte streams over an unreliable packet network, and
+  HTTP (Hypertext Transfer Protocol) on top of it for most application
+  traffic. Programs reach the network through sockets, the operating system's
+  interface for network communication. The engineering skill is reasoning
+  about latency (delay per round trip) versus bandwidth (bytes per second) as
+  separate resources, and debugging by looking at the actual packets on the
+  wire.
+proficiency:
+  - Write a working TCP client and server with the sockets API, handling partial reads, connection teardown, and multiple concurrent clients
+  - Trace what happens when a browser loads a URL, from DNS (Domain Name System) lookup through the TCP handshake, TLS, and the HTTP request/response
+  - Predict whether a transfer is latency-bound or bandwidth-bound from round-trip time and link speed, and compute the expected duration
+  - Capture traffic with tcpdump or Wireshark and diagnose a real failure such as a hung connection, retransmission storm, or misbehaving proxy
+  - Explain how TCP achieves reliability and congestion control (sequence numbers, acknowledgments, windows) and how that produces observed throughput behavior
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Kurose & Ross, Computer Networking: A Top-Down Approach"

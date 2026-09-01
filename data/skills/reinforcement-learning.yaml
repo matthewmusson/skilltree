@@ -1,0 +1,26 @@
+id: reinforcement-learning
+title: Reinforcement Learning
+branch: cs-ml
+prereqs: [ml-foundations]
+overview: >
+  Reinforcement learning (RL) is learning to act: an agent takes actions in an
+  environment, receives rewards, and improves its policy to maximize
+  long-term reward. The formalism is the MDP (Markov decision process), which
+  defines states, actions, transitions, and rewards. The two main solution
+  families are value methods, which estimate how good states and actions are,
+  and policy gradients, which adjust the policy directly; actor-critic
+  methods combine both. RL is distinctively fragile in practice, so the skill
+  includes exploration strategy and reward design, where most real failures
+  originate.
+proficiency:
+  - Formalize a stated problem as an MDP, defining state, action, reward, and discount, and identify where the Markov assumption is violated
+  - Implement tabular Q-learning and value iteration from scratch and verify convergence on a small environment
+  - Derive the policy gradient theorem's estimator (REINFORCE) and explain how a baseline reduces variance without adding bias
+  - Implement an actor-critic algorithm (e.g. PPO, proximal policy optimization) and get it to solve a standard continuous-control benchmark
+  - Debug a failing RL run by separating environment bugs, reward bugs, and learning bugs, using diagnostics like value estimates and entropy curves
+  - Predict how a proposed reward function can be gamed, produce a concrete reward-hacking scenario for it, and redesign the reward to close it
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Sutton & Barto, Reinforcement Learning: An Introduction"

@@ -1,0 +1,27 @@
+id: classical-robotics
+title: "Classical Robotics: Kinematics & Control"
+branch: robotics
+prereqs: [linear-algebra, control-systems]
+overview: >
+  Classical robotics is the mathematics of making a mechanism move where you
+  want. Kinematics maps joint angles to where the hand ends up (forward) and
+  back (inverse); the Jacobian is the matrix linking joint velocities to
+  hand velocities. Rotations must be represented carefully, with rotation
+  matrices or quaternions (a four-number encoding that avoids the
+  singularities of angle triples). Control runs at different frequencies in a
+  stack, from kilohertz joint servo loops up to slower planners, which is why
+  where computation runs (on the robot at the edge, or in the cloud with
+  network latency) is an engineering constraint, not a detail. Learned robot
+  policies sit on top of this layer.
+proficiency:
+  - Convert between rotation representations (matrix, quaternion, axis-angle, Euler angles) and state the failure modes of each, including gimbal lock
+  - Derive the forward kinematics of a serial arm from its link parameters and verify against a simulator
+  - Solve inverse kinematics both analytically for a simple arm and numerically via the Jacobian for a general one, handling unreachable targets and singularities
+  - Compute the manipulator Jacobian and use it to map forces and velocities between joint space and task space
+  - Explain joint-space versus task-space control and implement a working controller of each kind on a simulated arm
+  - Budget a control stack's frequencies and latencies, and determine which layers can tolerate cloud inference round trips and which must run at the edge
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Lynch & Park, Modern Robotics: Mechanics, Planning, and Control"

@@ -1,0 +1,22 @@
+id: biochemistry
+title: Biochemistry
+branch: bio-chem
+prereqs: [organic-chemistry, intro-biology]
+overview: >
+  Biochemistry is the chemistry of life's molecules: how proteins fold into
+  functional shapes, how enzymes speed up reactions by many orders of
+  magnitude, and how metabolic pathways convert food into energy and building
+  blocks. It treats the cell as a chemical machine and its proteins as
+  molecular machines with moving parts. It is the core subject connecting
+  chemistry to biology, and it is assumed background for drug development,
+  synthetic biology, and biomedical research.
+proficiency:
+  - Predict how a protein's structure and stability change under mutation, pH shift, or temperature change, using the hierarchy from amino acid sequence to folded structure.
+  - Compute enzyme kinetic parameters (Km, Vmax, kcat) from rate data and distinguish competitive from noncompetitive inhibition from the data.
+  - Trace glycolysis, the citric acid cycle, and oxidative phosphorylation, accounting for ATP and electron-carrier bookkeeping at each stage.
+  - Predict the direction of a metabolic reaction from free-energy changes and cellular concentrations.
+  - Explain how a molecular machine such as ATP synthase or a motor protein converts chemical energy into mechanical work.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources: []

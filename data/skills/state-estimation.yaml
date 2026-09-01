@@ -1,0 +1,19 @@
+id: state-estimation
+title: State Estimation & Filtering
+branch: robotics
+prereqs: [probability-theory, linear-algebra]
+overview: >
+  Inferring what a system is actually doing from noisy sensors. The Kalman
+  filter is the exact answer for linear systems with Gaussian noise; extended
+  and unscented variants, particle filters, and factor graphs handle the rest.
+  Every robot, rocket, and tracking detector runs one of these in its core loop.
+proficiency:
+  - Derive the Kalman filter predict and update equations from Bayesian first principles
+  - Implement an EKF for a nonlinear system and diagnose divergence from bad linearization
+  - Tune process and measurement noise covariances from data rather than folklore
+  - Fuse IMU, odometry, and vision measurements at different rates into one state estimate
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Thrun, Burgard & Fox, Probabilistic Robotics"

@@ -1,0 +1,24 @@
+id: build-toolchains
+title: Build Systems, Linking & Toolchains
+branch: cs-systems
+prereqs: [systems-programming]
+overview: >
+  This skill covers how source files become executables: the compiler turns
+  code into assembly, the assembler turns assembly into object files full of
+  symbols, and the linker stitches those object files and libraries into a
+  program. It includes static linking (code copied into the binary) versus
+  dynamic linking (code loaded at run time), build tools like Make and CMake
+  that orchestrate the steps, and cross-compilation, building on one machine
+  for a different one. It is unglamorous but load-bearing: every C, C++,
+  embedded, and performance project eventually breaks here.
+proficiency:
+  - Explain each stage from source to executable (preprocess, compile, assemble, link) and produce and inspect the intermediate artifacts of each
+  - Diagnose an undefined-symbol or duplicate-symbol linker error using tools like nm and objdump, and fix it
+  - Write a Makefile with correct dependencies and incremental rebuilds, and a CMake build for a multi-directory project with external libraries
+  - Explain static versus dynamic linking tradeoffs and debug a runtime shared-library failure (missing or wrong-version .so/.dll)
+  - Set up a cross-compilation toolchain targeting a different architecture and verify the produced binary runs on the target
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Bryant & O'Hallaron, Computer Systems: A Programmer's Perspective"

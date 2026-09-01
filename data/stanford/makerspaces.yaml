@@ -1,0 +1,23 @@
+# Stanford makerspaces and the skills they can demonstrate. DRAFT.
+makerspaces:
+  - id: prl
+    name: Product Realization Lab (PRL)
+    tools: [manual mills, lathes, CNC mills, waterjet, TIG/MIG welders, sheet-metal brake, FDM/SLA printers, laser cutters, composites layup]
+  - id: lab64
+    name: Lab64 (EE Makerspace)
+    tools: [soldering stations, oscilloscopes, function generators, power supplies, PCB reflow oven, logic analyzers, FPGA dev boards, 3D printers]
+
+demonstrations:
+  - { skill: cad, space: prl, note: "Model a part, then manufacture it on any PRL machine." }
+  - { skill: machining, space: prl, note: "PRL training courses; make a machined project part on mill and lathe." }
+  - { skill: additive-manufacturing, space: prl, note: "Print a multi-part assembly with dimensional tolerances." }
+  - { skill: additive-manufacturing, space: lab64, note: "Print enclosures for electronics projects." }
+  - { skill: mechanism-design, space: prl, note: "Build a geared or linkage mechanism end to end." }
+  - { skill: materials-selection, space: prl, note: "Composites layup station; compare material choices on a real part." }
+  - { skill: electronic-prototyping, space: lab64, note: "Breadboard, solder, and debug a circuit at a full bench." }
+  - { skill: pcb-design, space: lab64, note: "Design in KiCad, fab, then reflow and bring up your own board." }
+  - { skill: analog-design, space: lab64, note: "Build and measure filters and op-amp stages on the bench." }
+  - { skill: power-electronics, space: lab64, note: "Build a buck converter; measure efficiency and ripple." }
+  - { skill: rtl-design, space: lab64, note: "Deploy a SystemVerilog design to an FPGA dev board." }
+  - { skill: bare-metal-firmware, space: lab64, note: "Bring up a microcontroller board with your own drivers." }
+  - { skill: bioinstrumentation, space: lab64, note: "Build a biosignal amplifier (ECG/EMG) with proper isolation." }

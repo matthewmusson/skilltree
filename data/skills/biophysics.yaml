@@ -1,0 +1,22 @@
+id: biophysics
+title: Biophysics
+branch: bio-chem
+prereqs: [statistical-mechanics, intro-biology]
+overview: >
+  Biophysics builds quantitative physical models of biological systems. It asks
+  how molecules find each other by diffusion, how molecular motors generate
+  force from chemical energy, how ion concentration differences across a cell
+  membrane create electrical voltages, and how single-molecule instruments
+  measure all of this. It is a specialized interdisciplinary field that turns
+  qualitative biology into numbers a physicist or engineer can check.
+proficiency:
+  - Compute diffusion timescales and length scales for molecules in a cell and determine when diffusion alone suffices for transport.
+  - Model a molecular motor or receptor as a system of states with transition rates and compute its speed, force, or occupancy.
+  - Derive the Nernst equilibrium potential for an ion across a membrane and compute a cell's resting potential from ion concentrations.
+  - Estimate the energy scales of biological processes (bond, thermal, motor step) in units of kBT and use them to judge what is physically plausible.
+  - Interpret single-molecule data, such as an optical-trap force-extension curve, and extract physical parameters from it.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Phillips et al., Physical Biology of the Cell"

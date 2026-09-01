@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Skilltree</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <h1>Skilltree</h1>
+  <span class="tagline">an engineering skill DAG · Stanford overlay</span>
+  <label class="major-select">
+    Major overlay
+    <select id="major"><option value="">none</option></select>
+  </label>
+  <nav id="legend" aria-label="Branch legend"></nav>
+</header>
+<main>
+  <div id="graph-wrap">
+    <svg id="graph" role="application" aria-label="Skill prerequisite graph"></svg>
+  </div>
+  <aside id="panel" hidden>
+    <button id="panel-close" aria-label="Close">×</button>
+    <div id="panel-body"></div>
+  </aside>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

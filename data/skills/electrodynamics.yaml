@@ -1,0 +1,22 @@
+id: electrodynamics
+title: Advanced Electrodynamics
+branch: physics
+prereqs: [em-fields, pdes]
+overview: >
+  Advanced electrodynamics takes Maxwell's equations, the laws governing
+  electric and magnetic fields, and applies them to hard realistic problems:
+  fields near conductors of given shape, electromagnetic radiation from moving
+  charges, waves guided through pipes and cables, and field behavior inside
+  materials. It is a specialized upper-level physics course, and it is the
+  theory underneath antenna design, radio-frequency engineering, and photonics.
+proficiency:
+  - Solve electrostatic boundary-value problems using separation of variables, method of images, and multipole expansions.
+  - Compute the fields and radiated power of an oscillating dipole antenna.
+  - Derive the allowed propagation modes and cutoff frequencies of a rectangular waveguide.
+  - Compute reflection and transmission of electromagnetic waves at interfaces between materials, including polarization effects.
+  - Model fields inside dielectric and magnetic materials using polarization, magnetization, and the auxiliary fields D and H.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Griffiths, Introduction to Electrodynamics"

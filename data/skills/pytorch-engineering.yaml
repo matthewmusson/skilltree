@@ -1,0 +1,25 @@
+id: pytorch-engineering
+title: PyTorch Engineering
+branch: cs-ml
+prereqs: [deep-learning, programming-fundamentals]
+overview: >
+  PyTorch is the dominant library for building and training neural networks in
+  research. This skill is engineering fluency in it: using autograd (the
+  automatic differentiation engine that records operations and computes
+  gradients), writing custom modules and losses, building data pipelines that
+  keep the GPU fed, and using the standard performance tools, mixed precision
+  (computing in lower-precision floats for speed) and distributed data
+  parallel (DDP, replicating the model across GPUs and averaging gradients).
+  It also includes the unglamorous daily work of debugging shape errors and
+  hunting NaNs (not-a-number values that poison training).
+proficiency:
+  - Implement a custom nn.Module and loss function with correct autograd behavior, and explain when and why to use detach, no_grad, or a custom backward
+  - Build a Dataset/DataLoader pipeline with workers, batching, and augmentation that keeps GPU utilization high, and prove it with a profiler trace
+  - Track a NaN or inf in training to its source using hooks, anomaly detection, and bisection of the model and data
+  - Debug shape and dtype errors systematically from tensor shapes at each boundary rather than trial-and-error reshaping
+  - Convert a training loop to mixed precision with gradient scaling and verify both the speedup and unchanged convergence
+  - Scale a training run across multiple GPUs with distributed data parallel, handling seeding, samplers, and checkpointing correctly
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources: []

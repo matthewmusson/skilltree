@@ -1,0 +1,24 @@
+id: cad
+title: CAD & Solid Modeling
+branch: meche
+prereqs: []
+overview: >
+  Computer-Aided Design (CAD) is the practice of building precise 3D models of
+  physical parts and assemblies in software. It is the starting point for
+  nearly all mechanical engineering work: every part that gets 3D printed,
+  machined, or molded begins as a CAD model, and the model carries the
+  dimensions and tolerances that manufacturing needs. Parametric CAD tools
+  like Fusion 360, SolidWorks, and Onshape let you define geometry through
+  sketches and features so that a design updates cleanly when a dimension
+  changes. This is among the most foundational skills in the mechanical
+  branch; almost everything downstream depends on it.
+proficiency:
+  - Can model a multi-feature part in Fusion 360, SolidWorks, or Onshape using fully constrained sketches, extrudes, revolves, and fillets.
+  - Can structure a model with design intent so that changing one driving dimension propagates correctly without breaking downstream features.
+  - Can produce a 2D engineering drawing with dimensions, tolerances, and section views that a machinist could work from.
+  - Can build a multi-part assembly with mates or joints that reflect the real degrees of freedom, and check for interference.
+  - Can reverse-model an existing physical part from caliper measurements to within its functional tolerances.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources: []

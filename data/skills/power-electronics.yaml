@@ -1,0 +1,25 @@
+id: power-electronics
+title: Power Electronics
+branch: ee-circuits
+prereqs: [analog-design]
+overview: >
+  Power electronics is the design of circuits that convert electrical power
+  efficiently: taking a battery or wall voltage and producing the stable
+  rails everything else runs on. The core distinction is linear regulators,
+  which are simple but burn excess voltage as heat, versus switching
+  converters, which chop the input at high frequency through an inductor to
+  hit efficiencies above 90 percent. Every battery-powered or mains-powered
+  product contains this work, making it a practical requirement for hardware
+  engineers even though it is a specialized corner of the curriculum.
+proficiency:
+  - Can choose between a linear regulator and a switching converter for a given rail using a quantitative efficiency and thermal argument.
+  - Can design a buck or boost converter around a controller IC, selecting the inductor for target ripple current and the input and output capacitors for ripple voltage and RMS current rating.
+  - Can compute converter losses (conduction, switching, inductor core) and verify the design against its thermal budget.
+  - Can lay out a switching converter PCB with tight hot loops and correct feedback-node routing, and explain why layout failures show up as noise and instability.
+  - Can design or configure a lithium battery charging circuit that respects constant-current and constant-voltage phases and pack protection limits.
+  - Can measure converter efficiency, load regulation, and output ripple on the bench with an oscilloscope and electronic load.
+acquisition:
+  on_the_job_only: false
+  notes: "Class coverage is thin; most engineers learn this designing real supplies."
+resources:
+  - "Erickson & Maksimovic, Fundamentals of Power Electronics"

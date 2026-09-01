@@ -1,0 +1,24 @@
+id: complex-analysis
+title: Complex Analysis
+branch: math
+prereqs: [multivariable-calculus]
+overview: >
+  Complex analysis is calculus for functions of a complex variable, a number
+  with a real and an imaginary part. Functions that are differentiable in this
+  setting, called analytic functions, are far more rigid and better behaved
+  than real ones, which yields powerful tools: contour integration (integrating
+  along paths in the plane), the residue theorem (evaluating hard integrals by
+  inspecting isolated singular points), and conformal maps (angle-preserving
+  transformations). It is a specialized skill that feeds signal processing,
+  control theory, and fluid and field problems.
+proficiency:
+  - Verify analyticity of a function using the Cauchy-Riemann equations and identify where it fails
+  - Compute contour integrals directly and via Cauchy's integral formula
+  - Locate and classify singularities, compute residues, and evaluate real definite integrals by the residue theorem
+  - Derive Laurent series expansions of a function in specified annular regions
+  - Construct a conformal map between two given simple domains and verify it
+  - Explain and apply the connection between pole locations and the stability or frequency response of a linear system
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources: []

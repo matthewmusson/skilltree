@@ -1,0 +1,25 @@
+id: semiconductor-devices
+title: Semiconductor Devices
+branch: ee-circuits
+prereqs: [solid-state-physics, circuit-analysis]
+overview: >
+  Semiconductor device physics explains how transistors and diodes actually
+  work, starting from how electrons behave in silicon. The central objects
+  are the pn junction, the boundary between differently doped regions that
+  makes a diode, and the MOSFET (metal-oxide-semiconductor field-effect
+  transistor), the switch that all modern chips are built from. The subject
+  connects circuit-level component models to the physics underneath them. It
+  is specialized: circuit designers can treat devices as black boxes, but
+  chip design, device engineering, and fabrication all require this layer.
+proficiency:
+  - Can derive the diode current-voltage characteristic from pn junction physics and explain depletion width and junction capacitance dependence on bias.
+  - Can identify a MOSFET's operating region (cutoff, triode, saturation) from terminal voltages and apply the correct current equation in each.
+  - Can connect datasheet parameters (threshold voltage, on-resistance, gate charge, junction capacitances) to the physical device features that set them.
+  - Can explain how scaling device dimensions changes speed, power, and leakage, including short-channel effects that break the simple equations.
+  - Can extract device parameters such as threshold voltage and mobility from measured current-voltage curves.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Sedra & Smith, Microelectronic Circuits"
+  - "Pierret, Semiconductor Device Fundamentals"

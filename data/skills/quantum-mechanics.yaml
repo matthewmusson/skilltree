@@ -1,0 +1,23 @@
+id: quantum-mechanics
+title: Quantum Mechanics
+branch: physics
+prereqs: [linear-algebra, waves-optics]
+overview: >
+  Quantum mechanics is the physics of atoms, electrons, and light at the
+  smallest scales, where outcomes are probabilistic and states are described by
+  wavefunctions. Its mathematics is linear algebra: states are vectors,
+  measurable quantities are operators, and the Schrodinger equation governs how
+  states evolve in time. It is the foundation for semiconductors, lasers,
+  chemistry, and quantum computing, and it is a required core subject for any
+  physics-adjacent engineering path.
+proficiency:
+  - Solve the Schrodinger equation for standard potentials (infinite well, harmonic oscillator, hydrogen atom) and interpret the resulting energy levels.
+  - Compute measurement probabilities and expectation values from a given quantum state using the operator formalism.
+  - Manipulate spin-1/2 systems with Pauli matrices, including computing outcomes of sequential spin measurements.
+  - Apply time-independent perturbation theory to compute first-order corrections to energies and states.
+  - Compute commutators and use them to determine which observables can be simultaneously known, deriving uncertainty relations.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Griffiths, Introduction to Quantum Mechanics"

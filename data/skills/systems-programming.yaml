@@ -1,0 +1,26 @@
+id: systems-programming
+title: Systems Programming in C
+branch: cs-systems
+prereqs: [programming-fundamentals]
+overview: >
+  Systems programming in C means working at the level where the machine stops
+  being abstract: pointers are addresses, memory is a flat array of bytes you
+  manage yourself with malloc and free, and the stack and heap are real
+  regions with real rules. It also covers undefined behavior, the class of C
+  programs the language standard makes no promises about, and the path from
+  source code through compilation to a running process. This node is the gate
+  to operating systems, embedded work, performance engineering, and computer
+  architecture, because all of them assume you can read memory diagrams
+  fluently.
+proficiency:
+  - Write correct C using pointers, pointer arithmetic, structs, and dynamic allocation, with no leaks or invalid frees under a checker such as Valgrind or AddressSanitizer
+  - Draw the memory layout of a running process (text, data, heap, stack) and locate any given variable in it
+  - Identify undefined behavior in a code sample (out-of-bounds access, use-after-free, signed overflow, strict aliasing) and explain what the compiler is allowed to do
+  - Implement bit-manipulation routines (masking, shifting, packing fields) and explain two's complement and floating-point representation at the bit level
+  - Explain what happens between typing ./a.out and main() running, including loading, and use a debugger such as GDB to inspect a crashed process
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Bryant & O'Hallaron, Computer Systems: A Programmer's Perspective"
+  - "Kernighan & Ritchie, The C Programming Language"

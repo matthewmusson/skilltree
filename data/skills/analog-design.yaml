@@ -1,0 +1,25 @@
+id: analog-design
+title: Analog Circuit Design
+branch: ee-circuits
+prereqs: [circuit-analysis]
+overview: >
+  Analog design is the creation of circuits that process continuous signals:
+  amplifiers, filters, and the transistor stages inside them. The workhorse
+  building block is the operational amplifier (op-amp), a high-gain amplifier
+  used with feedback to make precise circuits, backed by discrete transistors,
+  the BJT (bipolar junction transistor) and MOSFET (metal-oxide-semiconductor
+  field-effect transistor). It is a central electrical engineering skill
+  because the physical world is analog; every sensor interface and audio or
+  power stage passes through analog design before anything digital happens.
+proficiency:
+  - Can design standard op-amp circuits (inverting, non-inverting, difference, transimpedance) with component values chosen for the required gain, input impedance, and bandwidth.
+  - Can design passive and active filters (Sallen-Key, multiple feedback) to meet a cutoff and rolloff specification.
+  - Can bias a BJT or MOSFET into a stable operating point and compute the resulting small-signal gain.
+  - Can apply the gain-bandwidth product to predict when a chosen op-amp will fail to meet a spec, and select a better part.
+  - Can identify the dominant noise source in a signal chain and estimate output noise from datasheet noise densities.
+  - Can simulate a design in LTspice, including transient, AC, and noise analyses, and explain divergences between simulation and the built circuit in terms of parasitics.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Horowitz & Hill, The Art of Electronics"

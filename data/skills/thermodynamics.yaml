@@ -1,0 +1,23 @@
+id: thermodynamics
+title: Engineering Thermodynamics
+branch: meche
+prereqs: [mechanics]
+overview: >
+  Thermodynamics is the physics of energy, heat, and work: what the laws of
+  energy conservation and entropy permit, and what they forbid. In engineering
+  it answers questions like how efficient an engine, refrigerator, or power
+  plant can possibly be, and how much work a given heat flow can produce. It
+  is a foundational course in the mechanical curriculum and the entry point to
+  anything involving engines, HVAC (heating, ventilation, and air
+  conditioning), propulsion, or energy systems.
+proficiency:
+  - Can apply the first law of thermodynamics to closed and open (control volume) systems, including turbines, compressors, and heat exchangers.
+  - Can use property tables and charts for steam and refrigerants to find state properties at each point of a cycle.
+  - Can analyze the Rankine, Brayton, Otto, and vapor-compression refrigeration cycles and compute their thermal efficiency or coefficient of performance.
+  - Can compute the Carnot limit for a process between two temperatures and explain why no real device beats it.
+  - Can use entropy balances to identify where a real system loses available work relative to the ideal.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Cengel & Boles, Thermodynamics: An Engineering Approach"

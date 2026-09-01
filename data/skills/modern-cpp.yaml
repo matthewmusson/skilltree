@@ -1,0 +1,26 @@
+id: modern-cpp
+title: Modern C++ (or Rust) at Scale
+branch: cs-systems
+prereqs: [systems-programming]
+overview: >
+  This skill is writing safe, fast code in a large C++ or Rust codebase, where
+  the language gives you manual-memory performance but expects discipline in
+  return. The core ideas are RAII (Resource Acquisition Is Initialization,
+  tying a resource's lifetime to an object's scope), ownership and move
+  semantics that make it explicit which code is responsible for freeing what,
+  and generics (C++ templates or Rust traits) for writing code once across
+  many types. At scale the skill shifts from syntax to judgment: designing
+  APIs others cannot misuse and changing shared code without breaking it.
+proficiency:
+  - Write C++ or Rust that manages resources through RAII and smart pointers or ownership, with no leaks, double frees, or dangling references under sanitizers
+  - Explain when a move happens versus a copy in a given code sample, and restructure code to eliminate unnecessary copies
+  - Write a generic function or container with templates or traits, and decode the compiler errors when an instantiation fails
+  - Use the standard library (STL containers, algorithms, iterators, or Rust equivalents) idiomatically instead of hand-rolling loops
+  - Design a library API with clear ownership rules, const-correctness or borrow rules, and error handling, and document its contract
+  - Navigate and safely modify a codebase of 100k+ lines, using the build system and tests to bound the blast radius of a change
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Meyers, Effective Modern C++"
+  - "Klabnik & Nichols, The Rust Programming Language"

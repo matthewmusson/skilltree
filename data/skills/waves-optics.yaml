@@ -1,0 +1,21 @@
+id: waves-optics
+title: Waves & Optics
+branch: physics
+prereqs: [mechanics, differential-equations]
+overview: >
+  Waves and optics studies how disturbances travel through space: vibrations on
+  strings, sound, and light. It covers coupled oscillators, the wave equation,
+  interference and diffraction (how waves combine and bend around obstacles),
+  lens-based optics, and Fourier decomposition, which breaks any signal into
+  simple sine waves. It is a core mid-level physics subject and the shared
+  language behind signal processing, imaging, acoustics, and photonics.
+proficiency:
+  - Derive the wave equation for a stretched string and solve it for standing and traveling waves with given boundary conditions.
+  - Compute normal modes and frequencies of coupled oscillator systems.
+  - Predict interference and diffraction patterns for double slits, gratings, and single apertures, including fringe positions and intensities.
+  - Trace rays through lens and mirror systems to locate images and compute magnification.
+  - Decompose a periodic signal into its Fourier series and interpret the spectrum.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources: []

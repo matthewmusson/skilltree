@@ -1,0 +1,24 @@
+id: control-systems
+title: Control Systems
+branch: robotics
+prereqs: [signal-processing, linear-algebra]
+overview: >
+  Control systems engineering is the design of feedback: measuring a system's
+  output, comparing it to a target, and computing a correction, so that
+  motors hold speed, drones stay level, and ovens hold temperature. The
+  theory analyzes when a feedback loop is stable and how fast and accurately
+  it responds. It sits on top of signals and systems and is used across
+  electrical, mechanical, aerospace, and chemical engineering; robotics in
+  particular is largely applied control.
+proficiency:
+  - Can model a physical system (motor, thermal mass, mass-spring-damper) as a transfer function or state-space model and validate it against step-response data.
+  - Can design and hand-tune a PID (proportional-integral-derivative) controller on real hardware and articulate what each term contributes and what breaks when it is too large.
+  - Can assess closed-loop stability using gain and phase margins from a Bode plot and translate margin requirements into controller adjustments.
+  - Can sketch a root locus and use it to predict how closed-loop poles move with gain.
+  - Can convert between transfer-function and state-space representations, check controllability and observability, and design a state-feedback controller by pole placement.
+  - Can discretize a continuous controller for implementation on a microcontroller and choose a sample rate that does not destroy the phase margin.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Astrom & Murray, Feedback Systems"

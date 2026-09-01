@@ -1,0 +1,25 @@
+id: ml-systems-performance
+title: ML Systems & Performance
+branch: cs-ml
+prereqs: [pytorch-engineering, gpu-programming]
+overview: >
+  ML systems and performance is the engineering of making training and
+  inference fast and cheap on real hardware. The recurring theme is that
+  modern accelerators are usually limited by memory bandwidth, not arithmetic,
+  so the levers are kernel fusion (merging operations to avoid round trips to
+  memory), quantization (running in lower-precision number formats), and
+  serving optimizations such as batching and KV-cache management (reusing
+  cached attention state during generation). The skill is diagnostic first:
+  profile, find the true bottleneck, then apply the right lever. It is a
+  specialized node combining ML and GPU systems knowledge.
+proficiency:
+  - Profile a training or inference run end to end and attribute time to data loading, host-device transfer, kernels, and communication, with evidence from traces
+  - Determine from arithmetic intensity whether an operation is memory-bandwidth-bound or compute-bound and predict the ceiling of any optimization before trying it
+  - Apply kernel fusion via a compiler (e.g. torch.compile) or a hand-written fused kernel and measure the reduction in memory traffic and wall time
+  - Quantize a model to int8 or fp8, measure both the speedup and the accuracy delta, and identify layers that must stay in higher precision
+  - Optimize a serving deployment using batching and KV-cache management, and report the throughput and latency tradeoff curve
+  - Estimate the hardware cost of a proposed training run from model size, token count, and cluster specs, within a factor of two
+acquisition:
+  on_the_job_only: false
+  notes: "Frontier-lab territory; classes lag industry practice."
+resources: []

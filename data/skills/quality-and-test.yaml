@@ -1,0 +1,18 @@
+id: quality-and-test
+title: Quality Engineering & Test
+branch: supply-chain
+prereqs: [statistical-inference]
+overview: >
+  Keeping a manufactured product inside spec using statistics. Statistical
+  process control (SPC) watches a line's drift, capability indices quantify
+  margin, and reliability testing (accelerated life, HALT/HASS) predicts field
+  failures before customers find them.
+proficiency:
+  - Set up an SPC control chart and act correctly on out-of-control signals
+  - Compute process capability (Cpk) and translate it into an expected defect rate
+  - Design an accelerated life test and defend the acceleration model
+  - Run a root-cause investigation (8D, fishbone) that ends in a verified fix
+acquisition:
+  on_the_job_only: false
+  notes: "Statistics classes teach the math; applying it to a real line is industry work."
+resources: []

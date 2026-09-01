@@ -1,0 +1,24 @@
+id: statics-strength
+title: Statics & Strength of Materials
+branch: meche
+prereqs: [mechanics]
+overview: >
+  Statics is the analysis of structures that are not accelerating: given the
+  loads on a bracket, truss, or frame, find the forces inside every member.
+  Strength of materials extends this to ask whether each member survives,
+  using stress (force per unit area) and strain (fractional deformation) to
+  predict bending, buckling, and failure. Together they are the core analytical
+  toolkit of structural mechanical design. Any time an engineer claims a part
+  will not break, this is the math behind the claim.
+proficiency:
+  - Can draw a correct free-body diagram for a multi-body system, including reaction forces at pins, rollers, and fixed supports.
+  - Can solve truss member forces by the method of joints or sections and identify zero-force members by inspection.
+  - Can compute axial, bending, and shear stresses in a loaded beam, including drawing shear and moment diagrams.
+  - Can size a beam or column against yielding and against Euler buckling, and state which governs.
+  - Can apply a failure criterion (von Mises for ductile metals, maximum normal stress for brittle materials) and choose a defensible factor of safety.
+  - Can predict deflection of a cantilever or simply supported beam and verify it against a hand formula or measurement.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Hibbeler, Mechanics of Materials"

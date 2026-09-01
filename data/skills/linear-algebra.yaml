@@ -1,0 +1,24 @@
+id: linear-algebra
+title: Linear Algebra
+branch: math
+prereqs: [calculus]
+overview: >
+  Linear algebra is the study of vectors (lists of numbers treated as single
+  objects), matrices (grids of numbers that transform vectors), and the spaces
+  they live in. Core tools include eigendecomposition (finding the directions a
+  transformation only stretches) and the singular value decomposition, or SVD (a
+  factorization that reveals the strongest actions of any matrix). Alongside
+  calculus it is the most reused math in engineering; graphics, controls,
+  structural analysis, statistics, and machine learning are all built on it.
+proficiency:
+  - Solve linear systems by Gaussian elimination and characterize the solution set via rank, null space, and column space
+  - Compute eigenvalues and eigenvectors of a matrix and diagonalize it when possible
+  - Compute the SVD of a small matrix by hand and interpret its factors geometrically
+  - Construct orthonormal bases via Gram-Schmidt and use projection to solve least-squares problems
+  - Prove basic statements about vector spaces, such as linear independence of a given set or that a map is invertible
+  - Implement matrix operations in code and predict how numerical scale (conditioning) affects the answer
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Strang, Introduction to Linear Algebra"

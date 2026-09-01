@@ -1,0 +1,25 @@
+id: operating-systems
+title: Operating Systems
+branch: cs-systems
+prereqs: [systems-programming]
+overview: >
+  An operating system (OS) is the software that multiplexes one machine among
+  many programs: it schedules processes and threads onto CPUs, gives each
+  process the illusion of its own memory through virtual memory, stores data
+  durably through filesystems, and exposes all of it to programs through
+  system calls (syscalls). Studying OS means learning these mechanisms deeply
+  enough to build or modify them, usually by writing pieces of a real or
+  teaching kernel. It is a pillar of systems engineering: performance work,
+  concurrency, networking, and security all lean on this mental model.
+proficiency:
+  - Explain the process and thread lifecycle and implement a program using fork, exec, wait, and pipes correctly
+  - Trace a virtual address through page tables to a physical address, and explain what the kernel does on a page fault, including copy-on-write and swapping
+  - Implement or modify a scheduler in a teaching kernel and measure how the policy changes latency and throughput for a workload
+  - Explain what happens during a syscall from user code to kernel and back, and use strace or equivalent to debug a program from its syscall trace
+  - Describe how a journaling filesystem lays out inodes, directories, and data blocks, and reason about what survives a crash at a given point
+  - Implement a working synchronization primitive (lock or condition variable) on top of hardware atomics
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Arpaci-Dusseau, Operating Systems: Three Easy Pieces"

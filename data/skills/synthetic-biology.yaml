@@ -1,0 +1,22 @@
+id: synthetic-biology
+title: Synthetic Biology
+branch: bio-chem
+prereqs: [biochemistry]
+overview: >
+  Synthetic biology is the engineering of living cells: designing genetic
+  circuits (networks of genes that switch each other on and off), assembling
+  the DNA that encodes them, inserting it into cells through cloning
+  workflows, and measuring whether the circuit behaves as designed. It treats
+  DNA sequences as composable parts, the way electronics treats components. It
+  is a specialized applied field built directly on biochemistry and molecular
+  biology.
+proficiency:
+  - Design a genetic circuit (such as a toggle switch or inducible reporter) by choosing promoters, ribosome binding sites, and coding sequences with compatible parts.
+  - Plan and execute a cloning workflow: design primers, amplify fragments by polymerase chain reaction (PCR), assemble them with a method such as Gibson assembly, and verify by sequencing.
+  - Transform assembled DNA into bacterial cells and select correct clones using antibiotic markers and screening.
+  - Characterize a circuit's behavior with fluorescence measurements, producing dose-response curves with appropriate controls.
+  - Diagnose a failed construct by isolating whether the fault is in design, assembly, transformation, or measurement.
+acquisition:
+  on_the_job_only: false
+  notes: "Lab technique matures in a research lab, not lecture."
+resources: []

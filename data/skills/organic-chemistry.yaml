@@ -1,0 +1,21 @@
+id: organic-chemistry
+title: Organic Chemistry
+branch: bio-chem
+prereqs: [general-chemistry]
+overview: >
+  Organic chemistry is the chemistry of carbon-based molecules, the compounds
+  that make up living matter, plastics, and most drugs. It focuses on
+  structure (how atoms arrange in three dimensions), mechanism (the
+  step-by-step electron movements of a reaction), and synthesis (planning a
+  sequence of reactions to build a target molecule). It is a core mid-level
+  course and the gateway to biochemistry, pharmaceuticals, and polymer work.
+proficiency:
+  - Name organic molecules and draw their three-dimensional structures, including identifying stereocenters and assigning R/S configuration.
+  - Draw the arrow-pushing mechanism for standard reaction classes (substitution, elimination, addition, carbonyl chemistry) and predict the major product.
+  - Rank compounds by acidity, basicity, or reactivity using structural arguments (resonance, induction, hybridization).
+  - Propose a multi-step synthesis of a simple target molecule from given starting materials.
+  - Assign a structure to an unknown compound from nuclear magnetic resonance (NMR), infrared (IR), and mass spectrometry data.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources: []

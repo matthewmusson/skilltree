@@ -1,0 +1,21 @@
+id: intro-biology
+title: Molecular & Cell Biology Foundations
+branch: bio-chem
+prereqs: []
+overview: >
+  This is the introductory study of how cells work at the molecular level. It
+  centers on the central dogma, the flow of information from DNA to RNA to
+  protein, along with cell structure, how cells extract energy from food, and
+  how biologists actually measure these things in the lab. It is the entry
+  point to the biological branch; biochemistry, synthetic biology, and
+  biomedical work all assume it.
+proficiency:
+  - Trace a gene from DNA sequence through transcription and translation to protein, including the role of the genetic code.
+  - Identify the major cell structures (nucleus, mitochondria, membranes, ribosomes) and state the function of each.
+  - Outline how cells extract energy from glucose through glycolysis and respiration, and where ATP, the cell's energy currency, is produced and spent.
+  - Explain how DNA replicates and how mutations arise and propagate.
+  - Read a molecular biology figure (gel electrophoresis, polymerase chain reaction (PCR) result, fluorescence microscopy image) and state what the experiment shows.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources: []

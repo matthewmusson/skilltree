@@ -1,0 +1,23 @@
+id: fea
+title: Finite Element Analysis
+branch: meche
+prereqs: [statics-strength, numerical-methods]
+overview: >
+  Finite Element Analysis (FEA) is a numerical method that predicts stress and
+  deformation in shapes too complicated for hand formulas. The software splits
+  a part into many small elements (the mesh), solves the equations of
+  elasticity on each, and stitches the results together. It is a standard
+  tool in mechanical design for validating parts before they are built. The
+  skill is a specialized layer on top of strength of materials, and its core
+  is judgment: a solver always produces colorful stress plots, and the
+  analyst's job is to know when they are wrong.
+proficiency:
+  - Can set up a static stress study in SolidWorks Simulation, Fusion 360, or Ansys with loads and constraints that match how the part is actually held and loaded.
+  - Can explain what meshing does, choose between shell and solid elements for a given geometry, and refine the mesh where gradients are steep.
+  - Can run a convergence study and report a stress value only after showing it is mesh-independent.
+  - Can identify artificial stress singularities at sharp corners and point constraints, and avoid quoting them as real stresses.
+  - Can sanity-check an FEA result against a hand calculation on a simplified version of the geometry and reconcile disagreements.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources: []

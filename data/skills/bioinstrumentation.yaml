@@ -1,0 +1,23 @@
+id: bioinstrumentation
+title: Bioinstrumentation
+branch: bio-chem
+prereqs: [electronic-prototyping, intro-biology]
+overview: >
+  Bioinstrumentation is the design of sensors and electronics that measure
+  biological signals: heartbeats, nerve impulses, muscle activity, and chemical
+  concentrations. The core difficulty is that these signals are tiny, often
+  microvolts, and buried in electrical noise, so the field centers on
+  amplification, noise rejection, transducers that convert biological
+  quantities into electrical ones, and safety isolation that protects the
+  person being measured. It is a specialized skill at the junction of
+  electronics and biology, central to medical devices and lab research tools.
+proficiency:
+  - Design an instrumentation-amplifier front end that recovers a microvolt-level biological signal, computing the gain, bandwidth, and common-mode rejection required.
+  - Identify the dominant noise source in a biosignal recording (mains interference, motion artifact, amplifier noise) from the raw trace and fix it.
+  - Select and apply an appropriate transducer (electrode, photodiode, thermistor, strain gauge) for a given biological quantity and characterize its response.
+  - Implement safety isolation between a subject and mains-powered equipment and verify leakage current against limits.
+  - Choose filter cutoffs and sampling rates for a given biosignal and justify them against the signal's frequency content.
+acquisition:
+  on_the_job_only: false
+  notes: "Usually learned in research labs or medtech industry; few dedicated classes."
+resources: []

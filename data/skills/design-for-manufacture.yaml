@@ -1,0 +1,19 @@
+id: design-for-manufacture
+title: Design for Manufacture
+branch: supply-chain
+prereqs: [cad, materials-selection]
+overview: >
+  Designing parts so they can be made cheaply and reliably at volume, where the
+  manufacturing method (injection molding, casting, stamping, machining) drives
+  the design rules. Draft angles, tolerances, part count, and assembly steps
+  become first-class design constraints.
+proficiency:
+  - Redesign a 3D-printed prototype part for injection molding, with draft, uniform wall thickness, and gate placement
+  - Estimate per-unit cost of a part across processes and quantities
+  - Run a tolerance stack-up and assign tolerances only where the function needs them
+  - Reduce an assembly's part count and fastener types without losing function
+acquisition:
+  on_the_job_only: false
+  notes: "Classes introduce the rules; judgment comes from taking a product through tooling."
+resources:
+  - "Boothroyd, Product Design for Manufacture and Assembly"

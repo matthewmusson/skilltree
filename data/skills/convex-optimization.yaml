@@ -1,0 +1,25 @@
+id: convex-optimization
+title: Convex Optimization
+branch: math
+prereqs: [linear-algebra, multivariable-calculus]
+overview: >
+  Convex optimization is the theory and practice of minimizing convex functions
+  (bowl-shaped, so any local minimum is global) over convex sets (regions with
+  no dents). Its machinery includes duality (a paired problem that bounds the
+  original), the Karush-Kuhn-Tucker (KKT) conditions that certify optimality,
+  and standard problem classes: linear programs (LP), quadratic programs (QP),
+  and semidefinite programs (SDP). It is a specialized but widely applied
+  skill, central to control, machine learning, resource allocation, and
+  engineering design.
+proficiency:
+  - Prove a given set or function convex using definitions and composition rules
+  - Recognize and transform a practical problem into a standard class such as LP, QP, or SDP, or show it is not convex
+  - Derive the Lagrangian dual of a problem, state weak and strong duality, and check a constraint qualification such as Slater's condition
+  - Write down and verify the KKT conditions for a constrained problem and use them to solve small instances analytically
+  - Formulate and solve problems in a modeling tool such as CVXPY, and diagnose infeasibility or unboundedness reported by the solver
+  - Explain what gradient descent and interior point methods converge to on a convex problem and at what rate, and verify empirically
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Boyd & Vandenberghe, Convex Optimization"

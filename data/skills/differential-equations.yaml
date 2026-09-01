@@ -1,0 +1,23 @@
+id: differential-equations
+title: Ordinary Differential Equations
+branch: math
+prereqs: [calculus]
+overview: >
+  An ordinary differential equation (ODE) relates a function of one variable,
+  usually time, to its own derivatives; it is how engineering describes systems
+  that evolve, such as circuits, vibrating structures, and chemical reactors.
+  The skill covers solving first and second order equations, systems of linear
+  ODEs, phase portraits (pictures of how solutions flow), stability of
+  equilibria, and the Laplace transform (a tool that turns ODEs into algebra).
+  It is foundational for controls, dynamics, and simulation.
+proficiency:
+  - Solve first-order ODEs by separation of variables, integrating factors, and exact-equation methods
+  - Solve linear constant-coefficient second-order ODEs, including forced and resonant cases, and interpret damping regimes physically
+  - Solve linear systems of ODEs via eigendecomposition and sketch the corresponding phase portrait
+  - Classify equilibria of a nonlinear system by linearization and state when that classification is trustworthy
+  - Apply the Laplace transform to solve initial value problems with discontinuous or impulsive forcing
+  - Derive the ODE governing a physical system from first principles, such as a spring-mass-damper or an RC circuit
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources: []

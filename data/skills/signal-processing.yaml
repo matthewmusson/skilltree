@@ -1,0 +1,23 @@
+id: signal-processing
+title: Signals & Systems
+branch: ee-circuits
+prereqs: [differential-equations, linear-algebra]
+overview: >
+  Signals and systems is the mathematical theory of how systems transform
+  signals over time, built around linear time-invariant (LTI) systems, ones
+  whose behavior does not change over time and scales linearly with input.
+  Its central tools are convolution and the Fourier, Laplace, and z-transforms,
+  which convert hard time-domain problems into simple frequency-domain algebra.
+  It is a foundational theory course that underpins control systems, digital
+  signal processing, communications, and much of modern measurement.
+proficiency:
+  - Can compute the output of an LTI system by convolving the input with the impulse response, in both continuous and discrete time.
+  - Can compute Fourier series and transforms of standard signals and use their properties (shifting, scaling, duality) instead of brute-force integration.
+  - Can use the Laplace transform to solve linear differential equations and read stability off pole locations.
+  - Can state and apply the Nyquist-Shannon sampling theorem, predict aliasing for a given signal and sample rate, and specify the required anti-aliasing filter.
+  - Can analyze discrete-time systems with the z-transform and design a simple FIR or IIR digital filter to a magnitude specification, verifying it in Python or MATLAB.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Oppenheim & Willsky, Signals and Systems"

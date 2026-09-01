@@ -1,0 +1,26 @@
+id: ml-foundations
+title: Machine Learning Foundations
+branch: cs-ml
+prereqs: [linear-algebra, probability-theory]
+overview: >
+  Machine learning (ML) is fitting functions to data instead of programming
+  them by hand. Supervised learning fits a function from labeled examples,
+  unsupervised learning finds structure without labels. The core machinery is
+  a loss function measuring how wrong the model is, gradient descent to reduce
+  that loss, and regularization to keep the model from memorizing the training
+  set. Equally central is evaluation methodology, the discipline of measuring
+  performance on data the model has never seen. This node is the base of the
+  entire ML branch; everything deeper assumes it.
+proficiency:
+  - Implement linear and logistic regression from scratch, including the gradient derivation, and verify against a library implementation
+  - Derive the gradient of a given loss function by hand and check it numerically with finite differences
+  - Diagnose overfitting versus underfitting from train and validation curves and choose the right response (more data, regularization, capacity change)
+  - Design a train/validation/test split that avoids leakage for a given dataset, including grouped or time-ordered data, and defend it
+  - Select and justify an evaluation metric (accuracy, precision/recall, AUC, calibration) for a stated problem, including class-imbalance cases
+  - Explain the bias-variance decomposition and predict how changing model capacity or dataset size moves each term
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Hastie, Tibshirani & Friedman, The Elements of Statistical Learning"
+  - "Bishop, Pattern Recognition and Machine Learning"

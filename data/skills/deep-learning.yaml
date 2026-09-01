@@ -1,0 +1,27 @@
+id: deep-learning
+title: Deep Learning
+branch: cs-ml
+prereqs: [ml-foundations]
+overview: >
+  Deep learning is machine learning with neural networks of many layers,
+  trained end to end by backpropagation, the algorithm that computes the
+  gradient of the loss with respect to every parameter by applying the chain
+  rule backward through the network. The craft is in what makes training
+  actually work: weight initialization, normalization layers, optimizers such
+  as Adam, and reading training diagnostics like loss curves to tell a broken
+  run from a healthy one. Architectures covered include CNNs (convolutional
+  neural networks, built for images) and RNNs (recurrent neural networks,
+  built for sequences). It is the platform on which transformers, vision, and
+  robot learning all sit.
+proficiency:
+  - Implement a multilayer network and backpropagation from scratch in NumPy and match gradients against a numerical check
+  - Implement a CNN and explain the parameter count, receptive field, and output shape of each layer
+  - Diagnose a failing training run from its loss curves and gradient statistics, distinguishing bad learning rate, bad initialization, data bugs, and overfitting
+  - Explain why vanishing and exploding gradients occur and apply the fixes (initialization schemes, normalization, residual connections) that address them
+  - Choose and tune an optimizer and learning-rate schedule for a new problem and justify the choices from observed training behavior
+  - Reproduce a published result at small scale, matching the reported metric within noise
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Goodfellow, Bengio & Courville, Deep Learning"

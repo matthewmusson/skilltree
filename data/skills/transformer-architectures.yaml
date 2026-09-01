@@ -1,0 +1,27 @@
+id: transformer-architectures
+title: Transformer Architectures
+branch: cs-ml
+prereqs: [deep-learning]
+overview: >
+  The transformer is the neural network architecture behind modern language
+  models and much of vision. Its core operation is scaled dot-product
+  attention (SDPA), which lets every position in a sequence gather information
+  from every other position, weighted by learned relevance. Around that sit
+  multi-head attention (several attention operations in parallel), positional
+  encodings (since attention alone is order-blind), and two family layouts,
+  encoder-decoder (for input-to-output mapping like translation) and
+  decoder-only (for next-token generation like GPT-style models). The KV
+  cache (storing past keys and values so generation does not recompute them)
+  is the central inference-time mechanism.
+proficiency:
+  - Implement scaled dot-product attention and multi-head attention from scratch, including masking, and match a reference implementation numerically
+  - Implement a KV cache for autoregressive generation and show the resulting speedup and its memory cost as a function of sequence length
+  - Explain and implement at least two positional encoding schemes (e.g. sinusoidal, rotary) and state what breaks without one
+  - Choose between encoder-decoder and decoder-only layouts for a stated task and justify the choice with the attention masking each implies
+  - Compute the parameter count, FLOPs, and attention memory of a transformer configuration by hand, and explain why naive attention is quadratic in sequence length
+  - Explain how flash attention reorders the computation to avoid materializing the full attention matrix, and when it changes what is feasible
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources:
+  - "Vaswani et al., Attention Is All You Need"

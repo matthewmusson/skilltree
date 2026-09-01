@@ -1,0 +1,23 @@
+id: discrete-math
+title: Discrete Mathematics
+branch: math
+prereqs: [proof-writing]
+overview: >
+  Discrete mathematics studies structures made of separate, countable pieces
+  rather than continuous quantities: counting arrangements (combinatorics),
+  networks of nodes and links (graph theory), formal logic, and recurrences
+  (sequences defined by rules referencing earlier terms). It is the mathematical
+  backbone of computer science, underlying algorithms, data structures,
+  cryptography, and network design, and it is the standard proving ground for
+  proof technique.
+proficiency:
+  - Count arrangements and selections using permutations, combinations, inclusion-exclusion, and the pigeonhole principle
+  - Prove properties of graphs, such as conditions for connectivity, the existence of Euler circuits, or bounds on edges in trees
+  - Solve linear recurrences with constant coefficients and verify the closed form by induction
+  - Manipulate propositional and predicate logic formulas, including building truth tables and proving logical equivalences
+  - Prove statements in elementary number theory, such as results about divisibility and modular arithmetic
+  - Model a concrete problem, such as scheduling or routing, as a graph or counting problem and justify the model
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources: []

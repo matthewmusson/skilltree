@@ -1,0 +1,22 @@
+id: lagrangian-mechanics
+title: Lagrangian & Hamiltonian Mechanics
+branch: physics
+prereqs: [mechanics, differential-equations]
+overview: >
+  Lagrangian and Hamiltonian mechanics are reformulations of Newton's laws
+  built on a single quantity called the action; nature picks the path that
+  makes the action stationary. This viewpoint turns hard force-balance problems
+  into systematic calculus and reveals that every symmetry of a system implies
+  a conserved quantity (Noether's theorem). It is the working language of
+  advanced physics, and the same machinery drives the dynamics engines used in
+  robotics and simulation.
+proficiency:
+  - Write down the Lagrangian for a constrained mechanical system in generalized coordinates and derive its equations of motion from the Euler-Lagrange equations.
+  - Identify symmetries of a Lagrangian and derive the corresponding conserved quantities via Noether's theorem.
+  - Construct the Hamiltonian from a Lagrangian by Legendre transform and write Hamilton's equations.
+  - Solve small-oscillation problems by finding normal modes from the Lagrangian.
+  - Derive the equations of motion for a multi-link mechanism, such as a double pendulum or robot arm, where direct force analysis is impractical.
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources: []

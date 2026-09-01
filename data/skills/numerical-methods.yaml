@@ -1,0 +1,24 @@
+id: numerical-methods
+title: Numerical Methods
+branch: math
+prereqs: [linear-algebra, differential-equations, programming-fundamentals]
+overview: >
+  Numerical methods is the study of how continuous mathematics is actually
+  computed on machines that store numbers with finite precision. It covers
+  floating point arithmetic and its rounding errors, conditioning (how
+  sensitive a problem's answer is to small input changes), solvers for linear
+  systems, integrators that step ordinary differential equations forward in
+  time, interpolation (fitting a curve through data points), and quadrature
+  (numerical integration). Every simulation an engineer runs rests on these
+  algorithms, so this skill is broadly foundational for computational work.
+proficiency:
+  - Predict when a floating point computation loses accuracy, such as catastrophic cancellation, and restructure the formula to avoid it
+  - Compute or estimate the condition number of a problem and distinguish ill-conditioning from an unstable algorithm
+  - Implement and compare direct and iterative linear solvers, such as LU decomposition and conjugate gradient, and choose between them for a given system
+  - Implement explicit and implicit ODE integrators, verify their order of accuracy empirically, and identify stiffness from solver behavior
+  - Construct polynomial and spline interpolants and explain when high-degree polynomial interpolation fails
+  - Select and apply a quadrature rule to meet a stated error tolerance, verifying the error estimate numerically
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources: []

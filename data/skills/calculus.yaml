@@ -1,0 +1,22 @@
+id: calculus
+title: Single-Variable Calculus
+branch: math
+prereqs: []
+overview: >
+  Calculus is the mathematics of continuous change. It studies limits (the value a
+  quantity approaches), derivatives (instantaneous rates of change), integrals
+  (accumulated totals such as areas and distances), and Taylor series
+  (approximating a function by polynomials). It is the root of the entire
+  quantitative engineering curriculum; nearly every later math, physics, and
+  modeling skill assumes it.
+proficiency:
+  - Compute derivatives of composite, implicit, and inverse functions using the chain, product, and quotient rules
+  - Evaluate definite and indefinite integrals using substitution, integration by parts, and partial fractions
+  - Set up an integral from a word problem by identifying the quantity being accumulated and its differential element
+  - Derive the Taylor series of a function about a point and bound the truncation error
+  - Determine whether an infinite series converges using ratio, comparison, and integral tests
+  - Solve optimization and related-rates problems by translating them into derivative conditions
+acquisition:
+  on_the_job_only: false
+  notes: ""
+resources: []
