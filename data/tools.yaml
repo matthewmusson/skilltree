@@ -26,3 +26,15 @@ tools:
     demonstrates: [machining]
     youtube: 8ywiGFqoPSA
     typical_shop: true
+
+  - id: manual-mill
+    name: Manual mill
+    zone: machining
+    purpose: >
+      Spins a cutter over a workpiece clamped to a table that moves on measured
+      handwheels. Makes flat faces, squared edges, slots, pockets, and holes at
+      precise coordinates; the machine of choice whenever a feature's location
+      is the spec.
+    demonstrates: [machining]
+    youtube: 5ZkP5RW41rg
+    typical_shop: true

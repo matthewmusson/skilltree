@@ -12,6 +12,7 @@ makerspaces:
 inventory:
   - { space: prl, tool: bandsaw, access: "Requires PRL general shop training." }
   - { space: prl, tool: drill-press, access: "Requires PRL general shop training." }
+  - { space: prl, tool: manual-mill, access: "Requires PRL machining training (mill course)." }
 
 demonstrations:
   - { skill: cad, space: prl, note: "Model a part, then manufacture it on any PRL machine." }

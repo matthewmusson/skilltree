@@ -5163,6 +5163,34 @@
      100,
      44
     ]
+   },
+   {
+    "id": "manual-mill",
+    "name": "Manual mill",
+    "zone": "machining",
+    "purpose": "Spins a cutter over a workpiece clamped to a table that moves on measured handwheels. Makes flat faces, squared edges, slots, pockets, and holes at precise coordinates; the machine of choice whenever a feature's location is the spec.",
+    "youtube": "5ZkP5RW41rg",
+    "typical_shop": true,
+    "demonstrates": [
+     {
+      "id": "machining",
+      "title": "Machining & Shop Fabrication",
+      "branch": "meche"
+     }
+    ],
+    "spaces": [
+     {
+      "id": "prl",
+      "name": "Product Realization Lab (PRL)",
+      "access": "Requires PRL machining training (mill course)."
+     }
+    ],
+    "rect": [
+     332,
+     96,
+     90,
+     44
+    ]
    }
   ],
   "workflows": []
