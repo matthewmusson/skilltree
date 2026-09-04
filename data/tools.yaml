@@ -1,0 +1,15 @@
+# Universal tool catalog for the hypothetical shop (college-agnostic layer).
+# One entry per machine, added one at a time as the walkthrough covers them.
+# youtube: video id of the curated demo clip (picked by Matthew or vetted).
+tools:
+  - id: bandsaw
+    name: Horizontal bandsaw
+    zone: machining
+    purpose: >
+      Rough-cuts bar and plate stock to approximate length before precision
+      work. A continuous toothed blade loop, run slow for metal with fine-pitch
+      teeth; the horizontal form bows down through clamped stock under gravity
+      feed.
+    demonstrates: [machining]
+    youtube: adRgpGQ01gA
+    typical_shop: true

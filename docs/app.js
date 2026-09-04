@@ -15,7 +15,7 @@ const state = {
   data: null, selected: null, major: "",
   // SVG text measurement returns 0 on display:none elements, so each tab's
   // view renders only while visible; dirty flags defer the hidden one.
-  tab: "graph", graphDirty: true, cmDirty: true, panZoomInit: false,
+  tab: "graph", graphDirty: true, cmDirty: true, shopDirty: true, panZoomInit: false,
 };
 
 // ---- theming ---------------------------------------------------------------
@@ -41,23 +41,28 @@ function applyTheme() {
 }
 
 // ---- tabs ------------------------------------------------------------------
+const TAB_VIEWS = { graph: "graph-wrap", classes: "class-map", shop: "shop-map" };
 function showTab(which) {
   state.tab = which;
-  document.getElementById("graph-wrap").hidden = which !== "graph";
-  document.getElementById("class-map").hidden = which !== "classes";
-  document.getElementById("tab-graph").setAttribute("aria-current", which === "graph" ? "page" : "false");
-  document.getElementById("tab-classes").setAttribute("aria-current", which === "classes" ? "page" : "false");
-  if (location.hash !== (which === "classes" ? "#classes" : ""))
-    history.replaceState(null, "", which === "classes" ? "#classes" : location.pathname);
+  for (const [t, viewId] of Object.entries(TAB_VIEWS)) {
+    document.getElementById(viewId).hidden = t !== which;
+    document.getElementById("tab-" + t).setAttribute("aria-current", t === which ? "page" : "false");
+  }
+  const hash = which === "graph" ? "" : "#" + which;
+  if (location.hash !== hash)
+    history.replaceState(null, "", hash || location.pathname);
   refreshTab();
 }
 function refreshTab() {
   if (state.tab === "graph") {
     if (state.graphDirty) { render(); state.graphDirty = false; }
     if (!state.panZoomInit) { initPanZoom(); state.panZoomInit = true; }
-  } else if (state.cmDirty) {
+  } else if (state.tab === "classes" && state.cmDirty) {
     renderClassDag(document.getElementById("cm-branch").value || "robotics");
     state.cmDirty = false;
+  } else if (state.tab === "shop" && state.shopDirty) {
+    renderShop();
+    state.shopDirty = false;
   }
 }
 
@@ -92,7 +97,7 @@ async function main() {
   }
 
   const rerenderAll = () => {
-    state.graphDirty = state.cmDirty = true;
+    state.graphDirty = state.cmDirty = state.shopDirty = true;
     refreshTab();
     for (const sw of legend.querySelectorAll(".swatch"))
       sw.style.background = bcolor(sw.dataset.branch);
@@ -143,9 +148,10 @@ async function main() {
   cmSel.value = "robotics";
   cmSel.addEventListener("change", () => renderClassDag(cmSel.value));
 
-  document.getElementById("tab-graph").addEventListener("click", () => showTab("graph"));
-  document.getElementById("tab-classes").addEventListener("click", () => showTab("classes"));
-  showTab(location.hash === "#classes" ? "classes" : "graph");
+  for (const t of Object.keys(TAB_VIEWS))
+    document.getElementById("tab-" + t).addEventListener("click", () => showTab(t));
+  const initial = location.hash.slice(1);
+  showTab(TAB_VIEWS[initial] ? initial : "graph");
 }
 
 // ---- fly-to-branch camera --------------------------------------------------
@@ -659,6 +665,101 @@ function selectClass(c) {
   el.querySelectorAll(".prereq-link").forEach((a) =>
     a.addEventListener("click", () => select(a.dataset.id, { fly: true })));
   document.getElementById("panel").hidden = false;
+}
+
+// ---- shop floor plan (wireframe facilities drawing) ------------------------
+function renderShop() {
+  const { shop } = state.data;
+  const svg = document.getElementById("shop-graph");
+  if (!svg || !shop) return;
+  const { w, h } = { w: shop.sheet.w, h: shop.sheet.h };
+  svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
+  svg.innerHTML = "";
+  const mk = (tag, attrs, text) => {
+    const el = document.createElementNS(SVG, tag);
+    for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+    if (text !== undefined) el.textContent = text;
+    return el;
+  };
+
+  // drawing-sheet double border
+  svg.append(
+    mk("rect", { class: "sheet-border", x: 16, y: 16, width: w - 32, height: h - 32 }),
+    mk("rect", { class: "sheet-inner", x: 22, y: 22, width: w - 44, height: h - 44 }),
+  );
+
+  for (const z of shop.zones) {
+    const [x, y, zw, zh] = z.rect;
+    const g = mk("g", { class: "zone" });
+    g.append(
+      mk("rect", { x, y, width: zw, height: zh }),
+      mk("text", { x: x + 8, y: y + 16 }, z.name),
+    );
+    svg.appendChild(g);
+  }
+
+  // title block, bottom-right
+  const tb = mk("g", { class: "titleblock" });
+  tb.append(
+    mk("rect", { x: w - 340, y: h - 72, width: 324, height: 56 }),
+    mk("text", { x: w - 328, y: h - 50 }, "HYPOTHETICAL SHOP · FLOOR PLAN"),
+    mk("text", { x: w - 328, y: h - 32 }, `SKILLTREE · ${shop.machines.length} MACHINE${shop.machines.length === 1 ? "" : "S"} · REV A`),
+  );
+  svg.appendChild(tb);
+
+  for (const m of shop.machines) {
+    const [x, y, mw, mh] = m.rect;
+    const color = m.demonstrates.length ? bcolor(m.demonstrates[0].branch) : "var(--ink)";
+    const g = mk("g", { class: "mnode", transform: `translate(${x},${y})`, tabindex: 0, role: "button", "aria-label": m.name });
+    const label = mk("text", { x: mw / 2, y: mh / 2 + 3.5, "text-anchor": "middle" }, m.name.toUpperCase());
+    g.append(
+      mk("title", {}, m.name),
+      mk("rect", { width: mw, height: mh, stroke: color }),
+      label,
+    );
+    const pick = () => selectTool(m);
+    g.addEventListener("click", pick);
+    g.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); } });
+    svg.appendChild(g);
+    fitText(label, mw - 10);
+  }
+}
+
+function selectTool(m) {
+  const el = document.getElementById("panel-body");
+  const tags = [
+    ...m.spaces.map((s) => `<span class="space-tag">${esc(s.id.toUpperCase())}</span>`),
+    m.typical_shop ? `<span class="space-tag">SHOP</span>` : "",
+  ].join("");
+  const media = m.youtube
+    ? `<button class="video-facade" data-yt="${esc(m.youtube)}" aria-label="Play demo video for ${esc(m.name)}">
+         <img src="https://img.youtube.com/vi/${esc(m.youtube)}/hqdefault.jpg" alt="" loading="lazy">
+         <span class="play">▶</span>
+       </button>`
+    : `<p class="note">No demo clip yet.</p>`;
+  el.innerHTML = `
+    <h2>${esc(m.name)}</h2>
+    <p>${tags}</p>
+    ${media}
+    <section><h3>What it is</h3><p>${esc(m.purpose)}</p></section>
+    ${m.demonstrates.length ? `<section><h3>Skills it demonstrates</h3>
+      <ul>${m.demonstrates.map((d) => `<li><button class="prereq-link" data-id="${esc(d.id)}">${esc(d.title)}</button></li>`).join("")}</ul></section>` : ""}
+    ${m.spaces.length ? `<section><h3>At Stanford</h3>
+      <ul>${m.spaces.map((s) => `<li><strong>${esc(s.name)}</strong>${s.access ? `: ${esc(s.access)}` : ""}</li>`).join("")}</ul></section>` : ""}
+  `;
+  el.querySelector(".video-facade")?.addEventListener("click", (e) => {
+    const id = e.currentTarget.dataset.yt;
+    const wrap = document.createElement("div");
+    wrap.className = "video-embed";
+    wrap.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0"
+      title="Demo video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+    e.currentTarget.replaceWith(wrap);
+  });
+  el.querySelectorAll(".prereq-link").forEach((a) =>
+    a.addEventListener("click", () => select(a.dataset.id, { fly: true })));
+  const panel = document.getElementById("panel");
+  panel.hidden = false;
+  panel.focus({ preventScroll: true });
 }
 
 main();

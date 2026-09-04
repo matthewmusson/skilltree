@@ -7,6 +7,11 @@ makerspaces:
     name: Lab64 (EE Makerspace)
     tools: [soldering stations, oscilloscopes, function generators, power supplies, PCB reflow oven, logic analyzers, FPGA dev boards, 3D printers]
 
+# Which shop-floor tools (data/tools.yaml) each space actually has, with
+# access requirements. Grows one machine at a time with the tool catalog.
+inventory:
+  - { space: prl, tool: bandsaw, access: "Requires PRL general shop training." }
+
 demonstrations:
   - { skill: cad, space: prl, note: "Model a part, then manufacture it on any PRL machine." }
   - { skill: machining, space: prl, note: "PRL training courses; make a machined project part on mill and lathe." }

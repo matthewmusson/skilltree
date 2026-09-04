@@ -1,0 +1,4 @@
+# Common shop workflows: ordered routes through the machines. Each step
+# references a tool id. Directed arrows are drawn on the floor plan when a
+# workflow is selected. Populated once enough machines exist to walk a route.
+workflows: []

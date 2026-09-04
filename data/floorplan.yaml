@@ -1,0 +1,16 @@
+# The hypothetical shop, drawn as a facilities plan. Coordinates are SVG user
+# units on the sheet. rect: [x, y, w, h]. Placements must sit inside the zone
+# their tool belongs to (validated at build time).
+sheet: { w: 1040, h: 780 }
+
+zones:
+  - { id: machining,   name: Machining corner,      rect: [48, 60, 380, 250] }
+  - { id: cutting,     name: Cutting bay,           rect: [452, 60, 200, 250] }
+  - { id: joining,     name: Joining bay,           rect: [676, 60, 320, 250] }
+  - { id: metrology,   name: Metrology,             rect: [48, 340, 200, 190] }
+  - { id: additive,    name: Additive,              rect: [272, 340, 220, 190] }
+  - { id: electronics, name: Electronics bench,     rect: [516, 340, 480, 190] }
+  - { id: handtools,   name: Hand tools + assembly, rect: [48, 560, 948, 130] }
+
+placements:
+  - { tool: bandsaw, rect: [76, 96, 100, 44] }

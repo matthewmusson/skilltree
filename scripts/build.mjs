@@ -65,7 +65,10 @@ const loadYaml = (p) => yaml.load(fs.readFileSync(path.join(root, p), "utf8"));
 const { classes } = loadYaml("data/stanford/classes.yaml");
 const { majors } = loadYaml("data/stanford/majors.yaml");
 const { programs: gradPrograms } = loadYaml("data/stanford/grad-programs.yaml");
-const { makerspaces, demonstrations } = loadYaml("data/stanford/makerspaces.yaml");
+const { makerspaces, demonstrations, inventory = [] } = loadYaml("data/stanford/makerspaces.yaml");
+const { tools } = loadYaml("data/tools.yaml");
+const floorplan = loadYaml("data/floorplan.yaml");
+const { workflows } = loadYaml("data/workflows.yaml");
 
 const classIds = new Set();
 for (const c of classes) {
@@ -91,6 +94,37 @@ const spaceIds = new Set(makerspaces.map((s) => s.id));
 for (const d of demonstrations) {
   if (!skills[d.skill]) errors.push(`demonstration: skill '${d.skill}' does not exist`);
   if (!spaceIds.has(d.space)) errors.push(`demonstration: space '${d.space}' unknown`);
+}
+
+// ---- shop floor: tools, floorplan, workflows, space inventory --------------
+const toolIds = new Set();
+const zoneById = Object.fromEntries(floorplan.zones.map((z) => [z.id, z]));
+for (const t of tools) {
+  if (toolIds.has(t.id)) errors.push(`duplicate tool '${t.id}'`);
+  toolIds.add(t.id);
+  if (!zoneById[t.zone]) errors.push(`tool ${t.id}: zone '${t.zone}' not in floorplan`);
+  for (const s of t.demonstrates ?? [])
+    if (!skills[s]) errors.push(`tool ${t.id}: skill '${s}' does not exist`);
+}
+const placedCount = {};
+const inside = ([x, y, w, h], [zx, zy, zw, zh]) =>
+  x >= zx && y >= zy && x + w <= zx + zw && y + h <= zy + zh;
+for (const p of floorplan.placements) {
+  placedCount[p.tool] = (placedCount[p.tool] ?? 0) + 1;
+  const t = tools.find((t) => t.id === p.tool);
+  if (!t) { errors.push(`placement: tool '${p.tool}' does not exist`); continue; }
+  if (zoneById[t.zone] && !inside(p.rect, zoneById[t.zone].rect))
+    errors.push(`placement ${p.tool}: rect outside its zone '${t.zone}'`);
+}
+for (const t of tools)
+  if ((placedCount[t.id] ?? 0) !== 1)
+    errors.push(`tool ${t.id}: placed ${placedCount[t.id] ?? 0} times, expected exactly once`);
+for (const w of workflows)
+  for (const step of w.steps ?? [])
+    if (!toolIds.has(step.tool)) errors.push(`workflow ${w.id}: tool '${step.tool}' does not exist`);
+for (const inv of inventory) {
+  if (!spaceIds.has(inv.space)) errors.push(`inventory: space '${inv.space}' unknown`);
+  if (!toolIds.has(inv.tool)) errors.push(`inventory: tool '${inv.tool}' does not exist`);
 }
 
 if (errors.length) {
@@ -164,7 +198,27 @@ if (errors.length) {
   process.exit(1);
 }
 
-const out = { generated: null, branches: BRANCHES, nodes, majors, gradPrograms, makerspaces, classDags };
+// ---- shop payload: machines with placement, spaces, and skill links --------
+const placementByTool = Object.fromEntries(floorplan.placements.map((p) => [p.tool, p.rect]));
+const shop = {
+  sheet: floorplan.sheet,
+  zones: floorplan.zones,
+  machines: tools.map((t) => ({
+    id: t.id,
+    name: t.name,
+    zone: t.zone,
+    purpose: t.purpose?.trim() ?? "",
+    youtube: t.youtube ?? null,
+    typical_shop: t.typical_shop ?? false,
+    demonstrates: (t.demonstrates ?? []).map((s) => ({ id: s, title: skills[s].title, branch: skills[s].branch })),
+    spaces: inventory.filter((i) => i.tool === t.id)
+      .map((i) => ({ id: i.space, name: makerspaces.find((s) => s.id === i.space).name, access: i.access ?? "" })),
+    rect: placementByTool[t.id],
+  })),
+  workflows,
+};
+
+const out = { generated: null, branches: BRANCHES, nodes, majors, gradPrograms, makerspaces, classDags, shop };
 fs.writeFileSync(path.join(root, "docs/data.json"), JSON.stringify(out, null, 1));
 
 // Stamp asset versions into index.html so browsers never serve a stale
