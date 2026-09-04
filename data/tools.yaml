@@ -13,3 +13,16 @@ tools:
     demonstrates: [machining]
     youtube: adRgpGQ01gA
     typical_shop: true
+
+  - id: drill-press
+    name: Drill press
+    zone: machining
+    purpose: >
+      Drills round, perpendicular holes with a bit held in a rigid vertical
+      spindle, lowered by lever into work clamped on the table. Also spots,
+      countersinks, reams, and squarely starts taps. Location accuracy comes
+      from layout and a center punch, so holes whose position is critical move
+      to the mill instead.
+    demonstrates: [machining]
+    youtube: 8ywiGFqoPSA
+    typical_shop: true

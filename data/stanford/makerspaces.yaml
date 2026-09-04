@@ -11,6 +11,7 @@ makerspaces:
 # access requirements. Grows one machine at a time with the tool catalog.
 inventory:
   - { space: prl, tool: bandsaw, access: "Requires PRL general shop training." }
+  - { space: prl, tool: drill-press, access: "Requires PRL general shop training." }
 
 demonstrations:
   - { skill: cad, space: prl, note: "Model a part, then manufacture it on any PRL machine." }
