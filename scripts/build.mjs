@@ -166,6 +166,14 @@ if (errors.length) {
 
 const out = { generated: null, branches: BRANCHES, nodes, majors, gradPrograms, makerspaces, classDags };
 fs.writeFileSync(path.join(root, "docs/data.json"), JSON.stringify(out, null, 1));
+
+// Stamp asset versions into index.html so browsers never serve a stale
+// app.js/styles.css/data.json mix after a rebuild.
+const stamp = Date.now().toString(36);
+const idx = path.join(root, "docs/index.html");
+fs.writeFileSync(idx, fs.readFileSync(idx, "utf8")
+  .replace(/\?v=[a-z0-9]+/g, `?v=${stamp}`)
+  .replace(/window\.ASSET_V = "[a-z0-9]+"/, `window.ASSET_V = "${stamp}"`));
 console.log(
   `OK: ${nodes.length} skills, ${classes.length} classes, ${majors.length} major(s), ` +
   `${Math.max(...Object.values(layer)) + 1} layers -> docs/data.json`

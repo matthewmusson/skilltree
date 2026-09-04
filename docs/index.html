@@ -8,13 +8,17 @@
   const t = localStorage.getItem("skilltree-theme");
   if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
 </script>
-<link rel="stylesheet" href="fonts/plex.css" />
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="fonts/plex.css?v=mtmbn4mi" />
+<link rel="stylesheet" href="styles.css?v=mtmbn4mi" />
 </head>
 <body>
 <header>
   <h1>Skilltree</h1>
   <span class="tagline">an engineering skill DAG · Stanford overlay</span>
+  <nav id="tabs" aria-label="Views">
+    <button id="tab-graph" class="tab" aria-current="page">Skill graph</button>
+    <button id="tab-classes" class="tab">Class maps</button>
+  </nav>
   <label class="major-select">
     Major overlay
     <select id="major"><option value="">none</option></select>
@@ -34,7 +38,7 @@
       </div>
       <p id="overlay-key" hidden>solid fill = teaches · dashed = touches · dimmed = not covered</p>
     </div>
-    <section id="class-map">
+    <section id="class-map" hidden>
       <h2>Class map ·
         <select id="cm-branch" aria-label="Class map branch"></select>
       </h2>
@@ -49,6 +53,7 @@
     <div id="panel-body"></div>
   </aside>
 </main>
-<script src="app.js"></script>
+<script>window.ASSET_V = "mtmbn4mi";</script>
+<script src="app.js?v=mtmbn4mi"></script>
 </body>
 </html>

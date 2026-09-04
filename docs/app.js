@@ -11,7 +11,12 @@ const BAND_ORDER = [
   "ee-circuits", "ee-digital", "cs-systems", "cs-ml", "robotics",
 ];
 
-const state = { data: null, selected: null, major: "" };
+const state = {
+  data: null, selected: null, major: "",
+  // SVG text measurement returns 0 on display:none elements, so each tab's
+  // view renders only while visible; dirty flags defer the hidden one.
+  tab: "graph", graphDirty: true, cmDirty: true, panZoomInit: false,
+};
 
 // ---- theming ---------------------------------------------------------------
 // Three branch colors sit below 3:1 against the dark background; these are the
@@ -30,15 +35,36 @@ function applyTheme() {
   if (p === "system") delete document.documentElement.dataset.theme;
   else document.documentElement.dataset.theme = p;
   const btn = document.getElementById("theme-toggle");
-  btn.textContent = { system: "◐", light: "○", dark: "●" }[p];
-  btn.setAttribute("aria-label", `Color theme: ${p}`);
-  btn.title = `Theme: ${p}`;
+  btn.textContent = { system: "◐ Auto", light: "○ Light", dark: "● Dark" }[p];
+  btn.setAttribute("aria-label", `Color theme: ${p}. Click to change.`);
+  btn.title = p === "system" ? "Theme follows your OS setting" : `Theme: ${p}`;
+}
+
+// ---- tabs ------------------------------------------------------------------
+function showTab(which) {
+  state.tab = which;
+  document.getElementById("graph-wrap").hidden = which !== "graph";
+  document.getElementById("class-map").hidden = which !== "classes";
+  document.getElementById("tab-graph").setAttribute("aria-current", which === "graph" ? "page" : "false");
+  document.getElementById("tab-classes").setAttribute("aria-current", which === "classes" ? "page" : "false");
+  if (location.hash !== (which === "classes" ? "#classes" : ""))
+    history.replaceState(null, "", which === "classes" ? "#classes" : location.pathname);
+  refreshTab();
+}
+function refreshTab() {
+  if (state.tab === "graph") {
+    if (state.graphDirty) { render(); state.graphDirty = false; }
+    if (!state.panZoomInit) { initPanZoom(); state.panZoomInit = true; }
+  } else if (state.cmDirty) {
+    renderClassDag(document.getElementById("cm-branch").value || "robotics");
+    state.cmDirty = false;
+  }
 }
 
 async function main() {
   const wrap = document.getElementById("graph-wrap");
   try {
-    const res = await fetch("data.json");
+    const res = await fetch(`data.json?v=${window.ASSET_V ?? ""}`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     state.data = await res.json();
   } catch (err) {
@@ -61,13 +87,13 @@ async function main() {
     btn.type = "button";
     btn.innerHTML = `<span class="swatch" data-branch="${id}" style="background:${bcolor(id)}"></span>${b.name}`;
     btn.setAttribute("aria-label", `Go to ${b.name} branch`);
-    btn.addEventListener("click", () => flyToBand(id));
+    btn.addEventListener("click", () => { showTab("graph"); flyToBand(id); });
     legend.appendChild(btn);
   }
 
   const rerenderAll = () => {
-    render();
-    renderClassDag(document.getElementById("cm-branch").value || "robotics");
+    state.graphDirty = state.cmDirty = true;
+    refreshTab();
     for (const sw of legend.querySelectorAll(".swatch"))
       sw.style.background = bcolor(sw.dataset.branch);
   };
@@ -99,14 +125,13 @@ async function main() {
   sel.addEventListener("change", () => {
     state.major = sel.value;
     document.getElementById("overlay-key").hidden = !state.major;
-    render();
+    state.graphDirty = true;
+    refreshTab();
   });
   document.getElementById("panel-close").addEventListener("click", closePanel);
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closePanel(); });
 
   layout();
-  render();
-  initPanZoom();
 
   const cmSel = document.getElementById("cm-branch");
   for (const bid of BAND_ORDER) {
@@ -117,7 +142,10 @@ async function main() {
   }
   cmSel.value = "robotics";
   cmSel.addEventListener("change", () => renderClassDag(cmSel.value));
-  renderClassDag("robotics");
+
+  document.getElementById("tab-graph").addEventListener("click", () => showTab("graph"));
+  document.getElementById("tab-classes").addEventListener("click", () => showTab("classes"));
+  showTab(location.hash === "#classes" ? "classes" : "graph");
 }
 
 // ---- fly-to-branch camera --------------------------------------------------
@@ -367,6 +395,8 @@ function fitText(el, max) {
   const full = el.textContent;
   const key = full + "|" + max + "|" + (el.getAttribute("class") ?? "");
   if (fitCache.has(key)) { el.textContent = fitCache.get(key); return; }
+  // Unmeasurable (display:none subtree or hidden pane) — keep full text, no cache.
+  if (full && el.getComputedTextLength() === 0) return;
   let s = full;
   while (s.length > 2 && el.getComputedTextLength() > max) {
     s = s.slice(0, -2).replace(/[\s·&-]+$/, "") + "…";
@@ -389,6 +419,7 @@ function ancestorsOf(id) {
 const LIGHT = new Set(["#E69F00", "#56B4E9", "#F0E442", "#8B8000"]);
 
 function select(id, opts = {}) {
+  if (state.tab !== "graph") showTab("graph");
   state.selected = id;
   render();
   if (opts.fly) state.view?.flyToNode(id);
