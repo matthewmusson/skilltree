@@ -17,3 +17,4 @@ placements:
   - { tool: drill-press, rect: [204, 96, 100, 44] }
   - { tool: manual-mill, rect: [332, 96, 90, 44] }
   - { tool: lathe, rect: [76, 170, 100, 44] }
+  - { tool: cnc-mill, rect: [204, 170, 100, 44] }

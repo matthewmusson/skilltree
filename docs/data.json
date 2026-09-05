@@ -5247,6 +5247,44 @@
      100,
      44
     ]
+   },
+   {
+    "id": "cnc-mill",
+    "name": "CNC mill",
+    "zone": "machining",
+    "purpose": "A mill whose table and spindle are driven by motors executing a program. CAD geometry becomes CAM toolpaths, then G-code motion commands. Cuts curves and pockets no hand crank can trace, and repeats a part identically; the operator still owns workholding, tool setup, zeroing, and checking the first part.",
+    "videos": [
+     {
+      "youtube": "Do_C_NLH5sw",
+      "label": "Fusion 360 CAM for beginners (NYC CNC)"
+     }
+    ],
+    "typical_shop": false,
+    "demonstrates": [
+     {
+      "id": "machining",
+      "title": "Machining & Shop Fabrication",
+      "branch": "meche"
+     },
+     {
+      "id": "cad",
+      "title": "CAD & Solid Modeling",
+      "branch": "meche"
+     }
+    ],
+    "spaces": [
+     {
+      "id": "prl",
+      "name": "Product Realization Lab (PRL)",
+      "access": "Requires PRL CNC training, after the manual machining courses."
+     }
+    ],
+    "rect": [
+     204,
+     170,
+     100,
+     44
+    ]
    }
   ],
   "workflows": []

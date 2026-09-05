@@ -14,6 +14,7 @@ inventory:
   - { space: prl, tool: drill-press, access: "Requires PRL general shop training." }
   - { space: prl, tool: manual-mill, access: "Requires PRL machining training (mill course)." }
   - { space: prl, tool: lathe, access: "Requires PRL machining training (lathe course)." }
+  - { space: prl, tool: cnc-mill, access: "Requires PRL CNC training, after the manual machining courses." }
 
 demonstrations:
   - { skill: cad, space: prl, note: "Model a part, then manufacture it on any PRL machine." }
