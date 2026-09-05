@@ -42,3 +42,16 @@ tools:
       - { youtube: 5ZkP5RW41rg, label: "Manual mill tutorial" }
       - { youtube: ryi5qntPfHc, label: "Edge finder in use" }
     typical_shop: true
+
+  - id: lathe
+    name: Engine lathe
+    zone: machining
+    purpose: >
+      Spins the workpiece against a fixed cutting tool, so everything it makes
+      is rotationally symmetric and concentric with the spin axis: shafts,
+      pins, bushings, spacers, threads. Faces ends flat, turns diameters to
+      size, and drills perfectly centered holes from the tailstock.
+    demonstrates: [machining]
+    videos:
+      - { youtube: H6Dnmd3lDzA, label: "Lathe theory (Blondihacks)" }
+    typical_shop: true

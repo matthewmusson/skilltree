@@ -5210,6 +5210,39 @@
      90,
      44
     ]
+   },
+   {
+    "id": "lathe",
+    "name": "Engine lathe",
+    "zone": "machining",
+    "purpose": "Spins the workpiece against a fixed cutting tool, so everything it makes is rotationally symmetric and concentric with the spin axis: shafts, pins, bushings, spacers, threads. Faces ends flat, turns diameters to size, and drills perfectly centered holes from the tailstock.",
+    "videos": [
+     {
+      "youtube": "H6Dnmd3lDzA",
+      "label": "Lathe theory (Blondihacks)"
+     }
+    ],
+    "typical_shop": true,
+    "demonstrates": [
+     {
+      "id": "machining",
+      "title": "Machining & Shop Fabrication",
+      "branch": "meche"
+     }
+    ],
+    "spaces": [
+     {
+      "id": "prl",
+      "name": "Product Realization Lab (PRL)",
+      "access": "Requires PRL machining training (lathe course)."
+     }
+    ],
+    "rect": [
+     76,
+     170,
+     100,
+     44
+    ]
    }
   ],
   "workflows": []

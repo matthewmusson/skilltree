@@ -16,3 +16,4 @@ placements:
   - { tool: bandsaw, rect: [76, 96, 100, 44] }
   - { tool: drill-press, rect: [204, 96, 100, 44] }
   - { tool: manual-mill, rect: [332, 96, 90, 44] }
+  - { tool: lathe, rect: [76, 170, 100, 44] }
