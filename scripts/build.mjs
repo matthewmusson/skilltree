@@ -105,6 +105,8 @@ for (const t of tools) {
   if (!zoneById[t.zone]) errors.push(`tool ${t.id}: zone '${t.zone}' not in floorplan`);
   for (const s of t.demonstrates ?? [])
     if (!skills[s]) errors.push(`tool ${t.id}: skill '${s}' does not exist`);
+  for (const v of t.videos ?? [])
+    if (!v.youtube || !v.label) errors.push(`tool ${t.id}: video entries need youtube and label`);
 }
 const placedCount = {};
 const inside = ([x, y, w, h], [zx, zy, zw, zh]) =>
@@ -208,7 +210,7 @@ const shop = {
     name: t.name,
     zone: t.zone,
     purpose: t.purpose?.trim() ?? "",
-    youtube: t.youtube ?? null,
+    videos: t.videos ?? [],
     typical_shop: t.typical_shop ?? false,
     demonstrates: (t.demonstrates ?? []).map((s) => ({ id: s, title: skills[s].title, branch: skills[s].branch })),
     spaces: inventory.filter((i) => i.tool === t.id)

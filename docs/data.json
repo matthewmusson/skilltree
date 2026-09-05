@@ -5113,7 +5113,12 @@
     "name": "Horizontal bandsaw",
     "zone": "machining",
     "purpose": "Rough-cuts bar and plate stock to approximate length before precision work. A continuous toothed blade loop, run slow for metal with fine-pitch teeth; the horizontal form bows down through clamped stock under gravity feed.",
-    "youtube": "adRgpGQ01gA",
+    "videos": [
+     {
+      "youtube": "adRgpGQ01gA",
+      "label": "Cutting stock to length"
+     }
+    ],
     "typical_shop": true,
     "demonstrates": [
      {
@@ -5141,7 +5146,12 @@
     "name": "Drill press",
     "zone": "machining",
     "purpose": "Drills round, perpendicular holes with a bit held in a rigid vertical spindle, lowered by lever into work clamped on the table. Also spots, countersinks, reams, and squarely starts taps. Location accuracy comes from layout and a center punch, so holes whose position is critical move to the mill instead.",
-    "youtube": "8ywiGFqoPSA",
+    "videos": [
+     {
+      "youtube": "8ywiGFqoPSA",
+      "label": "Drill press basics"
+     }
+    ],
     "typical_shop": true,
     "demonstrates": [
      {
@@ -5169,7 +5179,16 @@
     "name": "Manual mill",
     "zone": "machining",
     "purpose": "Spins a cutter over a workpiece clamped to a table that moves on measured handwheels. Makes flat faces, squared edges, slots, pockets, and holes at precise coordinates; the machine of choice whenever a feature's location is the spec.",
-    "youtube": "5ZkP5RW41rg",
+    "videos": [
+     {
+      "youtube": "5ZkP5RW41rg",
+      "label": "Manual mill tutorial"
+     },
+     {
+      "youtube": "ryi5qntPfHc",
+      "label": "Edge finder in use"
+     }
+    ],
     "typical_shop": true,
     "demonstrates": [
      {

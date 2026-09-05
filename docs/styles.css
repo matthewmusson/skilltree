@@ -118,6 +118,11 @@ main { flex: 1; display: flex; min-height: 0; }
 .mnode:hover rect { stroke-width: 2.5; }
 .mnode:focus-visible { outline: none; }
 .mnode:focus-visible rect { stroke-width: 2.5; stroke-dasharray: 3 2; }
+.video-label {
+  font: 500 0.75rem var(--sans);
+  color: var(--muted);
+  margin: 0.6rem 0 0;
+}
 .video-facade {
   position: relative;
   display: block;

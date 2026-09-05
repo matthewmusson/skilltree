@@ -731,11 +731,13 @@ function selectTool(m) {
     ...m.spaces.map((s) => `<span class="space-tag">${esc(s.id.toUpperCase())}</span>`),
     m.typical_shop ? `<span class="space-tag">SHOP</span>` : "",
   ].join("");
-  const media = m.youtube
-    ? `<button class="video-facade" data-yt="${esc(m.youtube)}" aria-label="Play demo video for ${esc(m.name)}">
-         <img src="https://img.youtube.com/vi/${esc(m.youtube)}/hqdefault.jpg" alt="" loading="lazy">
+  const media = m.videos.length
+    ? m.videos.map((v) => `
+       <p class="video-label">${esc(v.label)}</p>
+       <button class="video-facade" data-yt="${esc(v.youtube)}" aria-label="Play: ${esc(v.label)}">
+         <img src="https://img.youtube.com/vi/${esc(v.youtube)}/hqdefault.jpg" alt="" loading="lazy">
          <span class="play">▶</span>
-       </button>`
+       </button>`).join("")
     : `<p class="note">No demo clip yet.</p>`;
   el.innerHTML = `
     <h2>${esc(m.name)}</h2>
@@ -747,14 +749,14 @@ function selectTool(m) {
     ${m.spaces.length ? `<section><h3>At Stanford</h3>
       <ul>${m.spaces.map((s) => `<li><strong>${esc(s.name)}</strong>${s.access ? `: ${esc(s.access)}` : ""}</li>`).join("")}</ul></section>` : ""}
   `;
-  el.querySelector(".video-facade")?.addEventListener("click", (e) => {
+  el.querySelectorAll(".video-facade").forEach((f) => f.addEventListener("click", (e) => {
     const id = e.currentTarget.dataset.yt;
     const wrap = document.createElement("div");
     wrap.className = "video-embed";
     wrap.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0"
       title="Demo video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
     e.currentTarget.replaceWith(wrap);
-  });
+  }));
   el.querySelectorAll(".prereq-link").forEach((a) =>
     a.addEventListener("click", () => select(a.dataset.id, { fly: true })));
   const panel = document.getElementById("panel");
