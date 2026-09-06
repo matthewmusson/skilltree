@@ -1342,7 +1342,11 @@
     "on_the_job_only": false,
     "notes": "Learned through shop training and projects, not lecture."
    },
-   "resources": [],
+   "resources": [
+    "Machinery's Handbook (Industrial Press) - the shop reference for threads, fits, speeds and feeds",
+    "Slocum, FUNdaMENTALS of Design (free MIT PDF chapters on precision machine design)",
+    "Moore, Davis & Coplan, Building Scientific Apparatus"
+   ],
    "classes": [
     {
      "id": "ME 102",
@@ -1485,7 +1489,8 @@
     "notes": ""
    },
    "resources": [
-    "Budynas & Nisbett, Shigley's Mechanical Engineering Design"
+    "Budynas & Nisbett, Shigley's Mechanical Engineering Design",
+    "Blanding, Exact Constraint: Machine Design Using Kinematic Principles"
    ],
    "classes": [
     {
