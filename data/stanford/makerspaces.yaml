@@ -17,6 +17,8 @@ inventory:
   - { space: prl, tool: cnc-mill, access: "Requires PRL CNC training, after the manual machining courses." }
   - { space: prl, tool: calipers, access: "At every bench; covered in general shop training." }
   - { space: prl, tool: micrometer, access: "At the machining benches; covered in machining training." }
+  - { space: lab64, tool: bench-supply, access: "At every bench; open lab access." }
+  - { space: lab64, tool: multimeter, access: "At every bench; open lab access." }
 
 demonstrations:
   - { skill: cad, space: prl, note: "Model a part, then manufacture it on any PRL machine." }

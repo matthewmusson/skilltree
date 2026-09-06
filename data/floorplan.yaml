@@ -20,3 +20,5 @@ placements:
   - { tool: cnc-mill, rect: [204, 170, 100, 44] }
   - { tool: calipers, rect: [60, 376, 80, 40] }
   - { tool: micrometer, rect: [152, 376, 80, 40] }
+  - { tool: bench-supply, rect: [540, 376, 100, 44] }
+  - { tool: multimeter, rect: [664, 376, 100, 44] }

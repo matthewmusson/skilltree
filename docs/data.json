@@ -5351,6 +5351,62 @@
      80,
      40
     ]
+   },
+   {
+    "id": "bench-supply",
+    "name": "Bench power supply",
+    "zone": "electronics",
+    "purpose": "An adjustable DC voltage source with a settable current limit. Set the voltage your circuit needs and a current ceiling above which the supply folds back instead of letting a mistake burn; powers every prototype on the bench, including the excitation voltage a sensor bridge runs on.",
+    "videos": [],
+    "typical_shop": true,
+    "demonstrates": [
+     {
+      "id": "electronic-prototyping",
+      "title": "Electronic Prototyping & Test",
+      "branch": "ee-circuits"
+     }
+    ],
+    "spaces": [
+     {
+      "id": "lab64",
+      "name": "Lab64 (EE Makerspace)",
+      "access": "At every bench; open lab access."
+     }
+    ],
+    "rect": [
+     540,
+     376,
+     100,
+     44
+    ]
+   },
+   {
+    "id": "multimeter",
+    "name": "Multimeter",
+    "zone": "electronics",
+    "purpose": "Measures DC and AC voltage, current, and resistance, plus continuity. Voltage is measured in parallel across a component, current in series through it. High input impedance means probing a circuit barely disturbs it. The first instrument on any electrical question, for slow signals.",
+    "videos": [],
+    "typical_shop": true,
+    "demonstrates": [
+     {
+      "id": "electronic-prototyping",
+      "title": "Electronic Prototyping & Test",
+      "branch": "ee-circuits"
+     }
+    ],
+    "spaces": [
+     {
+      "id": "lab64",
+      "name": "Lab64 (EE Makerspace)",
+      "access": "At every bench; open lab access."
+     }
+    ],
+    "rect": [
+     664,
+     376,
+     100,
+     44
+    ]
    }
   ],
   "workflows": []
