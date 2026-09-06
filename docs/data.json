@@ -5285,6 +5285,62 @@
      100,
      44
     ]
+   },
+   {
+    "id": "calipers",
+    "name": "Calipers",
+    "zone": "metrology",
+    "purpose": "The everyday measuring instrument: a sliding jaw on a scale that reads outside dimensions, inside dimensions, and depths across a 150 mm range. Fast and one-handed, trustworthy to roughly ±0.03 mm; the first check on nearly every dimension, and the wrong tool for the tightest ones.",
+    "videos": [],
+    "typical_shop": true,
+    "demonstrates": [
+     {
+      "id": "machining",
+      "title": "Machining & Shop Fabrication",
+      "branch": "meche"
+     }
+    ],
+    "spaces": [
+     {
+      "id": "prl",
+      "name": "Product Realization Lab (PRL)",
+      "access": "At every bench; covered in general shop training."
+     }
+    ],
+    "rect": [
+     60,
+     376,
+     80,
+     40
+    ]
+   },
+   {
+    "id": "micrometer",
+    "name": "Micrometer",
+    "zone": "metrology",
+    "purpose": "A calibrated screw: the spindle advances a known distance per turn of the thimble, so 0.01 mm reads directly and ±0.002 mm is realistic. A ratchet applies the same measuring force every time. Narrow range per instrument (typically 0 to 25 mm); the referee for tight tolerances.",
+    "videos": [],
+    "typical_shop": true,
+    "demonstrates": [
+     {
+      "id": "machining",
+      "title": "Machining & Shop Fabrication",
+      "branch": "meche"
+     }
+    ],
+    "spaces": [
+     {
+      "id": "prl",
+      "name": "Product Realization Lab (PRL)",
+      "access": "At the machining benches; covered in machining training."
+     }
+    ],
+    "rect": [
+     152,
+     376,
+     80,
+     40
+    ]
    }
   ],
   "workflows": []
