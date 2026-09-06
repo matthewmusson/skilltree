@@ -5291,7 +5291,12 @@
     "name": "Calipers",
     "zone": "metrology",
     "purpose": "The everyday measuring instrument: a sliding jaw on a scale that reads outside dimensions, inside dimensions, and depths across a 150 mm range. Fast and one-handed, trustworthy to roughly ±0.03 mm; the first check on nearly every dimension, and the wrong tool for the tightest ones.",
-    "videos": [],
+    "videos": [
+     {
+      "youtube": "oOZjbbe6YZk",
+      "label": "Using calipers"
+     }
+    ],
     "typical_shop": true,
     "demonstrates": [
      {
@@ -5319,7 +5324,12 @@
     "name": "Micrometer",
     "zone": "metrology",
     "purpose": "A calibrated screw: the spindle advances a known distance per turn of the thimble, so 0.01 mm reads directly and ±0.002 mm is realistic. A ratchet applies the same measuring force every time. Narrow range per instrument (typically 0 to 25 mm); the referee for tight tolerances.",
-    "videos": [],
+    "videos": [
+     {
+      "youtube": "k5AdTiLNiRI",
+      "label": "Reading a micrometer"
+     }
+    ],
     "typical_shop": true,
     "demonstrates": [
      {

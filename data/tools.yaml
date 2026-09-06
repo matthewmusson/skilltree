@@ -80,7 +80,8 @@ tools:
       Fast and one-handed, trustworthy to roughly ±0.03 mm; the first check on
       nearly every dimension, and the wrong tool for the tightest ones.
     demonstrates: [machining]
-    videos: []
+    videos:
+      - { youtube: oOZjbbe6YZk, label: "Using calipers" }
     typical_shop: true
 
   - id: micrometer
@@ -92,5 +93,6 @@ tools:
       applies the same measuring force every time. Narrow range per instrument
       (typically 0 to 25 mm); the referee for tight tolerances.
     demonstrates: [machining]
-    videos: []
+    videos:
+      - { youtube: k5AdTiLNiRI, label: "Reading a micrometer" }
     typical_shop: true
