@@ -1,8 +1,30 @@
 # Design brief — Makerspaces tab
 
-Status: confirmed direction (2026-09-03), implementation paused by Matthew.
-Discovery answers: YouTube click-to-play media · catalog by category with space
-badges · full field-manual entries.
+Status: SHIPPING incrementally as the "Shop floor" tab (floor-plan revision,
+2026-09-04). One machine added per walkthrough turn, grounded in building a
+rocket-motor thrust stand. Discovery answers: YouTube click-to-play media ·
+floor plan with zones · full field-manual entries.
+
+## Walkthrough roadmap
+
+Done: bandsaw, drill press, manual mill, engine lathe, CNC mill (machining
+corner); calipers, micrometer (metrology); bench power supply, multimeter
+(electronics bench, in progress).
+
+Committed upcoming (requested 2026-09-09):
+- **FDM 3D printer** (additive) — must include a discussion of filament types
+  (PLA / PETG / ABS / ASA / TPU / filled filaments: strength, temperature,
+  warping, when each is the right call).
+- **Resin (SLA) printer** (additive) — with wash/cure station.
+- **Laser cutter** (cutting bay).
+- **Casting** (process entry) — sand/investment casting; where it beats
+  machining, pattern and mold thinking.
+- **Injection molding** (process entry) — the at-volume process; tooling cost
+  vs per-part cost, draft angles, ties into the supply-chain branch.
+
+Still open: oscilloscope, soldering iron, hot-air rework (electronics bench);
+welding + sheet-metal brake (joining bay); waterjet (cutting bay); hand-tool
+wall; workflows.yaml routes once enough machines exist.
 
 ## 1. What it is
 
